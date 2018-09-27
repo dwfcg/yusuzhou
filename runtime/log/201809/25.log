@@ -1,0 +1,433 @@
+---------------------------------------------------------------
+[ 2018-09-25T09:16:49+08:00 ] ::1 ::1 GET /yusuzhou/
+[ info ] localhost/yusuzhou/ [运行时间：0.119007s][吞吐率：8.40req/s] [内存消耗：2,549.89kb] [文件加载：72]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.032002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.020001s ]
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpStudy\WWW\yusuzhou\application\index\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.006001s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.005001s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-09-25T16:55:00+08:00 ] ::1 ::1 GET /
+[ info ] localhost/ [运行时间：0.053003s][吞吐率：18.87req/s] [内存消耗：2,550.02kb] [文件加载：72]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=tomfop1s1lmojm5g8tv88v8r96',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.018001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.011001s ]
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpStudy\WWW\yusuzhou\application\index\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-09-25T16:55:10+08:00 ] ::1 ::1 GET /admin.php/auction/record/index.html
+[ info ] localhost/admin.php/auction/record/index.html [运行时间：0.076005s][吞吐率：13.16req/s] [内存消耗：2,711.99kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'record',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=tomfop1s1lmojm5g8tv88v8r96',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.016001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.016001s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_role` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `menu_auth` FROM `ysz_admin_role` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_menu` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `id`,`url_value` FROM `ysz_admin_menu` WHERE  `id` = 0 [ RunTime:0.000000s ]
+[ error ] [8]unserialize(): Error at offset 0 of 16 bytes[D:\phpStudy\WWW\yusuzhou\thinkphp\library\think\cache\driver\File.php:120]
+---------------------------------------------------------------
+[ 2018-09-25T16:55:16+08:00 ] ::1 ::1 GET /admin.php/
+[ info ] localhost/admin.php/ [运行时间：0.026002s][吞吐率：38.46req/s] [内存消耗：1,243.16kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=tomfop1s1lmojm5g8tv88v8r96',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-25T16:55:16+08:00 ] ::1 ::1 GET /admin.php/admin
+[ info ] localhost/admin.php/admin [运行时间：0.058003s][吞吐率：17.24req/s] [内存消耗：2,718.16kb] [文件加载：76]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=tomfop1s1lmojm5g8tv88v8r96',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.016001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.013000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_role` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `menu_auth` FROM `ysz_admin_role` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_menu` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `id`,`url_value` FROM `ysz_admin_menu` WHERE  `id` = 0 [ RunTime:0.000000s ]
+[ error ] [8]unserialize(): Error at offset 0 of 16 bytes[D:\phpStudy\WWW\yusuzhou\thinkphp\library\think\cache\driver\File.php:120]
+---------------------------------------------------------------
+[ 2018-09-25T16:56:43+08:00 ] ::1 ::1 GET /admin.php/admin
+[ info ] localhost/admin.php/admin [运行时间：0.099005s][吞吐率：10.10req/s] [内存消耗：2,718.57kb] [文件加载：76]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=tomfop1s1lmojm5g8tv88v8r96',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.025002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.011000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_role` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `menu_auth` FROM `ysz_admin_role` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_menu` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `id`,`url_value` FROM `ysz_admin_menu` WHERE  `id` = 0 [ RunTime:0.000000s ]
+[ error ] [8]unserialize(): Error at offset 0 of 16 bytes[D:\phpStudy\WWW\yusuzhou\thinkphp\library\think\cache\driver\File.php:120]
+---------------------------------------------------------------
+[ 2018-09-25T16:56:57+08:00 ] ::1 ::1 GET /admin.php/admin/admin
+[ info ] localhost/admin.php/admin/admin [运行时间：0.079005s][吞吐率：12.66req/s] [内存消耗：2,699.01kb] [文件加载：75]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=tomfop1s1lmojm5g8tv88v8r96',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.011001s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_role` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `menu_auth` FROM `ysz_admin_role` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_menu` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `id`,`url_value` FROM `ysz_admin_menu` WHERE  `id` = 0 [ RunTime:0.000000s ]
+[ error ] [8]unserialize(): Error at offset 0 of 16 bytes[D:\phpStudy\WWW\yusuzhou\thinkphp\library\think\cache\driver\File.php:120]
+---------------------------------------------------------------
+[ 2018-09-25T17:00:27+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/auction/record/index.html
+[ info ] localhost/admin.php/auction/record/index.html [运行时间：0.111006s][吞吐率：9.01req/s] [内存消耗：2,845.46kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'record',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=tomfop1s1lmojm5g8tv88v8r96',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.024001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.014001s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.005001s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_role` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `menu_auth` FROM `ysz_admin_role` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_menu` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `id`,`url_value` FROM `ysz_admin_menu` WHERE  `id` = 0 [ RunTime:0.001000s ]
+[ error ] [8]unserialize(): Error at offset 0 of 16 bytes[D:\phpStudy\WWW\yusuzhou\thinkphp\library\think\cache\driver\File.php:120]
+---------------------------------------------------------------
+[ 2018-09-25T17:01:22+08:00 ] ::1 ::1 GET /admin.php/auction/record/index.html
+[ info ] localhost/admin.php/auction/record/index.html [运行时间：0.067004s][吞吐率：14.92req/s] [内存消耗：2,712.94kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'record',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=tomfop1s1lmojm5g8tv88v8r96',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.013001s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_role` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `menu_auth` FROM `ysz_admin_role` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_menu` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `id`,`url_value` FROM `ysz_admin_menu` WHERE  `id` = 0 [ RunTime:0.000000s ]
+[ error ] [8]unserialize(): Error at offset 0 of 16 bytes[D:\phpStudy\WWW\yusuzhou\thinkphp\library\think\cache\driver\File.php:120]

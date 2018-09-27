@@ -1,0 +1,400 @@
+<html class="" lang="zh-cmn-Hans" style="position: relative; overflow: hidden; height: 736px; padding-bottom: 0px; margin-bottom: 0px;">
+    <head>
+        <meta charset="utf-8">
+        <meta name="keywords" content="有赞,移动电商服务平台">
+        <title>待付款的订单</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <style>
+            a, body {
+                color: #333
+            }
+            a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font: inherit;
+                font-size: 100%;
+                vertical-align: baseline
+            }
+            html {
+                line-height: 1;
+                -ms-text-size-adjust: 100%;
+                -webkit-text-size-adjust: 100%;
+                font-family: Helvetica, "STHeiti STXihei", "Microsoft YaHei", Tohoma, Arial
+            }
+            ol, ul {
+                list-style: none
+            }
+            table {
+                border-collapse: collapse;
+                border-spacing: 0
+            }
+            caption, td, th {
+                font-weight: 400;
+                vertical-align: middle
+            }
+            blockquote, q {
+                quotes: none
+            }
+            blockquote:after, blockquote:before, q:after, q:before {
+                content: "";
+                content: none
+            }
+            .arrow-right::after, .clearfix:after, .container .content:after {
+                content: ''
+            }
+            a img {
+                border: none
+            }
+            article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+                display: block
+            }
+            body {
+                background-color:#f8f8f8;
+                -webkit-backface-visibility: hidden
+            }
+            body.body-fixed-bottom {
+                padding-bottom: 50px
+            }
+            .container {
+                background-color: #f8f8f8
+            }
+            strong {
+                font-weight: 700
+            }
+            a {
+                background: 0 0;
+                text-decoration: none;
+                -webkit-tap-highlight-color: transparent
+            }
+            h1 {
+                font-size: 2em;
+                margin: .67em 0
+            }
+            h2 {
+                font-size: 18px;
+                line-height: 22px
+            }
+            h3 {
+                font-size: 15px;
+                line-height: 18px
+            }
+            button, input[type=number], input[type=text], input[type=password], input[type=email], input[type=search], select, textarea {
+                font-family: inherit;
+                font-size: 100%;
+                margin: 0;
+                -webkit-tap-highlight-color: transparent;
+                -webkit-appearance: none;
+                -moz-appearance: none
+            }
+            .c-orange {
+                color: #f60!important
+            }
+            .c-orange-dark {
+                color: #f15a0c!important
+            }
+            .c-green {
+                color: #06bf04!important
+            }
+            .c-wx-green {
+                color: #4b0!important
+            }
+            .c-red {
+                color: #ed5050!important
+            }
+            .c-pink {
+                color: #ee614b!important
+            }
+            .c-white {
+                color: #fff!important
+            }
+            .c-gray-light {
+                color: #e5e5e5!important
+            }
+            .c-gray {
+                color: #c9c9c9!important
+            }
+            .c-gray-dark {
+                color: #999!important
+            }
+            .c-gray-darker {
+                color: #666!important
+            }
+            .c-black {
+                color: #333!important
+            }
+            .c-yellow {
+                color: #f09000!important
+            }
+            .c-light-yellow {
+                color: #fcff00!important
+            }
+            .c-blue {
+                color: #38f!important
+            }
+            @media only screen and (-webkit-min-device-pixel-ratio:1.5), only screen and (min--moz-device-pixel-ratio:1.5), only screen and (min-device-pixel-ratio:1.5) {
+                hr {
+                    border-top-width: 1px
+                }
+            }
+            hr.margin-0 {
+                margin: 0
+            }
+            hr.left-10 {
+                margin-left: 10px
+            }
+            .relative {
+                position: relative
+            }
+            .font-size-12 {
+                font-size: 12px!important
+            }
+            .font-size-14 {
+                font-size: 14px!important
+            }
+            .font-size-16 {
+                font-size: 16px!important
+            }
+            .font-size-18 {
+                font-size: 18px!important
+            }
+            .font-size-20 {
+                font-size: 20px!important
+            }
+            .font-size-22 {
+                font-size: 22px!important
+            }
+            .font-size-24 {
+                font-size: 24px!important
+            }
+            .font-size-26 {
+                font-size: 26px!important
+            }
+            .font-size-28 {
+                font-size: 28px!important
+            }
+            .ellipsis {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis
+            }
+            .border-bottom-none {
+                border-bottom: 0!important
+            }
+            .border-top-none {
+                border-top: 0!important
+            }
+            .link, .link:active, .link:hover, .link:link, .link:visited {
+                color: #07d
+            }
+            .clearfix:after {
+                display: table;
+                clear: both
+            }
+            .pull-left {
+                float: left
+            }
+            .pull-right {
+                float: right
+            }
+            .show {
+                display:block!important;
+            }
+            .hide {
+                display:none!important;
+            }
+            .motify {
+                position: fixed;
+                top: 35%;
+                left: 50%;
+                width: 220px;
+                padding: 0;
+                margin: 0 0 0 -110px;
+                z-index: 9999;
+                background: rgba(0,0,0,.8);
+                color: #fff;
+                display:none;
+                line-height: 1.5em;
+                border-radius: 6px;
+                -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+                box-shadow: 0 1px 2px rgba(0,0,0,.2);
+            }
+            .motify-inner{
+                padding:10px;
+                text-align:center;
+            }
+            .recharge_pay_list{
+                padding:0 20px;
+            }
+            .recharge_pay_list li{
+                position:relative;
+            }
+            .recharge_pay_list li:first-of-type:after{
+                display:none;
+            }
+            .recharge_pay_list label{
+                display:-webkit-box;
+                display:box;
+                -webkit-box-align:center;
+                box-align:center;
+                -webkit-box-pack:center;
+                box-pack:center;
+                padding:15px 0;
+                background:#f59d06;
+                color:#fff;
+                border-radius:4px;
+                margin-top:16px;
+            }
+        </style>
+        <link rel="stylesheet" href="__IMGURL__/static/lingshu/css/trade_a0360ed2c406957b97dec0b9b2a9e6c6.css">
+        <link rel="stylesheet" href="__IMGURL__/static/lingshu/css/index_a11364dc72ed102d49e9fe4d2a5d5d23.css">
+    </head>
+    <body class=" body-fixed-bottom default-theme" style="overflow: hidden; height: 736px; margin-bottom: 0px; padding: 0px;">
+        <div class="container">
+            <div class="content confirm-container">
+                <div class="app app-order">
+                    <div class="app-inner inner-order" id="js-page-content">
+                        <div class="js-order-total block-item block order-total">
+                            <p> <span>订单编号</span> <span class="pull-right c-gray-darker">{$order.order_sn} </span> </p>
+                            <p> <span>支付金额</span> <span class="pull-right c-gray-darker"> ￥{$order.price} </span> </p>
+                        </div>
+                        <input type="hidden" name="id" value="{$order.id}" />
+                        <ul class="recharge_pay_list">
+                            <li>
+                                <div id="zhifubao">
+                                    <label style="background:#1b82d2;">
+                                        <div class="text">支付宝</div>
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                            	<!--原来链接写法：{:url('pay/weixin',array('id'=>$order.id))}-->
+                                <div id="weixin">
+                                    <label style="background:#2aa346;">
+                                        <div class="text">微信支付</div>
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="{:url('lingshu/orders/orders')}">
+                                    <label style="background:#ef8109;">
+                                        <div class="text">我的订单</div>
+                                    </label>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="motify"><div class="motify-inner"></div></div>
+        <script type="text/javascript" src="__STATIC__/home/js/api.js?3"></script>
+		<script type="text/javascript" src="__STATIC__/home/js/vue.min.js"></script>
+		<script type="text/javascript" src="__STATIC__/home/js/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript">
+			apiready = function(){
+				user = api.getPrefs({sync: true,key: 'userLogin'});
+				user = JSON.parse(user);
+	        	//支付宝支付
+				$("#zhifubao").on('click',function(){
+					api.ajax({
+			            url: 'http://yusuzhou.youacloud.com/index.php/collect/zhifu/alipay_before',
+			            method: 'post',
+			            data: {
+			            	values: {
+			            		mid: user.data.id,
+			            		order_sn: {$order.order_sn},
+			            	}
+			            }
+			        }, function(ret, err) {
+			            if(ret){
+			            	var orderInfo = ret.data.form;
+			            	var aliPayPlus = api.require('aliPayPlus');
+		                    aliPayPlus.payOrder({
+		                        orderInfo:orderInfo
+		                    }, function(ret, err) {
+		                    	//一会儿不用登录，一会儿要登录。
+		                        if (ret.code == 9000) {
+		                          	api.toast({
+		                          		msg: '支付成功'
+		                          	});
+		                          	//返回上一页，并刷新上一页页面
+									window.location='http://yusuzhou.youacloud.com/index.php/collect/order/orders/uid/'+user.data.id+'/status/1.html';
+		                      	}else {
+		                        	api.toast({
+		                          		msg: '您已取消支付'
+		                          	});
+		                          	//返回上一页，并刷新上一页页面
+									window.location='http://yusuzhou.youacloud.com/index.php/collect/order/orders/uid/'+user.data.id+'/status/0.html';
+		                      	}
+		                    });
+			            }
+			        });
+				});
+				//微信支付
+				$("#weixin").on('click',function(){
+					api.ajax({
+			            url: 'http://yusuzhou.youacloud.com/index.php/collect/zhifu/wxpay_before',
+			            method: 'post',
+			            data: {
+			            	values: {
+			            		mid: user.data.id,
+			            		order_sn: {$order.order_sn},
+			            	}
+			            }
+			       }, function(ret, err) {
+			        	if(ret){
+			                var apiKey=ret.data.appid;
+			                var orderId= ret.data.prepayid;
+			                var mchId= ret.data.mch_id;
+			                var nonceStr=ret.data.nonce_str;
+			                var timeStamp=ret.data.timestamp;
+			                var package1= ret.data.package;
+			                var signature = api.require('signature');
+		                    var wxPay = api.require('wxPay');
+		                    var myDate = new Date();
+		                    var now = Date.parse(new Date()) / 1000;
+		                    var stringA ="appid="+apiKey+"&noncestr="+nonceStr+"&package=Sign=WXPay&partnerid="+mchId+"&prepayid="+orderId+ "&timestamp="+ now;
+		                    var stringSignTemp = stringA+"&key=n0alu1cnrq8bdus6jcpnnhkig421suz6";
+		                    var sign = signature.md5Sync({
+		                        data: stringSignTemp
+		                    });
+		                    wxPay.payOrder({
+	                          apiKey: apiKey,
+	                          orderId: orderId,
+	                          mchId: mchId,
+	                          nonceStr:nonceStr,
+	                          timeStamp:timeStamp,
+	                          package:'Sign=WXPay',
+	                          sign:sign
+	                      	}, function(ret, err) {
+	                      		alert(JSON.stringify(ret));
+		                      	if(ret.status){
+		                      		api.toast({
+		                          		msg: '支付成功'
+		                          	});
+		                          	//返回上一页，并刷新上一页页面
+									window.location='http://yusuzhou.youacloud.com/index.php/collect/order/orders/uid/'+user.data.id+'/status/1.html';
+//									api.sendEvent({
+//					        			name: 'updata'
+//					        		})
+		                      	}else{
+		                      		api.toast({
+		                          		msg: '您已取消支付'
+		                          	});
+//		                          	api.sendEvent({
+//					        			name: 'updata'
+//					        		})
+//		                          	//返回上一页，并刷新上一页页面
+									window.location='http://yusuzhou.youacloud.com/index.php/collect/order/orders/uid/'+user.data.id+'/status/0.html';
+		                      	}
+	                      	})
+			        	}else{
+			        		alert(JSON.stringify(err))
+			        	}
+			        })
+				})
+			}
+		</script>
+    </body>
+</html>

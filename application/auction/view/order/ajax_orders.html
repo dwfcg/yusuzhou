@@ -1,0 +1,24 @@
+{volist name="orders" id="v"}
+<div class="order_main" data-orderid="111">
+<div class="title">订单ID：{$v['order_sn']}<span>{$order_status[$v['status']]}</span></div>
+
+<div class="good">
+    <div class="img"  onclick="location.href = ''"><img src="{$v['pic']}"/></div>
+    <div class='info' onclick="location.href = '{:url('index/detail',array('gid'=>$v['gid']))}'">
+        <div class='inner'>
+            <div class="name">{$v['title']}</div>     
+            <div class='option'></div>
+        </div>
+    </div>
+    <div class="price">
+        <div class='pnum'><span class='marketprice'>￥{$v['money']}</span></div>
+        <div class='pnum'><span class='total'>×1</span></div>
+    </div>
+</div>
+<div class="info1">实付：<span>￥{$v['money']}</span></div>
+{if $v['status'] >= 1}
+<div class="sub">
+    <div class="sub1" onclick="location.href = '{:url("pay/pay",array('id'=>$v['id']))}'">付款</div>  
+</div>
+{/if}
+{/volist}

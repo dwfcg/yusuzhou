@@ -1,0 +1,999 @@
+---------------------------------------------------------------
+[ 2018-08-31T09:58:01+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/auction/index/ajax_chujia
+[ info ] 127.0.0.1/yusuzhou/index.php/auction/index/ajax_chujia [运行时间：0.113000s][吞吐率：8.85req/s] [内存消耗：2,353.89kb] [文件加载：66]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'index',
+    2 => 'ajax_chujia',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.030000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.020000s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ error ] [0]语法解析错误: syntax error, unexpected '='[D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php:163]
+---------------------------------------------------------------
+[ 2018-08-31T09:58:33+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/auction/index/ajax_chujia
+[ info ] 127.0.0.1/yusuzhou/index.php/auction/index/ajax_chujia [运行时间：0.070000s][吞吐率：14.29req/s] [内存消耗：2,624.48kb] [文件加载：75]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'index',
+    2 => 'ajax_chujia',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.010000s ]
+[ info ] [ RUN ] app\auction\home\Index->ajax_chujia[ D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\yusuzhou/application/admin/view/dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_goods` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_auction_goods` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-08-31T09:58:37+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/auction/index/bzj
+[ info ] 127.0.0.1/yusuzhou/index.php/auction/index/bzj [运行时间：0.070000s][吞吐率：14.29req/s] [内存消耗：2,608.58kb] [文件加载：76]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'index',
+    2 => 'bzj',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.010000s ]
+[ info ] [ RUN ] app\auction\home\Index->bzj[ D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_band` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] INSERT INTO `ysz_auction_band` (`uid` , `gid` , `band` , `status` , `addtime`) VALUES (50 , 1 , 200 , 0 , 1535680717) [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `ysz_auction_band`  SET `order_no`='61535680717'  WHERE  `id` = 6 [ RunTime:0.000000s ]
+[ error ] [0]variable type error： array[D:\phpStudy\WWW\yusuzhou\thinkphp\library\think\Response.php:318]
+---------------------------------------------------------------
+[ 2018-08-31T09:59:05+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/auction/index/bzj
+[ info ] 127.0.0.1/yusuzhou/index.php/auction/index/bzj [运行时间：0.050000s][吞吐率：20.00req/s] [内存消耗：2,523.63kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'index',
+    2 => 'bzj',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.010000s ]
+[ info ] [ RUN ] app\auction\home\Index->bzj[ D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_band` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] INSERT INTO `ysz_auction_band` (`uid` , `gid` , `band` , `status` , `addtime`) VALUES (50 , 1 , 200 , 0 , 1535680745) [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-08-31T09:59:32+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/auction/index/bzj
+[ info ] 127.0.0.1/yusuzhou/index.php/auction/index/bzj [运行时间：0.080001s][吞吐率：12.50req/s] [内存消耗：2,523.63kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'index',
+    2 => 'bzj',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.010001s ]
+[ info ] [ RUN ] app\auction\home\Index->bzj[ D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_band` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] INSERT INTO `ysz_auction_band` (`uid` , `gid` , `band` , `status` , `addtime`) VALUES (50 , 1 , 200 , 0 , 1535680772) [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-08-31T10:00:18+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/auction/index/bzj
+[ info ] 127.0.0.1/yusuzhou/index.php/auction/index/bzj [运行时间：0.080000s][吞吐率：12.50req/s] [内存消耗：2,523.92kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'index',
+    2 => 'bzj',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.010000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.020000s ]
+[ info ] [ RUN ] app\auction\home\Index->bzj[ D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_band` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] INSERT INTO `ysz_auction_band` (`uid` , `gid` , `band` , `status` , `addtime`) VALUES (50 , 1 , 200 , 0 , 1535680818) [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-08-31T10:00:41+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/auction/index/bzj
+[ info ] 127.0.0.1/yusuzhou/index.php/auction/index/bzj [运行时间：0.070000s][吞吐率：14.29req/s] [内存消耗：2,608.98kb] [文件加载：76]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'index',
+    2 => 'bzj',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.010000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.010000s ]
+[ info ] [ RUN ] app\auction\home\Index->bzj[ D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_band` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] INSERT INTO `ysz_auction_band` (`uid` , `gid` , `band` , `status` , `addtime`) VALUES (50 , 1 , 200 , 0 , 1535680841) [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `ysz_auction_band`  SET `order_no`='101535680841'  WHERE  `id` = 10 [ RunTime:0.000000s ]
+[ error ] [0]variable type error： array[D:\phpStudy\WWW\yusuzhou\thinkphp\library\think\Response.php:318]
+---------------------------------------------------------------
+[ 2018-08-31T10:16:53+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/auction/index/bzj
+[ info ] 127.0.0.1/yusuzhou/index.php/auction/index/bzj [运行时间：0.050000s][吞吐率：20.00req/s] [内存消耗：2,564.89kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'index',
+    2 => 'bzj',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.010000s ]
+[ info ] [ RUN ] app\auction\home\Index->bzj[ D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_band` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_auction_band` WHERE  `uid` = 50  AND `gid` = 1  AND `band` = 200  AND `status` = 0 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-08-31T10:17:15+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/auction/index/bzj
+[ info ] 127.0.0.1/yusuzhou/index.php/auction/index/bzj [运行时间：0.050000s][吞吐率：20.00req/s] [内存消耗：2,565.29kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'index',
+    2 => 'bzj',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.010000s ]
+[ info ] [ RUN ] app\auction\home\Index->bzj[ D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_band` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_auction_band` WHERE  `uid` = 59  AND `gid` = 1  AND `band` = 200  AND `status` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] INSERT INTO `ysz_auction_band` (`uid` , `gid` , `band` , `order_no` , `status` , `addtime`) VALUES (59 , 1 , 200 , '2018083171245' , 0 , 1535681835) [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`uid`,`gid`,`band`,`order_no`,`status`,`trade_no`,`pay_type`,`pay_status` FROM `ysz_auction_band` WHERE  `uid` = 59  AND `gid` = 1  AND `band` = 200 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-08-31T10:17:48+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/auction/index/bzj
+[ info ] 127.0.0.1/yusuzhou/index.php/auction/index/bzj [运行时间：0.060000s][吞吐率：16.67req/s] [内存消耗：2,564.06kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'index',
+    2 => 'bzj',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.010000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.020000s ]
+[ info ] [ RUN ] app\auction\home\Index->bzj[ D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_band` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_auction_band` WHERE  `uid` = 59  AND `gid` = 1  AND `band` = 200  AND `status` = 0 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-08-31T10:18:08+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/auction/index/bzj
+[ info ] 127.0.0.1/yusuzhou/index.php/auction/index/bzj [运行时间：0.060000s][吞吐率：16.67req/s] [内存消耗：2,565.87kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'index',
+    2 => 'bzj',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.020000s ]
+[ info ] [ RUN ] app\auction\home\Index->bzj[ D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_band` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_auction_band` WHERE  `uid` = 77  AND `gid` = 1  AND `band` = 200  AND `status` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] INSERT INTO `ysz_auction_band` (`uid` , `gid` , `band` , `order_no` , `status` , `addtime`) VALUES (77 , 1 , 200 , '2018083110180865557' , 0 , 1535681888) [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_auction_band` WHERE  `uid` = 77  AND `gid` = 1  AND `band` = 200 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-08-31T14:16:06+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/auction/index/tuibao
+[ info ] 127.0.0.1/yusuzhou/index.php/auction/index/tuibao [运行时间：0.069004s][吞吐率：14.49req/s] [内存消耗：2,609.09kb] [文件加载：78]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'index',
+    2 => 'tuibao',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.017001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.012001s ]
+[ info ] [ RUN ] app\auction\home\Index->tuibao[ D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_goods` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] UPDATE `ysz_auction_goods`  SET `status`=3  WHERE  `id` = 1 [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_record` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] UPDATE `ysz_auction_record`  SET `states`=1  WHERE  `id` = 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `id`,`status` FROM `ysz_auction_goods` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.goodid' in 'where clause'[D:\phpStudy\WWW\yusuzhou\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2018-08-31T14:17:01+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/auction/index/tuibao
+[ info ] 127.0.0.1/yusuzhou/index.php/auction/index/tuibao [运行时间：0.058003s][吞吐率：17.24req/s] [内存消耗：2,568.59kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'index',
+    2 => 'tuibao',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.015001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.012001s ]
+[ info ] [ RUN ] app\auction\home\Index->tuibao[ D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_goods` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] UPDATE `ysz_auction_goods`  SET `status`=3  WHERE  `id` = 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_record` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] UPDATE `ysz_auction_record`  SET `states`=1  WHERE  `id` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`status` FROM `ysz_auction_goods` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`goodid`,`r`.`userid`,`r`.`money`,`r`.`success`,`r`.`type`,`g`.`title`,`g`.`imgs`,`g`.`price`,`g`.`content` FROM `ysz_auction_record` `r` INNER JOIN `ysz_auction_goods` `g` ON `r`.`goodid`=`g`.`id` WHERE  `r`.`goodid` = 1  AND `type` = 1 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-08-31T14:17:48+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/auction/index/tuibao
+[ info ] 127.0.0.1/yusuzhou/index.php/auction/index/tuibao [运行时间：0.056003s][吞吐率：17.86req/s] [内存消耗：2,568.61kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'index',
+    2 => 'tuibao',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.016001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.011001s ]
+[ info ] [ RUN ] app\auction\home\Index->tuibao[ D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001001s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_goods` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] UPDATE `ysz_auction_goods`  SET `status`=3  WHERE  `id` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_record` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] UPDATE `ysz_auction_record`  SET `states`=1  WHERE  `id` = 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `id`,`status` FROM `ysz_auction_goods` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`goodid`,`r`.`userid`,`r`.`money`,`r`.`success`,`r`.`type`,`g`.`title`,`g`.`imgs`,`g`.`price`,`g`.`content` FROM `ysz_auction_record` `r` INNER JOIN `ysz_auction_goods` `g` ON `r`.`goodid`=`g`.`id` WHERE  `r`.`goodid` = 1  AND `type` = 1 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-08-31T14:19:13+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/auction/index/tuibao
+[ info ] 127.0.0.1/yusuzhou/index.php/auction/index/tuibao [运行时间：0.073004s][吞吐率：13.70req/s] [内存消耗：2,568.92kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'index',
+    2 => 'tuibao',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.027001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.012001s ]
+[ info ] [ RUN ] app\auction\home\Index->tuibao[ D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_goods` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] UPDATE `ysz_auction_goods`  SET `status`=3  WHERE  `id` = 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_record` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] UPDATE `ysz_auction_record`  SET `states`=1  WHERE  `id` = 1 [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `id`,`status` FROM `ysz_auction_goods` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`goodid`,`r`.`userid`,`r`.`money`,`r`.`success`,`r`.`type`,`g`.`title`,`g`.`imgs`,`g`.`price`,`g`.`content` FROM `ysz_auction_record` `r` INNER JOIN `ysz_auction_goods` `g` ON `r`.`goodid`=`g`.`id` WHERE  `r`.`goodid` = 1  AND `type` = 1 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-08-31T14:19:34+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/auction/index/tuibao
+[ info ] 127.0.0.1/yusuzhou/index.php/auction/index/tuibao [运行时间：0.081004s][吞吐率：12.35req/s] [内存消耗：2,657.43kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'index',
+    2 => 'tuibao',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.019001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.012001s ]
+[ info ] [ RUN ] app\auction\home\Index->tuibao[ D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_goods` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] UPDATE `ysz_auction_goods`  SET `status`=3  WHERE  `id` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_record` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] UPDATE `ysz_auction_record`  SET `states`=1  WHERE  `id` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`status` FROM `ysz_auction_goods` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`goodid`,`r`.`userid`,`r`.`money`,`r`.`success`,`r`.`type`,`g`.`title`,`g`.`imgs`,`g`.`price`,`g`.`content` FROM `ysz_auction_record` `r` INNER JOIN `ysz_auction_goods` `g` ON `r`.`goodid`=`g`.`id` WHERE  `r`.`goodid` = 1  AND `type` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ error ] [8]未定义数组索引: g.imgs[D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php:275]
+---------------------------------------------------------------
+[ 2018-08-31T14:19:54+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/auction/index/tuibao
+[ info ] 127.0.0.1/yusuzhou/index.php/auction/index/tuibao [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：2,657.43kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'index',
+    2 => 'tuibao',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.015001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.012001s ]
+[ info ] [ RUN ] app\auction\home\Index->tuibao[ D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_goods` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] UPDATE `ysz_auction_goods`  SET `status`=3  WHERE  `id` = 1 [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_record` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] UPDATE `ysz_auction_record`  SET `states`=1  WHERE  `id` = 1 [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `id`,`status` FROM `ysz_auction_goods` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`goodid`,`r`.`userid`,`r`.`money`,`r`.`success`,`r`.`type`,`g`.`title`,`g`.`imgs`,`g`.`price`,`g`.`content` FROM `ysz_auction_record` `r` INNER JOIN `ysz_auction_goods` `g` ON `r`.`goodid`=`g`.`id` WHERE  `r`.`goodid` = 1  AND `type` = 1 [ RunTime:0.001000s ]
+[ error ] [8]未定义数组索引: g.imgs[D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php:275]
+---------------------------------------------------------------
+[ 2018-08-31T14:19:56+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/auction/index/tuibao
+[ info ] 127.0.0.1/yusuzhou/index.php/auction/index/tuibao [运行时间：0.067003s][吞吐率：14.92req/s] [内存消耗：2,657.43kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'index',
+    2 => 'tuibao',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.015001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.012000s ]
+[ info ] [ RUN ] app\auction\home\Index->tuibao[ D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_goods` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] UPDATE `ysz_auction_goods`  SET `status`=3  WHERE  `id` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_record` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] UPDATE `ysz_auction_record`  SET `states`=1  WHERE  `id` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`status` FROM `ysz_auction_goods` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`goodid`,`r`.`userid`,`r`.`money`,`r`.`success`,`r`.`type`,`g`.`title`,`g`.`imgs`,`g`.`price`,`g`.`content` FROM `ysz_auction_record` `r` INNER JOIN `ysz_auction_goods` `g` ON `r`.`goodid`=`g`.`id` WHERE  `r`.`goodid` = 1  AND `type` = 1 [ RunTime:0.001000s ]
+[ error ] [8]未定义数组索引: g.imgs[D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php:275]
+---------------------------------------------------------------
+[ 2018-08-31T14:21:02+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/auction/index/tuibao
+[ info ] 127.0.0.1/yusuzhou/index.php/auction/index/tuibao [运行时间：0.061004s][吞吐率：16.39req/s] [内存消耗：2,569.45kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'index',
+    2 => 'tuibao',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.019001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.013001s ]
+[ info ] [ RUN ] app\auction\home\Index->tuibao[ D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_goods` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] UPDATE `ysz_auction_goods`  SET `status`=3  WHERE  `id` = 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_record` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] UPDATE `ysz_auction_record`  SET `states`=1  WHERE  `id` = 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `id`,`status` FROM `ysz_auction_goods` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`goodid`,`r`.`userid`,`r`.`money`,`r`.`success`,`r`.`type`,`g`.`title`,`g`.`imgs`,`g`.`price`,`g`.`content` FROM `ysz_auction_record` `r` INNER JOIN `ysz_auction_goods` `g` ON `r`.`goodid`=`g`.`id` WHERE  `r`.`goodid` = 1  AND `type` = 1 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-08-31T14:22:33+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/auction/index/tuibao
+[ info ] 127.0.0.1/yusuzhou/index.php/auction/index/tuibao [运行时间：0.064003s][吞吐率：15.62req/s] [内存消耗：2,569.66kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'index',
+    2 => 'tuibao',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.017000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.012001s ]
+[ info ] [ RUN ] app\auction\home\Index->tuibao[ D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_goods` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] UPDATE `ysz_auction_goods`  SET `status`=3  WHERE  `id` = 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_record` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] UPDATE `ysz_auction_record`  SET `states`=1  WHERE  `id` = 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `id`,`status` FROM `ysz_auction_goods` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`goodid`,`r`.`userid`,`r`.`money`,`r`.`success`,`r`.`type`,`g`.`title`,`g`.`imgs`,`g`.`price`,`g`.`content` FROM `ysz_auction_record` `r` INNER JOIN `ysz_auction_goods` `g` ON `r`.`goodid`=`g`.`id` WHERE  `r`.`goodid` = 1  AND `type` = 1 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-08-31T14:22:37+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/auction/index/tuibao
+[ info ] 127.0.0.1/yusuzhou/index.php/auction/index/tuibao [运行时间：0.074005s][吞吐率：13.51req/s] [内存消耗：2,569.72kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auction',
+    1 => 'index',
+    2 => 'tuibao',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.016001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.010000s ]
+[ info ] [ RUN ] app\auction\home\Index->tuibao[ D:\phpStudy\WWW\yusuzhou\application\auction\home\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_goods` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] UPDATE `ysz_auction_goods`  SET `status`=3  WHERE  `id` = 1 [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_auction_record` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] UPDATE `ysz_auction_record`  SET `states`=1  WHERE  `id` = 1 [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `id`,`status` FROM `ysz_auction_goods` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`goodid`,`r`.`userid`,`r`.`money`,`r`.`success`,`r`.`type`,`g`.`title`,`g`.`imgs`,`g`.`price`,`g`.`content` FROM `ysz_auction_record` `r` INNER JOIN `ysz_auction_goods` `g` ON `r`.`goodid`=`g`.`id` WHERE  `r`.`goodid` = 1  AND `type` = 1 LIMIT 1 [ RunTime:0.001001s ]

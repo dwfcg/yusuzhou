@@ -1,0 +1,302 @@
+---------------------------------------------------------------
+[ 2018-06-29T15:14:54+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/shop/goods/pingjia
+[ info ] 127.0.0.1/yusuzhou/index.php/shop/goods/pingjia [运行时间：0.121007s][吞吐率：8.26req/s] [内存消耗：2,727.15kb] [文件加载：78]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'shop',
+    1 => 'goods',
+    2 => 'pingjia',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=ufm4n0bcmpsij91m2imbt2rl23',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.034002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.016001s ]
+[ info ] [ RUN ] app\shop\home\Goods->pingjia[ D:\phpStudy\WWW\yusuzhou\application\shop\home\Goods.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.005001s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ error ] [8]未定义数组索引: images[D:\phpStudy\WWW\yusuzhou\application\shop\home\Goods.php:184]
+---------------------------------------------------------------
+[ 2018-06-29T15:15:00+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/shop/goods/index
+[ info ] 127.0.0.1/yusuzhou/index.php/shop/goods/index [运行时间：0.097006s][吞吐率：10.31req/s] [内存消耗：3,009.19kb] [文件加载：78]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'shop',
+    1 => 'goods',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=ufm4n0bcmpsij91m2imbt2rl23',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.013001s ]
+[ info ] [ RUN ] app\shop\home\Goods->index[ D:\phpStudy\WWW\yusuzhou\application\shop\home\Goods.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\yusuzhou/application/shop\view\goods\index.html [ array (
+  0 => 'count',
+  1 => 'good',
+  2 => 'shou',
+  3 => 'though',
+  4 => 'kind',
+  5 => 'theme',
+  6 => 'origin',
+  7 => 'rock',
+  8 => 'cation',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_shou` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_shop_shou` WHERE  `userid` IS NULL  AND `goodid` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_goods` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_shop_goods` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_shop_goods` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_though` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`name` FROM `ysz_shop_though` `a` INNER JOIN `ysz_shop_goods` `c` ON `a`.`id`=`c`.`thoughid` WHERE  `c`.`thoughid` = 7 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_kind` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `k`.`id`,`k`.`name` FROM `ysz_shop_kind` `k` INNER JOIN `ysz_shop_goods` `y` ON `k`.`id`=`y`.`kindid` WHERE  `y`.`kindid` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_theme` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `t`.`id`,`t`.`name` FROM `ysz_shop_theme` `t` INNER JOIN `ysz_shop_goods` `e` ON `t`.`id`=`e`.`themeid` WHERE  `e`.`themeid` = 7 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_origin` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `o`.`id`,`o`.`name` FROM `ysz_shop_origin` `o` INNER JOIN `ysz_shop_goods` `q` ON `o`.`id`=`q`.`originid` WHERE  `q`.`originid` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_rock` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`name` FROM `ysz_shop_rock` `r` INNER JOIN `ysz_shop_goods` `s` ON `r`.`id`=`s`.`rockid` WHERE  `s`.`rockid` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_cation` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `c`.`id`,`c`.`name` FROM `ysz_shop_cation` `c` INNER JOIN `ysz_shop_goods` `w` ON `c`.`id`=`w`.`cationid` WHERE  `w`.`cationid` = 2 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-06-29T15:15:28+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/shop/goods/index/id/50/uid/59.html
+[ info ] 127.0.0.1/yusuzhou/index.php/shop/goods/index/id/50/uid/59.html [运行时间：0.090000s][吞吐率：11.11req/s] [内存消耗：2,821.84kb] [文件加载：76]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'shop',
+    1 => 'goods',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=ufm4n0bcmpsij91m2imbt2rl23',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+  'id' => '50',
+  'uid' => '59',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.010000s ]
+[ info ] [ RUN ] app\shop\home\Goods->index[ D:\phpStudy\WWW\yusuzhou\application\shop\home\Goods.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\yusuzhou/application/shop\view\goods\index.html [ array (
+  0 => 'count',
+  1 => 'good',
+  2 => 'shou',
+  3 => 'though',
+  4 => 'kind',
+  5 => 'theme',
+  6 => 'origin',
+  7 => 'rock',
+  8 => 'cation',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_shou` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_shop_shou` WHERE  `userid` = 59  AND `goodid` = 50 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_goods` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_shop_goods` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_shop_goods` WHERE  `id` = 50 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_though` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`name` FROM `ysz_shop_though` `a` INNER JOIN `ysz_shop_goods` `c` ON `a`.`id`=`c`.`thoughid` WHERE  `c`.`thoughid` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_kind` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `k`.`id`,`k`.`name` FROM `ysz_shop_kind` `k` INNER JOIN `ysz_shop_goods` `y` ON `k`.`id`=`y`.`kindid` WHERE  `y`.`kindid` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_theme` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `t`.`id`,`t`.`name` FROM `ysz_shop_theme` `t` INNER JOIN `ysz_shop_goods` `e` ON `t`.`id`=`e`.`themeid` WHERE  `e`.`themeid` = 7 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_origin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `o`.`id`,`o`.`name` FROM `ysz_shop_origin` `o` INNER JOIN `ysz_shop_goods` `q` ON `o`.`id`=`q`.`originid` WHERE  `q`.`originid` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_rock` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`name` FROM `ysz_shop_rock` `r` INNER JOIN `ysz_shop_goods` `s` ON `r`.`id`=`s`.`rockid` WHERE  `s`.`rockid` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_cation` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `c`.`id`,`c`.`name` FROM `ysz_shop_cation` `c` INNER JOIN `ysz_shop_goods` `w` ON `c`.`id`=`w`.`cationid` WHERE  `w`.`cationid` = 2 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-06-29T15:15:36+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/shop/goods/index/id/50/uid/59.html
+[ info ] 127.0.0.1/yusuzhou/index.php/shop/goods/index/id/50/uid/59.html [运行时间：0.090000s][吞吐率：11.11req/s] [内存消耗：2,822.08kb] [文件加载：76]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'shop',
+    1 => 'goods',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=ufm4n0bcmpsij91m2imbt2rl23',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+  'id' => '50',
+  'uid' => '59',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.020000s ]
+[ info ] [ RUN ] app\shop\home\Goods->index[ D:\phpStudy\WWW\yusuzhou\application\shop\home\Goods.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\yusuzhou/application/shop\view\goods\index.html [ array (
+  0 => 'count',
+  1 => 'good',
+  2 => 'shou',
+  3 => 'though',
+  4 => 'kind',
+  5 => 'theme',
+  6 => 'origin',
+  7 => 'rock',
+  8 => 'cation',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_shou` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_shop_shou` WHERE  `userid` = 59  AND `goodid` = 50 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_goods` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_shop_goods` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_shop_goods` WHERE  `id` = 50 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_though` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`name` FROM `ysz_shop_though` `a` INNER JOIN `ysz_shop_goods` `c` ON `a`.`id`=`c`.`thoughid` WHERE  `c`.`thoughid` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_kind` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `k`.`id`,`k`.`name` FROM `ysz_shop_kind` `k` INNER JOIN `ysz_shop_goods` `y` ON `k`.`id`=`y`.`kindid` WHERE  `y`.`kindid` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_theme` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `t`.`id`,`t`.`name` FROM `ysz_shop_theme` `t` INNER JOIN `ysz_shop_goods` `e` ON `t`.`id`=`e`.`themeid` WHERE  `e`.`themeid` = 7 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_origin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `o`.`id`,`o`.`name` FROM `ysz_shop_origin` `o` INNER JOIN `ysz_shop_goods` `q` ON `o`.`id`=`q`.`originid` WHERE  `q`.`originid` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_rock` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`name` FROM `ysz_shop_rock` `r` INNER JOIN `ysz_shop_goods` `s` ON `r`.`id`=`s`.`rockid` WHERE  `s`.`rockid` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_cation` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `c`.`id`,`c`.`name` FROM `ysz_shop_cation` `c` INNER JOIN `ysz_shop_goods` `w` ON `c`.`id`=`w`.`cationid` WHERE  `w`.`cationid` = 2 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-06-29T15:17:08+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/shop/goods/fied/37.html
+[ info ] 127.0.0.1/yusuzhou/index.php/shop/goods/fied/37.html [运行时间：0.050000s][吞吐率：20.00req/s] [内存消耗：2,643.79kb] [文件加载：72]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'shop',
+    1 => 'goods',
+    2 => 'fied',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=ufm4n0bcmpsij91m2imbt2rl23',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.020000s ]
+[ info ] [ RUN ] app\shop\home\Goods->fied[ D:\phpStudy\WWW\yusuzhou\application\shop\home\Goods.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_shop_category` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`icon` FROM `ysz_shop_category` WHERE  `tuijian` = 1 [ RunTime:0.000000s ]

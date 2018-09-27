@@ -1,0 +1,542 @@
+---------------------------------------------------------------
+[ 2018-08-16T17:02:51+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/user/sale/code
+[ info ] 127.0.0.1/yusuzhou/index.php/user/sale/code [运行时间：0.128008s][吞吐率：7.81req/s] [内存消耗：2,605.79kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'sale',
+    2 => 'code',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.039003s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.017001s ]
+[ info ] [ RUN ] app\user\home\Sale->code[ D:\phpStudy\WWW\yusuzhou\application\user\home\Sale.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `dangcode` FROM `ysz_user` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `ysz_user`  SET `dangcode`='37112'  WHERE  `id` IS NULL [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `dangcode` FROM `ysz_user` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-08-16T17:03:09+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/user/sign/signindex
+[ info ] 127.0.0.1/yusuzhou/index.php/user/sign/signindex [运行时间：0.065003s][吞吐率：15.38req/s] [内存消耗：2,605.95kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'sign',
+    2 => 'signindex',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.019001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.013001s ]
+[ info ] [ RUN ] app\user\home\Sign->signindex[ D:\phpStudy\WWW\yusuzhou\application\user\home\Sign.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_user` WHERE  `id` = 50 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-08-16T17:03:43+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/user/sign/signindex
+[ info ] 127.0.0.1/yusuzhou/index.php/user/sign/signindex [运行时间：0.081004s][吞吐率：12.35req/s] [内存消耗：2,590.84kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'sign',
+    2 => 'signindex',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.024002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.014000s ]
+[ info ] [ RUN ] app\user\home\Sign->signindex[ D:\phpStudy\WWW\yusuzhou\application\user\home\Sign.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_user` WHERE  `id` = 50 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `ysz_user`  SET `last_time`=1534410223  WHERE  `id` = 50 [ RunTime:0.003000s ]
+[ sql ] [ SQL ] UPDATE `ysz_user`  SET `integral`=integral+5  WHERE  `id` = 50 [ RunTime:0.003000s ]
+---------------------------------------------------------------
+[ 2018-08-16T17:03:55+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/user/sign/signindex
+[ info ] 127.0.0.1/yusuzhou/index.php/user/sign/signindex [运行时间：0.080004s][吞吐率：12.50req/s] [内存消耗：2,590.84kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'sign',
+    2 => 'signindex',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.017001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.015001s ]
+[ info ] [ RUN ] app\user\home\Sign->signindex[ D:\phpStudy\WWW\yusuzhou\application\user\home\Sign.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_user` WHERE  `id` = 50 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `ysz_user`  SET `last_time`=1534410235  WHERE  `id` = 50 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `ysz_user`  SET `integral`=integral+5  WHERE  `id` = 50 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-08-16T17:04:14+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/user/sign/signindex
+[ info ] 127.0.0.1/yusuzhou/index.php/user/sign/signindex [运行时间：0.063003s][吞吐率：15.87req/s] [内存消耗：2,590.61kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'sign',
+    2 => 'signindex',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.018001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.015001s ]
+[ info ] [ RUN ] app\user\home\Sign->signindex[ D:\phpStudy\WWW\yusuzhou\application\user\home\Sign.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_user` WHERE  `id` = 50 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `ysz_user`  SET `last_time`=1534410254  WHERE  `id` = 50 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] UPDATE `ysz_user`  SET `integral`=integral+5  WHERE  `id` = 50 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-08-16T17:11:31+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/user/sign/signindex
+[ info ] 127.0.0.1/yusuzhou/index.php/user/sign/signindex [运行时间：0.068004s][吞吐率：14.70req/s] [内存消耗：2,590.63kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'sign',
+    2 => 'signindex',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.021001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.014001s ]
+[ info ] [ RUN ] app\user\home\Sign->signindex[ D:\phpStudy\WWW\yusuzhou\application\user\home\Sign.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_user` WHERE  `id` = 50 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `ysz_user`  SET `last_time`=1534410691  WHERE  `id` = 50 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] UPDATE `ysz_user`  SET `integral`=integral+5  WHERE  `id` = 50 [ RunTime:0.003000s ]
+---------------------------------------------------------------
+[ 2018-08-16T17:20:21+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/user/sign/signindex
+[ info ] 127.0.0.1/yusuzhou/index.php/user/sign/signindex [运行时间：0.064004s][吞吐率：15.62req/s] [内存消耗：2,606.67kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'sign',
+    2 => 'signindex',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.015000s ]
+[ info ] [ RUN ] app\user\home\Sign->signindex[ D:\phpStudy\WWW\yusuzhou\application\user\home\Sign.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_user` WHERE  `id` = 50 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-08-16T17:20:49+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/user/sign/signindex
+[ info ] 127.0.0.1/yusuzhou/index.php/user/sign/signindex [运行时间：0.057003s][吞吐率：17.54req/s] [内存消耗：2,606.66kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'sign',
+    2 => 'signindex',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.019001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.015001s ]
+[ info ] [ RUN ] app\user\home\Sign->signindex[ D:\phpStudy\WWW\yusuzhou\application\user\home\Sign.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_user` WHERE  `id` = 50 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-08-16T17:21:06+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/user/sign/signindex
+[ info ] 127.0.0.1/yusuzhou/index.php/user/sign/signindex [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：2,591.30kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'sign',
+    2 => 'signindex',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.031001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.012001s ]
+[ info ] [ RUN ] app\user\home\Sign->signindex[ D:\phpStudy\WWW\yusuzhou\application\user\home\Sign.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_user` WHERE  `id` = 7 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `ysz_user`  SET `last_time`=1534411266  WHERE  `id` = 7 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `ysz_user`  SET `integral`=integral+5  WHERE  `id` = 7 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-08-16T17:21:30+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/user/sign/signindex
+[ info ] 127.0.0.1/yusuzhou/index.php/user/sign/signindex [运行时间：0.084005s][吞吐率：11.90req/s] [内存消耗：2,606.72kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'sign',
+    2 => 'signindex',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.028001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.014001s ]
+[ info ] [ RUN ] app\user\home\Sign->signindex[ D:\phpStudy\WWW\yusuzhou\application\user\home\Sign.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_user` WHERE  `id` = 7 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-08-16T17:40:51+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/user/sign/signindex
+[ info ] 127.0.0.1/yusuzhou/index.php/user/sign/signindex [运行时间：0.073004s][吞吐率：13.70req/s] [内存消耗：2,591.44kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'sign',
+    2 => 'signindex',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.025001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.014001s ]
+[ info ] [ RUN ] app\user\home\Sign->signindex[ D:\phpStudy\WWW\yusuzhou\application\user\home\Sign.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.005001s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_user` WHERE  `id` = 7 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `ysz_user`  SET `last_time`=1534412451  WHERE  `id` = 7 [ RunTime:0.003001s ]
+[ sql ] [ SQL ] UPDATE `ysz_user`  SET `integral`=integral+5  WHERE  `id` = 7 [ RunTime:0.003000s ]
+---------------------------------------------------------------
+[ 2018-08-16T17:40:54+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/user/sign/signindex
+[ info ] 127.0.0.1/yusuzhou/index.php/user/sign/signindex [运行时间：0.112006s][吞吐率：8.93req/s] [内存消耗：2,591.44kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'sign',
+    2 => 'signindex',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.035002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.022001s ]
+[ info ] [ RUN ] app\user\home\Sign->signindex[ D:\phpStudy\WWW\yusuzhou\application\user\home\Sign.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.008001s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_user` WHERE  `id` = 7 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `ysz_user`  SET `last_time`=1534412454  WHERE  `id` = 7 [ RunTime:0.003000s ]
+[ sql ] [ SQL ] UPDATE `ysz_user`  SET `integral`=integral+5  WHERE  `id` = 7 [ RunTime:0.003000s ]

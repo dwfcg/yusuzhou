@@ -1,0 +1,72 @@
+{extend name="layout" /}
+
+
+
+{block name="page-header"}
+    <div id="main" style="width: 600px;height:400px;margin-left: auto;margin-right: auto;"></div>
+{/block}
+
+{block name="script"}
+<script type="text/javascript" src="/public/static/admin/js/echarts.js"></script>
+<script type="text/javascript" src="/public/static/admin/js/echarts.min.js"></script>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+                tooltip : {
+                    trigger: 'axis',
+                    axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                        type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                    }
+                },
+                legend: {
+                    data:['昨日注册','今日注册','周注册人数','月注册人数']
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis : [
+                    {
+                        type : 'category',
+                        data : ['周一','周二','周三','周四','周五','周六','周日']
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'value'
+                    }
+                ],
+                series : [
+                    {
+                        name:'昨日注册',
+                        type:'bar',
+                        data:[320, 332, 301, 334, 390, 330, 320]
+                    },
+                    {
+                        name:'今日注册',
+                        type:'bar',
+                        data:[120, 132, 101, 134, 90, 230, 210]
+                    },
+                    {
+                        name:'周注册人数',
+                        type:'bar',
+                        data:[220, 182, 191, 234, 290, 330, 310]
+                    },
+                    {
+                        name:'月注册人数',
+                        type:'bar',
+                        data:[150, 232, 201, 154, 190, 330, 410]
+                    },
+                ]
+            };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+{/block}

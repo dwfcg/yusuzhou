@@ -1,0 +1,16 @@
+{extend name="$_admin_base_layout" /}
+
+
+{block name="style"}
+  <div id="main" style="width: 500px; height: 300px;"></div>
+{block name="script"}
+  <script type="text/javascript" src="/public/static/admin/js/echarts.min.js"></script>
+  <script>
+      alert(1);
+      $(function(){
+      	 var myChart = echarts.init(dacument.getElementById('main'));
+      	 alert(myChart);
+      })
+
+  </script>
+{/block}

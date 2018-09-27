@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>微信支付</title>
+<script>
+function payWechat(){
+    //参数必须正确才能正常使用支付功能，请详见微信支付官方文档
+    var payParam ={$last};
+    AppbymeJavascriptBridge.payRequest(function(data){
+        //回调  type:支付平台  1：微信
+       // alert(JSON.stringify(data));
+        if(data.errCode=='-2'){
+            alert(data.errInfo);
+        }else if(data.errCode=='0'){
+            document.location='{:url('lingshu/pay/alipay_return')}';
+        }
+    },1,JSON.stringify(payParam));
+}
+payWechat();
+</script>
+</head>
+
+<body>
+    <div onclick="payWechat()" style="background:#2aa346;margin:30px 10px 0;padding:15px 0;border-radius: 4px;text-align:center;color:#fff;">立即支付</div>  
+</body>
+</html>

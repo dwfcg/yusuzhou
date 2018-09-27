@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html;charset=UTF-8" http-equiv="Content-Type"/>
+        <!-- Mobile Devices Support @begin -->
+        <meta content="no-cache,must-revalidate" http-equiv="Cache-Control"/>
+        <meta content="no-cache" http-equiv="pragma"/>
+        <meta content="0" http-equiv="expires"/>
+        <meta content="telephone=no, address=no" name="format-detection"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+        <!-- Mobile Devices Support @end -->
+        <title>{$live['title']}</title>
+        <link rel="stylesheet" href="{$UrlPath}/css/sm.css">
+        <link rel="stylesheet" href="{$UrlPath}/css/style.css" />
+        <script type="text/javascript" src="{$UrlPath}/js/zepto.min.js"></script>
+        <script type="text/javascript" src="{$UrlPath}/js/swipeSlide.min.js"></script>
+        <script type="text/javascript" src="{$UrlPath}/js/fastclick.min.js"></script>
+    </head>
+    <body>
+        <div class="page-group">
+            <!-- page 2 -->
+            <div class="page" id='router2' style="display:block;">
+                <div class="content" style="background: #FFF;">
+                    <div class="main" style='width:98%;'>
+                        <div class="clearfix leave_bg">
+                                
+                            <!--{if $comment['reply_ways'] == 1}-->
+                                <img src="{$UrlPath}/images/anonymous_head.png" alt="" class="user_img"/>
+                            <!--{else}-->
+                                <img src="{$UrlPath}/images/anonymous_head.png" alt="" class="user_img"/>
+                            <!--{/if}-->
+                            <div class="right_con">
+                                <div class="line clearfix">
+                                    <p class="name" id="flooer_name">{$comment['username']}</p>
+                                    <p class="time">{$comment['addtime']}</p>
+                                </div>
+                                <div class="detail">{$comment['contents']}</div>
+                                <div class="tools clearfix">
+                                    <div class="fr clearfix">
+                                        <span class="zan tnzan {$comment['my_zan']}" onclick="ilikeid(this, 'reply')" likeid="{$comment['id']}">{$comment['zan']}</span>
+                                        <span class="comment" onclick="addReply(this)" parent_id="{$comment['id']}" parent_uid="{$comment['uid']}" parent_username="{$comment['username']}">{lang qidou_video_live:huif}</span>
+                                    </div>
+                                </div>
+                                <div class="comment_list" id="comment_list">
+                                     <!--{if $list_c}-->
+                                    <!--{loop $list_c $kk $vv}-->
+                                   <div class="clearfix li" onclick="addReply(this, '{$vv["id"]}')" parent_uid="{$vv['uid']}" parent_id="{$vv['id']}" parent_username="{$vv['username']}">
+                                       <span class="name">{$vv['username']}</span>
+                                       <!--{if $vv['uid'] != $vv['parent_uid']}-->
+                                       <span class="content-say">{lang qidou_video:huifu}</span>
+                                       <span class="name">{$vv['parent_name']}</span>
+                                       <!--{/if}-->
+                                       <span class="content-say">:{$vv['contents']}</span>
+                                   </div>
+                                    <!--{/loop}-->
+                                    <!--{/if}-->
+                                    <!--{if $v['coms_num']}-->
+                                       <a href="{$_G['siteurl']}plugin.php?id=qidou_video_live&act=commentall&lid={$live['id']}&rid={$v['id']}" data-no-cache="true" class="comment-btnmore external">{lang qidou_video_live:chakqy}<span class="rest_size">{$v['coms_num']}</span>{lang qidou_video_live:tiao}{lang qidou_video_live:huif}</a>
+                                    <!--{/if}-->
+                                   <!--展开btn-->
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div id="send_pl_container" class="parent_container dialog-relay-box" style="display: none;">
+                    <div class="mask"></div>
+                    <div class="video_reply_container">
+                        <div class="dialog-relay">
+                                <div class="relay-topbar">
+                                    <p class="relay-close">&nbsp;&nbsp;&nbsp;{lang qidou_video_live:qux}</p>
+                                    <p>{lang qidou_video_live:woyslj}</p>
+                                    <p onclick="sendrl(this)">{lang qidou_video_live:fas}&nbsp;&nbsp;&nbsp;</p>
+                                </div>
+                                
+                                <p class="tip-relay">{lang qidou_video_live:huif}&nbsp;<span id="reply_parent"></span>:</p>
+                                
+                                <textarea name="rl_content" id="rl_content"></textarea>
+                                
+                                <div class="input_container"></div>
+                                
+                            </div>
+                       <!--{if $live['niming'] == 1}-->
+                        <div class="plr10" style="padding-bottom:.1rem;" id="is_anonymous">
+                            <div class="select-js grey-circle choose_anonymous" id="user_1">
+                                <p class="text">{lang qidou_video_live:nim}</p>
+                                <input type="hidden" name="reply_ways" class="reply_ways" value="0">
+                            </div>
+                        </div>
+                        <!--{/if}-->
+                    </div>
+                </div>
+                <!--回复-->
+             
+            </div>
+        </div>
+        <script>
+            var zt = true;
+             $('#is_anonymous').on('click', function () {
+                 alert(123);
+               if(zt){
+                   $(".reply_ways").val(1);
+                   $("#user_1").addClass('bule-circle');
+                   zt = false;
+                }else{
+                   $(".reply_ways").val(1);
+                   $("#user_1").addClass('bule-circle');
+                   zt = true;
+                }
+            });
+            function ilikeid(obj, sign) {
+                var this1 = $(obj);
+                var the_action = '';
+              
+                var lid = this1.attr('likeid');
+                var text = parseInt(this1.text());
+                if (lid > 0) {
+                    $.ajax({
+                        type: "POST",
+                        url: "plugin.php?id=qidou_video_live:live_ajax",
+                        dataType: "json",
+                        data: {ajax: 'zan', sign: sign, lid: lid, formhash: '{FORMHASH}'},
+                        beforeSend: function () {
+                        },
+                        success: function (data) {
+                            if (data.status == 0) {
+                                this1.removeClass('thzan');
+                                alert(data.msg);
+                            } else if (data.status == 1) {
+                                if (this1.hasClass('thzan')) {
+                                    this1.removeClass('thzan');
+                                    the_action = 'cancel';
+                            }  else if(data.status == 2) {
+                                    if (data.isapp){
+
+                                     } else{
+                                     document.location.href = data.url;
+                                     }
+                              }  else {
+                                this1.addClass('thzan');
+                                the_action = 'add';
+                            }
+//     text = text + data.change;
+                                this1.text(data.change);
+                            } else if (data.status == 2) {
+                                this1.removeClass('thzan');
+                                if (data.isapp) {
+
+                                } else {
+                                    document.location.href = data.url;
+                                }
+                            } else {
+                                this1.removeClass('thzan');
+                                alert("{lang qidou_video_live:wanglcc}");
+                            }
+                        },
+                        error: function (data) {
+                            alert('{lang qidou_video_live:wanglcc}');
+                        }
+                    });
+                }
+
+            }
+            //回复
+            function addReply(obj) {
+                var html = '';
+                var this1 = $(obj);
+                var parent_id = this1.attr('parent_id');
+                var parent_uid = this1.attr('parent_uid');
+                var parent_username = this1.attr('parent_username');
+                var reply_parent = $('#reply_parent');
+                reply_parent.text(parent_username);
+                var hf_container = $('#send_pl_container');
+                var input_container = hf_container.find('.dialog-relay');
+                if (!parent_id) {
+                    alert('{lang qidou_video_live:wanglcc}');
+                    return false;
+                }
+                html += '<input type="hidden" name="parent_id" value="'+parent_id+'" />';
+                html += '<input type="hidden" name="parent_uid" value="'+parent_uid+'" />';
+                html += '<input type="hidden" name="parent_username" value="'+parent_username+'" />';
+                input_container.append(html);
+                $('#send_pl_container').show();
+                //$.popup('.popup-about-2');
+                //window.location.href = "http://app.qianfanyun.com/video_live/web/wap/default/replyhost/?parent_id=" + parent_id + "&parent_username=" + parent_username + "&parent_uid=" + parent_uid + "&aid=266";
+            }
+
+            function sendrl(obj) {
+                var this1 = $(obj);
+                var dialog_relay_box = this1.parents('.dialog-relay-box');
+                var parent_id = dialog_relay_box.find('input[name=parent_id]').val();
+                var parent_uid = dialog_relay_box.find('input[name=parent_uid]').val();
+                var parent_name = dialog_relay_box.find('input[name=parent_username]').val();
+                var reply_ways = dialog_relay_box.find('input[name=reply_ways]').val();
+                
+                var contents = dialog_relay_box.find('textarea').val();
+
+                if (dialog_relay_box.find('input[name=reply_ways]').size() == 0) {
+                    var reply_ways = 0;
+                } else {
+                    var reply_ways = dialog_relay_box.find('input[name=reply_ways]').val();
+                }
+                if (!contents) {
+                    alert('{lang qidou_video_live:tianxnr}');
+                    return false;
+                }
+                $.ajax({
+                    type: "POST",
+                    url: "plugin.php?id=qidou_video_live:live_ajax",
+                    dataType: "json",
+                    data: {ajax:'reply','parent_id': parent_id, 'parent_uid': parent_uid, lid:'{$live['id']}',parent_name:parent_name,'contents': contents, 'reply_ways': reply_ways,  formhash: '{FORMHASH}'},
+                    beforeSend: function () {
+                    },
+                    success: function (data) {
+                        if (data.status == 1) {
+                            $('#rl_content').html('');
+                            $('#send_pl_container').hide();
+                            create_reply_li(data.parent_uid, data.parent_id, data.parent_username, data.content, data.reply_username);
+                            //                    localhost_page_jump(1);
+                        } else if(data.status == 2) {
+                                    if (data.isapp){
+
+                                     } else{
+                                     document.location.href = data.url;
+                                     }
+                         }else {
+                            alert(data.msg);
+                        }
+                    },
+                    error: function (data) {
+                        alert(data.msg);
+                    }
+                });
+            }
+            function create_reply_li(parent_uid, parent_id, parent_username, content, reply_username) {
+                var comment_list = $('#comment_list');
+                var flooer_name = $('#flooer_name').text();
+                var html = '';
+                var clearfix_li = $('<li class="clearfix li" onclick="addReply(this)" parent_uid="' + parent_uid + '" parent_id="' + parent_id + '" parent_username="' + parent_username + '"></li>');
+                html += '<span class="name">' + parent_username + '</span>';
+                if (parent_username != reply_username) {
+                    html += '<span class="content-say"> {lang qidou_video_live:huif} </span>';
+                    html += '<span class="name">' + reply_username + '</span>';
+                }
+                html += '<span class="content-say"> :' + content + '</span>';
+                clearfix_li.append(html);
+                console.log(clearfix_li);
+                comment_list.append(clearfix_li);
+            }
+           
+        </script>
+    </body>
+    <script type="text/javascript" src="{$UrlPath}/js/common.js"></script>
+</html>

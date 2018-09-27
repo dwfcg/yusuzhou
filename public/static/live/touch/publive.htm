@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html;charset=gbk" http-equiv="Content-Type"/>
+    <!-- Mobile Devices Support @begin -->
+    <meta content="no-cache,must-revalidate" http-equiv="Cache-Control"/>
+    <meta content="no-cache" http-equiv="pragma"/>
+    <meta content="0" http-equiv="expires"/>
+    <meta content="telephone=no, address=no" name="format-detection"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <!-- Mobile Devices Support @end -->
+    <title>{$live['title']}</title>
+    <link rel="stylesheet" href="{$UrlPath}/css/sm.css">
+    <link rel="stylesheet" href="{$UrlPath}/css/style.css" />
+    <script type="text/javascript" src="{$UrlPath}/js/zepto.min.js"></script>
+    <script type="text/javascript" src="{$UrlPath}/js/swipeSlide.min.js"></script>
+    <script type="text/javascript" src="{$UrlPath}/js/fastclick.min.js"></script>
+</head>
+<body>
+<!-- page集合的容器，里面放多个平行的.page，其他.page作为内联页面由路由控制展示 -->
+<div class="page-group">
+
+    <!-- page 2 -->
+    <div class="page" style="display:block;">
+        <div class="content publive" >
+            <form method="post" id="form" accept-charset="utf-8">
+                <div class="main-pub">
+                    <textarea id="textarea1" name="contents" style="width:98%;" placeholder="{lang qidou_video_live:fabzbdt}... &#10;<!--{if $config['img_num']}-->{lang qidou_video_live:youqtx1}{$config['img_num']}{lang qidou_video_live:zhangzp}<!--{/if}-->"><!--{if $topic['id']}-->{$topic['contents']}<!--{/if}--></textarea>
+                    <div class="all_container">
+                        <div class="upload_btn">
+                            <input id="upload_image" type="file" />
+                        </div>
+                        <br/>
+                        <ul id="imglist" data-limit="{$config['img_num']}"> 
+                            <!--{loop $imgs $key $val}-->
+							<!--{if $val }-->
+                            <li><span class="del"></span><img class="wh60" src="{$val}"><input type="hidden" id="file{$key}" name="fileup[]" value="{$val}"></li>
+							<!--{/if}-->
+                            <!--{/loop}--> 
+                        </ul>
+                    </div>
+                    <input type="hidden" name="lid" value="{$lid}">
+                    <input type="hidden" name="live" value="<!--{if $topic['id']}-->edit<!--{else}-->add<!--{/if}-->">
+                 
+                    <!--{if $topic['id']}-->
+                       <input type="hidden" name="sign" value="{$sign}" />
+                       <input type="hidden" name="tid" value="{$topic['id']}" />
+                    <!--{/if}-->
+                    <input type="hidden" name="formhash" value="{FORMHASH}">
+                    <a href="#" class="btn-pub"><input type="submit" value="<!--{if $topic['id']}-->{lang qidou_video_live:baoc}  <!--{else}-->{lang qidou_video_live:fab}<!--{/if}-->"></a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript" src="{$UrlPath}/js/jquery.js"></script>
+<script type="text/javascript" src="{$UrlPath}/js/exif.js"></script>
+<script type="text/javascript" src="{$UrlPath}/js/binaryajax.js"></script>
+<script type="text/javascript" src="{$UrlPath}/js/localResizeIMG2.js"></script>
+<script type="text/javascript" src="{$UrlPath}/js/mobileFix.mini.js"></script>
+<script type="text/javascript" src="{$UrlPath}/js/mobileBUGFix1.mini.js"></script>
+<script>
+    (function () {
+        var viewImg = $("#imglist");
+        var imgurl = '';
+        var max =  <!--{if $config['img_num']}-->{$config['img_num']}<!--{else}-->''<!--{/if}-->;
+        $('#upload_image').localResizeIMG({
+            width:800,quality: 0.9, success: function (result) {
+                
+                if (viewImg.find("li").length >= max && max)
+                {
+                    alert("{lang qidou_video_live:zuidsc}" + max + "{lang qidou_video_live:zhangzp}");
+                }
+                else
+                {
+                    viewImg.prepend('<li><span class="pic_time"><span class="p_img"></span><em>50%</em></span></li>');
+                    viewImg.find("li:first-child").html('<span class="del"></span><img class="wh60" src="' + result.base64 + '"/><input type="hidden" id="file' + (viewImg.find("li").length - 1) + '" name="fileup[]" value="' + result.clearBase64 + '">');
+                    $(".del").on("click", function () {
+                        $(this).parent('li').remove();
+                        $("#upload_image").show();
+                    });
+                }
+            }
+        });
+        $(".del").on("click", function () {
+            $(this).parent('li').remove();
+            $("#upload_image").show();
+        });
+        $("#close").on('click', function () {
+            var refer = $(this).data('refer');
+            if (refer)
+            {
+                window.history.go(-1);
+            }
+            else
+            {
+                window.location.href = "";
+            }
+        });
+        
+        
+        
+        })();
+            
+            
+</script>
+</body>
+<script type="text/javascript" src="{$UrlPath}/js/common.js"></script>
+</html>

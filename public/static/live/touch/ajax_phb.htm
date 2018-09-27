@@ -1,0 +1,22 @@
+{loop $paihang $k $v}
+		<li class="li-b" data-time="" id="">
+            <div class="main">
+                <div class="clearfix leave_bg">
+                	<div style="float: left; height: 30px; line-height: 30px;">
+                		No.{eval echo $k+1+$p}
+                	</div>
+                     <img src="http://www.svn.com/uc_server/avatar.php?uid={$v['uid']}&amp;size=small" alt="" style="margin-left: 20px;" class="user_img">
+                    <div class="right_con" style="margin-left: 100px;">
+                        <div class="line clearfix">
+                            <p class="name flooer_name">{$v['username']}</p>
+                            <p class="time" style="padding-right: 25px;">
+                            	<i style="  width: 1rem;  height: 1rem;   display: block;   background: url({$UrlPath}/images/dashang.png) no-repeat center center / cover; position: absolute; right: 0; top:50%;margin-top: -.6rem;"></i>
+                            	{$v['zjf']}
+                            </p>
+                        </div>
+                     
+                    </div>
+                </div>
+            </div>
+        </li>
+		{/loop}

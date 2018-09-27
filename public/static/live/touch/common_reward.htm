@@ -1,0 +1,167 @@
+
+<link rel="stylesheet" type="text/css" href="{$UrlPath}/css/reward.css" />
+<div class="reward_wrap">
+    <div class="reward_box">
+        <div class="reward_main">
+            <ul class="reward_list">
+                <!--{loop $reward_list $reward}-->
+                <li>
+                    <!--{loop $reward $rew}-->
+                    {eval $rew = explode('|',$rew);}
+                    <div class="reward_content" data-price="{$rew[2]}">
+                        <div class="reward_logo"><img src="{$rew[0]}"  style="opacity: 1;" /></div>
+                        <div class="reward_name">{$rew[1]}</div>
+                        <div class="reward_price"><span class="icon"></span><span class="text">{$rew[2]}</span></div>
+                    </div>
+                    <!--{/loop}-->
+                </li>
+                <!--{/loop}-->
+            </ul>
+            <ul class="reward_dot">
+                <!--{loop $reward_list $reward}-->
+                <li></li>
+                <!--{/loop}-->
+            </ul>
+        </div>
+        <div class="reward_footer">
+            <div class="user_account">
+                <div class="icon"></div>
+                <div class="text">{lang qidou_video_live:zhye} : <span>{$account_price}</span></div>
+            </div>
+            <div class="reward_button" is_reward="false">{lang qidou_video_live:zengsong}</div>
+        </div>
+    </div>
+</div>
+<script>
+function post_reward( main ){
+	var oDoc = document.documentElement;
+   var vWidth = oDoc.clientWidth;
+
+    var account_price = "{$account_price}";
+    var reward_index = 0;
+    var iStart = {left:0};
+    var uid = "{$uid}";
+    var sLeft = 0;
+    var len = $('.reward_list li').length;
+    var reward_price = 0;
+
+    
+    $('.reward_dot li').eq(reward_index).addClass('active');
+    
+    $(main).click(function (){
+        $('.reward_logo img').map(function (i,t){
+            $(t).attr({src:$(t).attr('src')});
+        });
+        $('.reward_logo img').css({opacity:1});
+        $('.reward_wrap').show();
+    });
+    
+    $('.reward_content').click(function (){
+        $('.reward_content').removeClass('active');
+        reward_id = $('.reward_content').index(this);
+     
+        $(this).addClass('active');
+        reward_price = $(this).attr('data-price');
+        
+        if( reward_price < account_price ){
+            $('.reward_button').attr({is_reward:true});
+            $('.reward_button').html("{lang qidou_video_live:zengsong}");
+            $('.reward_button').addClass('active');
+        }else{
+            $('.reward_button').attr({is_reward:false});
+            $('.reward_button').removeClass('active');
+            $('.reward_button').html("{lang qidou_video_live:yebz}");
+        }
+    });
+  //  var this_reward_user = $('.reward_user_main li[data-uid='+uid+']');
+    $('.reward_button').click(function (){
+        if( !reward_price ){return;}
+        var is_reward = eval($(this).attr('is_reward'));
+        
+        if( !uid ){
+           	alert("\u8bf7\u5148\u767b\u5f55");
+            return;
+        }
+
+        if( is_reward ){
+          //  var loading = layer.open({type:2});
+           
+           
+            var data = {
+            	ajax:'dashang',
+                lid:'{$lid}',
+                reward_id:reward_id,
+                formhash: '{FORMHASH}'
+            };
+            $.ajax({
+                type:'post',
+                url:"{$_G['siteurl']}plugin.php?id=qidou_video_live:live_ajax",
+                data:data,
+                dataType:'json',
+                success:function ( data ){
+                   console.log(data);
+                    if( data.status == 1 ){
+                      alert(data.msg);
+                      $(".reward_wrap").hide();
+                    }else{
+                    	 alert(data.msg);
+                    }
+                    
+                }
+               
+            });
+        }else if( !is_reward && reward_link ){
+            
+        }
+    });
+    
+    $('.reward_main').on('touchstart',function (){
+        var oTouch = event.changedTouches[0];
+        iStart.left = oTouch.pageX;
+        $('.reward_list').css({transition:'initial'});
+        $(document).on('touchmove',rmove);
+        $(document).on('touchend',rend);
+    });
+
+    function rmove(){
+        var oTouch = event.changedTouches[0];
+        var left = 0;
+        left = -sLeft + (oTouch.pageX - iStart.left);
+        $('.reward_list').css({transform:'translateX('+left+'px) translateZ(0)'});
+        event.preventDefault();
+        return false;
+    }
+    function rend(){
+        var oTouch = event.changedTouches[0];
+        if( oTouch.pageX - iStart.left > 20 ){
+            reward_index--;
+        }else if( oTouch.pageX - iStart.left < -20 ){
+            reward_index++;
+        }
+        if( reward_index == -1 ){
+            reward_index = 0;
+        }else if( reward_index == len ){
+            reward_index = len -1;
+        }
+        $('.reward_dot li').removeClass('active');
+        $('.reward_dot li').eq(reward_index).addClass('active');
+        sLeft = reward_index*vWidth;
+        $('.reward_list').css({transition:'1s',transform:'translateX(-'+sLeft+'px) translateZ(0)'});
+        $(this).unbind('touchmove',rmove);
+        $(this).unbind('touchend',rend);
+    }
+    $('.reward_wrap').click(function (){
+        reward_price = 0;
+        $('.reward_content').removeClass('active');
+        $('.reward_button').removeClass('active');
+        $('.reward_button').html("{lang qidou_video_live:zengsong}");
+        $(this).hide();
+    });
+    $('.reward_box').click(function (){
+        event.cancelBubble = true;
+    });
+}
+
+post_reward('.reward');
+
+</script>

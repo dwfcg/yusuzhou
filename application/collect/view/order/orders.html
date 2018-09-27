@@ -1,0 +1,372 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+       
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="black" name="apple-mobile-web-app-status-bar-style">
+        <meta content="telephone=no" name="format-detection">
+        <script language="javascript" src="__STATIC__/home/js/jquery.js"></script>
+
+        <style>
+
+            a, a:visited {
+                text-decoration: none;    cursor: auto; }
+            #container{
+                margin-bottom:50px;
+            }
+
+        </style>
+
+    </head>
+    <body>
+   
+        <title>我的订单</title>
+        <style type="text/css">
+            body {margin:0px;background:#efefef; -moz-appearance:none; -webkit-appearance: none;}
+            .order_topbar {height:44px; width:100%; background:#fff; border-bottom:1px solid #e3e3e3;}
+            .order_topbar .nav {height:44px; width:20%; line-height:44px; text-align:center; font-size:14px; float:left; color:#666;}
+            .order_topbar .on {height:42px; color:#ff771b; border-bottom:2px solid #ff771b;}
+            .order_noinfo {height:20px; width:150px; background:url(img/order_img1.png) top center no-repeat; margin:50px auto 0px; padding-top:100px; line-height:20px; font-size:14px; text-align:center; color:#c9c9c9;}
+            .order_main {height:auto; width:94%; background:#fff; padding:0px 3%; margin-top:16px; border-bottom:1px solid #e2e2e2; border-top:1px solid #e2e2e2;}
+            .order_main .title {height:42px; width:100%; border-bottom:1px solid #e2e2e2; font-size:14px; line-height:42px; color:#666;}
+            .order_main .title span {height:42px; width:auto; float:right; color:#ff771b;}
+
+
+            .order_main .good {height:50px; width:100%; padding:10px 0px; border-bottom:1px solid #eaeaea;}
+            .order_main .good .img {height:50px; width:50px; float:left;}
+            .order_main .good  .img img {height:100%; width:100%;}
+            .order_main .good  .info {width:100%;float:left; margin-left:-50px;margin-right:-60px;}
+            .order_main .good .info .inner { margin-left:60px;margin-right:60px; }
+            .order_main .good .info .inner .name {height:32px; width:100%; float:left; font-size:12px; color:#555;overflow:hidden;}
+            .order_main .good .info .inner .option {height:18px; width:100%; float:left; font-size:12px; color:#888;overflow:hidden;word-break: break-all}
+            .order_main .good span { color:#666;}
+            .order_main .good  .price { float:right;width:60px;;height:54px;margin-left:-60px;;}
+            .order_main .good  .price .pnum { height:20px;width:100%;text-align:right;font-size:14px; }
+            .order_main .good  .price .num { height:20px;width:100%;text-align:right;}
+            .order_main .info1 {height:42px; width:100%; border-bottom:1px solid #e2e2e2; font-size:14px; color:#999; line-height:42px; text-align:right;}
+            .order_main .info1 span {color:#666;}
+
+            .order_main .sub {height:50px; width:100%;}
+            .order_main .sub1 {height:30px; width:auto; padding:0px 10px; border:1px solid #ff771b; float:right; border-radius:5px; line-height:30px; font-size:14px; margin:10px 5px 10px 0px; color:#fff; background:#ff771b;}
+            .order_main .sub2 {height:30px; width:auto; padding:0px 10px; border:1px solid #5f6e8b; float:right; border-radius:5px; line-height:30px; font-size:14px; margin:10px 5px 10px 0px; color:#5f6e8b;}
+            select { width:80px;height:30px;position:absolute;left:0; filter:alpha(Opacity=0); opacity: 0;-webkit-appearance: none;background:#fff; -webkit-tap-highlight-color: transparent };
+            .order_no {height:40px; width:100%;  padding-top:180px; margin:50px 0px;}
+
+            .order_no {height:100px; width:100%; margin:50px 0px 60px; color:#ccc; font-size:12px; text-align:center;}
+            .order_no_menu {height:40px; width:100%; text-align:center;}
+            .order_no_nav {height:38px;padding:10px; width:100px; background:#eee; border:1px solid #d4d4d4; border-radius:5px; text-align:center; line-height:38px; color:#666;}
+            #order_loading { width:94%;padding:10px;color:#666;text-align: center;}
+            .login{
+                width: 80%;
+                margin: 200px auto;
+                height: 45px;
+                line-height: 45px;
+                border-radius: 5px;
+                background: #ef5555;
+                color: #fff;
+                text-align: center;
+            }
+        </style>
+        <div id='container' >
+
+
+            <div class="order_topbar">
+                <div class="nav {if condition="$status eq ''"}on {/if}" data-status=""  onclick="allOrder()">全部</div>
+                <div class="nav {if condition="$status neq '' && $status < 1"}on {/if}" data-status="0" onclick="payment()">待付款</div>
+                <div class="nav {if condition="$status eq 1"}on {/if}"  data-status="1" onclick="pending_delivery()">定制中</div>
+                <div class="nav {if condition="$status eq 2"}on {/if}"  data-status="2" onclick="received()">待收货</div>
+                <div class="nav {if condition="$status eq 3"}on {/if}"  data-status="3" onclick="dat_comment()">待评价</div>
+            </div>
+            <div id='order_container' >
+            <div class="login" style="display:none">
+               	 点击登录
+            </div>
+          	{if condition="!$orders"}
+            <div class="order_no"><i class="fa fa-file-text-o" style="font-size:100px;"></i><br><span style="line-height:18px; font-size:16px;" </span>您还没有订单<br>随便逛逛</div>
+           
+            {else/}
+            {volist name="orders" id="v"}
+            {if condition="$v['status'] egt 0"}
+            <div class="order_main" data-orderid="111">
+                <div class="title">订单号：{$v['order_sn']}<span>{$order_status[$v['status']]}</span></div>
+
+                <div class="good">
+                    <div class="img"  onclick="location.href = '{:url('order/detail',array('id'=>$v['goods_id']))}'"><img id="imgs" src="{$v['pic']}"/></div>
+                    <div class='info' onclick="location.href = '{:url('order/detail',array('id'=>$v['id']))}'">
+                        <div class='inner'>
+                            <div class="name">{$v['title']}</div>     
+                            <div class='option'></div>
+                        </div>
+                    </div>
+                    <div class="price">
+                        <div class='pnum'><span class='marketprice'>￥{$v['price']}</span></div>
+                        <div class='pnum'><span class='total'>×1</span></div>
+                    </div>
+                </div>
+             
+                <div class="info1">共 1 件商品&nbsp;实付：<span>￥{$v['price']}</span></div>
+                <div class="sub">
+                    {if condition="$v['status'] eq 0"}
+                    <div class="sub1" onclick="location.href='{:url("pay/pay",array('id'=>$v['id']))}'">待付款</div>
+                    <div class="sub2 order_cancel" style='position:relative;width:56px;'>
+                        <span style='position:absolute;display:block;width:56px;' class="ajax_btn" data-id="{$v['id']}" data-status="-1">取消订单</span>
+                    </div>
+                    {/if}
+                    <!--{if condition="$v['status'] eq -1"}       
+                    <div class="sub1 order_refund ajax_btn" data-id="{$v['id']}" data-status="-2">申请退款</div>
+                    {/if}-->
+                    {if condition="$v['status'] eq 1"}
+                    <div class="sub1 order_complete">定制中</div>
+                    {/if}
+                    {if condition="$v['status'] eq 2"}
+                    <div class="sub1 order_complete ajax_btn" data-id="{$v['id']}" data-status="3">确认收货</div>
+                    <div class="sub2 order_express logistics_tracking" data-id="{$v['id']}" data-express="{$v['express']}" data-expressno="{$v['express_no']}">查看物流</div>
+                    {/if}	
+                    {if condition="$v['status'] eq 3"}
+                    <div class="sub1 order_comment" data-id="{$v['id']}">评价</div>
+                    <div class="sub2 order_express ajax_btn" data-id="{$v['id']}" data-status="-3">删除订单</div>
+                    {/if}
+                    {if condition="$v['status'] eq 4"}
+                    <div class="sub1 order_comment" data-id="{$v['id']}">追加评价</div>
+                    <div class="sub2 order_express logistics_tracking" data-id="{$v['id']}" data-express="{$v['express']}" data-expressno="{$v['express_no']}">查看物流</div>
+                    <div class="sub2 order_express ajax_btn" data-id="{$v['id']}" data-status="-3">删除订单</div>
+                    {/if}
+                    <!--<div class="sub2 order_comment">追加评价</div>-->
+                    <!--{if condition="$v['status'] eq -2"}
+                    <div class="sub1 order_refund">退款申请中</div>
+                    {/if}-->
+                </div>
+            </div>
+            {/if}
+            {/volist}
+            {/if}
+        </div>
+        </div>
+        <script type="text/javascript" src="__STATIC__/home/js/api.js"></script>
+        <script language="javascript" src="__STATIC__/home/js/jquery.js"></script>
+        <script>
+        		//取消订单
+//                $(".cancel-order").on("click",function(){
+//                	var index = $(".cancel-order").index(this);
+//                	var dialogBox = api.require('dialogBox');
+//					dialogBox.alert({
+//					    texts: {
+//					        content: '您确定要删除订单吗？',
+//					        leftBtnTitle: '取消',
+//					        rightBtnTitle: '确认'
+//					    },
+//					    styles: {
+//					        bg: '#fff',
+//					        w: 300,
+//					        content: {
+//					            color: '#000',
+//					            size: 14
+//					        },
+//					        left: {
+//					            marginB: 7,
+//					            marginL: 20,
+//					            w: 130,
+//					            h: 35,
+//					            corner: 2,
+//					            bg: 'white',
+//					            size: 12
+//					        },
+//					        right: {
+//					            marginB: 7,
+//					            marginL: 10,
+//					            w: 130,
+//					            h: 35,
+//					            corner: 2,
+//					            bg: 'white',
+//					            size: 12
+//					        }
+//					    },
+//					}, function(ret) {
+//					    if (ret.eventType == 'left') {
+//					        var dialogBox = api.require('dialogBox');
+//					        dialogBox.close({
+//					            dialogName: 'alert'
+//					        });
+//					    }
+//					    if (ret.eventType == 'right') {
+//					    	//后台数据未删除
+//					        $(".cancel-order").eq(index).parent().parent().remove();
+//					        var dialogBox = api.require('dialogBox');
+//					        dialogBox.close({
+//					            dialogName: 'alert'
+//					        });
+//					    }
+//					});
+//              });
+                //登录未登录
+                  apiready = function () {
+                  	user = api.getPrefs({sync: true,key: 'userLogin'});
+					user = JSON.parse(user);
+					if(!user.data.id){
+						$(".login").show();
+						$(".order_no").hide();
+					}
+					$(".login").click(function(){
+						$api.openLogin();
+					})
+                    //已评价
+                  	api.addEventListener({
+              			name: 'yi-ping-jia'
+		          	}, function(ret, err){
+		              	if( ret ){
+		              		location.reload();
+			                api.toast({
+	                		    msg: '评价成功',
+	                		    location: 'bottom',
+	                		    duration: 2000,
+	                		});
+		            	}
+		        	});
+		        	
+            }
+               	//取消订单/确认收货/删除订单
+                  $(".ajax_btn").click(function(){
+                      var oid = $(this).attr('data-id');//订单id
+                      var status = $(this).attr('data-status');//订单状态id
+                       $.ajax({
+                       		type: "post",
+                            url: "{:url('order/save')}",
+                            dataType: 'json',
+                            data: {
+                            	oid:oid,
+                            	status:status
+                            },
+                            success: function (res) {
+                                if(res.code == 1){
+                                    api.toast({
+					                    msg: '操作成功'
+					                });
+                                    location.reload();
+                                }else{
+                                    alert('网络错误');
+                                }
+                            },
+                            error: function(){
+                            	alert('错误')
+                            }
+                        });
+                  });
+                  //评价
+                  $('.order_comment').on('click',function(){
+                  	var oid = $(this).attr('data-id');//订单id
+//                	alert(oid)
+                    api.openWin({
+					    name: 'thread_comment',
+					    url: 'widget://html/thread/collect_comment.html',
+					    pageParam: {
+					        oid: oid
+					    }
+					});
+                  });
+                  //查看物流
+                  $('.logistics_tracking').on('click',function(){
+                  	var oid = $(this).attr('data-id');//订单id
+                  	var express = $(this).attr('data-express');//公司编号
+                  	var express_no = $(this).attr('data-expressno');//运单号
+                  	$api.openPage({
+				     	title: '物流信息',
+				     	name: 'express',
+				     	url: 'widget://html/logistics_tracking2.html',
+                 		express: express,
+					    express_no: express_no,
+					    oid: oid
+					})
+                  });
+          			function allOrder(){
+          				location.href = 'http://yusuzhou.youacloud.com/index.php/collect/order/orders/uid/'+user.data.id+'.html';
+          			}
+                    //待付款
+	                function payment(){
+	                  	location.href = 'http://yusuzhou.youacloud.com/index.php/collect/order/orders/uid/'+user.data.id+'/status/0.html';
+	                }
+	                //待发货
+	                function pending_delivery(){
+	                 	location.href = 'http://yusuzhou.youacloud.com/index.php/collect/order/orders/uid/'+user.data.id+'/status/1.html';
+	                }
+	                //待收货
+	                function received(){
+	                  	location.href = 'http://yusuzhou.youacloud.com/index.php/collect/order/orders/uid/'+user.data.id+'/status/2.html';
+	                }
+	                //待评价
+	                function dat_comment(){
+	                  	location.href = 'http://yusuzhou.youacloud.com/index.php/collect/order/orders/uid/'+user.data.id+'/status/3.html';
+	                }
+                  //这个方法功能未知 好像是分页
+//                var page_count = {$page_count};
+//                load_data('#order_container',page_count,{page_count},'{:url('order/ajax_orders')}',{body_main:'#order_container',doc_main:'#container'},
+//                  function (){
+//                      $('.loading').css({display:'-webkit-box'});
+//                      $('.loading_main').css({WebkitAnimation:'loading 1s infinite linear'});
+//                  },
+//                  function (){
+//                      $('.loading').css({display:'none'});
+//                  });
+//               	function load_data( item_main,iMaxPage,datas,data_url,doc_main,before,after ){
+//                      var page_main = doc_main || {doc_main:document,body_main:document};
+//                      var view_height = $(window).height();
+//                      var iNowPage = 1;
+//                      var onOff = true;
+//                      var time = null;
+//                      var loading_item = null;
+//
+//                      $(document).bind('touchmove',move);
+//                      $(window).bind('resize',function (){
+//                          view_height = $(window).height();
+//                      });
+//
+//                      function move(ev){
+//                          var ev = ev || window.event;
+//                          var aTouch = ev.changedTouches;
+//                          var scr_top = $(page_main.doc_main).scrollTop();
+//
+//                          if( onOff && iNowPage < iMaxPage && scr_top + view_height > $(page_main.body_main).height() - 50){
+//                              ajax_post();
+//                              onOff = false;
+//                              before && before();
+//                          }else{
+//                              var prevScrollTop = scr_top;
+//                              clearInterval(time);
+//                              time = setInterval(function (){
+//                                  var thisScrollTop = $(page_main.doc_main).scrollTop();
+//                                  if(thisScrollTop==prevScrollTop){
+//                                      clearInterval(time);
+//                                  }
+//                                  prevScrollTop = $(page_main.doc_main).scrollTop();
+//                              },200);
+//                          }
+//                      }
+//
+//                      function ajax_post(){
+//                          if(!data_url)return;
+//                          loading_item = layer.open({
+//                              content:'\u6b63\u5728\u52a0\u8f7d\u002e\u002e\u002e',
+//                              skin: 'msg',
+//                          });
+//                          $.ajax({
+//                              type:'post',
+//                              url:data_url,
+//                              data:$.extend(datas,{start:iNowPage*10}),
+//                              success:function ( data ){
+//                                  layer.close(loading_item);
+//                                  if( !data ){
+//                                      onOff = false;
+//                                  }else{
+//                                      iNowPage++;
+//                                      onOff = true;
+//                                      after && after();
+//                                      $(item_main).append(data);
+//                                  }
+//                              }
+//                          });
+//                      }
+//                  }
+        </script>
+    </body>
+</html>

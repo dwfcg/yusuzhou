@@ -1,0 +1,1198 @@
+---------------------------------------------------------------
+[ 2018-09-12T10:56:42+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/detail/guandong
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/detail/guandong [运行时间：0.119007s][吞吐率：8.40req/s] [内存消耗：2,700.60kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'detail',
+    2 => 'guandong',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.029002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.017001s ]
+[ info ] [ RUN ] app\forum\home\Detail->guandong[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ error ] [8]未定义数组索引: page[D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php:188]
+---------------------------------------------------------------
+[ 2018-09-12T10:56:57+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/thread/getQuanvideo
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/thread/getQuanvideo [运行时间：0.065004s][吞吐率：15.38req/s] [内存消耗：2,585.21kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'thread',
+    2 => 'getQuanvideo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.019001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.014001s ]
+[ info ] [ RUN ] app\forum\home\Thread->getQuanvideo[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Thread.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.006001s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_forum_thread` [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`sid`,`a`.`title`,`a`.`content`,`a`.`videos`,`a`.`firsturl`,`type`,`a`.`zan_num`,`a`.`view_num`,`a`.`com_num`,`a`.`add_time`,`u`.`name`,`u`.`headimg`,u.id as uid FROM `ysz_forum_thread` `a` INNER JOIN `ysz_user` `u` ON `a`.`uid`=`u`.`id` WHERE  `a`.`type` = 2  AND `a`.`status` = 1 ORDER BY add_time desc LIMIT 10,10 [ RunTime:0.005000s ]
+---------------------------------------------------------------
+[ 2018-09-12T10:57:31+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/thread/getQuanvideo
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/thread/getQuanvideo [运行时间：0.084005s][吞吐率：11.90req/s] [内存消耗：2,605.96kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'thread',
+    2 => 'getQuanvideo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.026001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.013001s ]
+[ info ] [ RUN ] app\forum\home\Thread->getQuanvideo[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Thread.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_forum_thread` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`sid`,`a`.`title`,`a`.`content`,`a`.`videos`,`a`.`firsturl`,`type`,`a`.`zan_num`,`a`.`view_num`,`a`.`com_num`,`a`.`add_time`,`u`.`name`,`u`.`headimg`,u.id as uid FROM `ysz_forum_thread` `a` INNER JOIN `ysz_user` `u` ON `a`.`uid`=`u`.`id` WHERE  `a`.`type` = 2  AND `a`.`status` = 1 ORDER BY add_time desc LIMIT 0,10 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_forum_shicom` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_forum_shicom` WHERE  `shiid` = 424 LIMIT 0,4 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_forum_shicom` WHERE  `shiid` = 401 LIMIT 0,4 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_forum_shicom` WHERE  `shiid` = 365 LIMIT 0,4 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_forum_shicom` WHERE  `shiid` = 361 LIMIT 0,4 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_forum_shicom` WHERE  `shiid` = 357 LIMIT 0,4 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_forum_shicom` WHERE  `shiid` = 354 LIMIT 0,4 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-09-12T10:57:59+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/thread/getQuanvideo
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/thread/getQuanvideo [运行时间：0.058004s][吞吐率：17.24req/s] [内存消耗：2,605.73kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'thread',
+    2 => 'getQuanvideo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.016001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.012001s ]
+[ info ] [ RUN ] app\forum\home\Thread->getQuanvideo[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Thread.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_forum_thread` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`sid`,`a`.`title`,`a`.`content`,`a`.`videos`,`a`.`firsturl`,`type`,`a`.`zan_num`,`a`.`view_num`,`a`.`com_num`,`a`.`add_time`,`u`.`name`,`u`.`headimg`,u.id as uid FROM `ysz_forum_thread` `a` INNER JOIN `ysz_user` `u` ON `a`.`uid`=`u`.`id` WHERE  `a`.`type` = 2  AND `a`.`status` = 1 ORDER BY add_time desc LIMIT 0,10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_forum_shicom` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_forum_shicom` WHERE  `shiid` = 424 LIMIT 0,4 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_forum_shicom` WHERE  `shiid` = 401 LIMIT 0,4 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_forum_shicom` WHERE  `shiid` = 365 LIMIT 0,4 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_forum_shicom` WHERE  `shiid` = 361 LIMIT 0,4 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_forum_shicom` WHERE  `shiid` = 357 LIMIT 0,4 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_forum_shicom` WHERE  `shiid` = 354 LIMIT 0,4 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-09-12T11:37:09+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/thread/getQuanvideo
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/thread/getQuanvideo [运行时间：0.221000s][吞吐率：4.52req/s] [内存消耗：2,351.27kb] [文件加载：65]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'thread',
+    2 => 'getQuanvideo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.010000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.020000s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ error ] [0]语法解析错误: syntax error, unexpected ''userid'' (T_CONSTANT_ENCAPSED_STRING), expecting ']'[D:\phpStudy\WWW\yusuzhou\application\forum\home\Thread.php:250]
+---------------------------------------------------------------
+[ 2018-09-12T11:37:34+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/thread/getQuanvideo
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/thread/getQuanvideo [运行时间：0.110001s][吞吐率：9.09req/s] [内存消耗：2,618.06kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'thread',
+    2 => 'getQuanvideo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.020000s ]
+[ info ] [ RUN ] app\forum\home\Thread->getQuanvideo[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Thread.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_forum_thread` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`sid`,`a`.`title`,`a`.`content`,`a`.`videos`,`a`.`firsturl`,`type`,`a`.`zan_num`,`a`.`view_num`,`a`.`com_num`,`a`.`add_time`,`u`.`name`,`u`.`headimg`,u.id as uid FROM `ysz_forum_thread` `a` INNER JOIN `ysz_user` `u` ON `a`.`uid`=`u`.`id` WHERE  `a`.`type` = 2  AND `a`.`status` = 1 ORDER BY add_time desc LIMIT 0,10 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_forum_wenzan` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 424  AND `userid` = 50 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_forum_shicom` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_forum_shicom` WHERE  `shiid` = 424 LIMIT 0,4 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 401  AND `userid` = 50 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_forum_shicom` WHERE  `shiid` = 401 LIMIT 0,4 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 365  AND `userid` = 50 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_forum_shicom` WHERE  `shiid` = 365 LIMIT 0,4 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 361  AND `userid` = 50 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_forum_shicom` WHERE  `shiid` = 361 LIMIT 0,4 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 357  AND `userid` = 50 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_forum_shicom` WHERE  `shiid` = 357 LIMIT 0,4 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 354  AND `userid` = 50 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_forum_shicom` WHERE  `shiid` = 354 LIMIT 0,4 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-09-12T16:29:04+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/detail/guandong
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/detail/guandong [运行时间：0.070000s][吞吐率：14.29req/s] [内存消耗：2,650.88kb] [文件加载：78]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'detail',
+    2 => 'guandong',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.010000s ]
+[ info ] [ RUN ] app\forum\home\Detail->guandong[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user_guan` [ RunTime:0.000000s ]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'w.dangid' in 'field list'[D:\phpStudy\WWW\yusuzhou\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2018-09-12T16:29:20+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/detail/guandong
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/detail/guandong [运行时间：0.060000s][吞吐率：16.67req/s] [内存消耗：2,650.70kb] [文件加载：78]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'detail',
+    2 => 'guandong',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.010000s ]
+[ info ] [ RUN ] app\forum\home\Detail->guandong[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user_guan` [ RunTime:0.000000s ]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '' in 'field list'[D:\phpStudy\WWW\yusuzhou\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2018-09-12T16:30:06+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/detail/guandong
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/detail/guandong [运行时间：0.070000s][吞吐率：14.29req/s] [内存消耗：2,689.72kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'detail',
+    2 => 'guandong',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.010000s ]
+[ info ] [ RUN ] app\forum\home\Detail->guandong[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user_guan` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `c`.`id`,`c`.`uid`,`c`.`oid`,`c`.`vid`,`c`.`cid`,`c`.`sid`,`c`.`title`,`c`.`keyword`,`c`.`content`,`c`.`conimage`,`c`.`images`,`c`.`videos`,`c`.`firsturl`,`c`.`status`,`c`.`type`,`c`.`zan_num`,`c`.`guan_num`,`c`.`view_num`,`c`.`com_num`,`c`.`flag`,`c`.`stick`,`c`.`add_time` FROM `ysz_user_guan` `a` INNER JOIN `ysz_forum_thread` `c` ON `a`.`threadid`=`c`.`uid` WHERE  `dangid` = 59  AND `a`.`status` = 0 LIMIT 0,10 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-09-12T16:30:37+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/detail/guandong
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/detail/guandong [运行时间：0.071001s][吞吐率：14.08req/s] [内存消耗：2,698.14kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'detail',
+    2 => 'guandong',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.010000s ]
+[ info ] [ RUN ] app\forum\home\Detail->guandong[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user_guan` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `c`.`id`,`c`.`uid`,`c`.`oid`,`c`.`vid`,`c`.`cid`,`c`.`sid`,`c`.`title`,`c`.`keyword`,`c`.`content`,`c`.`conimage`,`c`.`images`,`c`.`videos`,`c`.`firsturl`,`c`.`status`,`c`.`type`,`c`.`zan_num`,`c`.`guan_num`,`c`.`view_num`,`c`.`com_num`,`c`.`flag`,`c`.`stick`,`c`.`add_time` FROM `ysz_user_guan` `a` INNER JOIN `ysz_forum_thread` `c` ON `a`.`threadid`=`c`.`uid` WHERE  `dangid` = 59  AND `a`.`status` = 0 LIMIT 0,10 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_forum_thread` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`uid` FROM `ysz_forum_thread` WHERE  `type` = 0 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`uid` FROM `ysz_forum_thread` WHERE  `type` = 0 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`uid` FROM `ysz_forum_thread` WHERE  `type` = 0 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`uid` FROM `ysz_forum_thread` WHERE  `type` = 0 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`uid` FROM `ysz_forum_thread` WHERE  `type` = 0 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`uid` FROM `ysz_forum_thread` WHERE  `type` = 0 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`uid` FROM `ysz_forum_thread` WHERE  `type` = 0 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`uid` FROM `ysz_forum_thread` WHERE  `type` = 0 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`uid` FROM `ysz_forum_thread` WHERE  `type` = 0 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`uid` FROM `ysz_forum_thread` WHERE  `type` = 0 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-09-12T16:31:24+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/detail/guandong
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/detail/guandong [运行时间：0.061000s][吞吐率：16.39req/s] [内存消耗：2,709.40kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'detail',
+    2 => 'guandong',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.021000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.010000s ]
+[ info ] [ RUN ] app\forum\home\Detail->guandong[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user_guan` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `c`.`id`,`c`.`uid`,`c`.`oid`,`c`.`vid`,`c`.`cid`,`c`.`sid`,`c`.`title`,`c`.`keyword`,`c`.`content`,`c`.`conimage`,`c`.`images`,`c`.`videos`,`c`.`firsturl`,`c`.`status`,`c`.`type`,`c`.`zan_num`,`c`.`guan_num`,`c`.`view_num`,`c`.`com_num`,`c`.`flag`,`c`.`stick`,`c`.`add_time` FROM `ysz_user_guan` `a` INNER JOIN `ysz_forum_thread` `c` ON `a`.`threadid`=`c`.`uid` WHERE  `dangid` = 59  AND `a`.`status` = 0 LIMIT 0,10 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_forum_thread` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `id`,`uid` FROM `ysz_forum_thread` WHERE  `type` = 0 [ RunTime:0.000000s ]
+[ error ] [8]未定义数组索引: conimage[D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php:192]
+---------------------------------------------------------------
+[ 2018-09-12T16:31:26+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/detail/guandong
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/detail/guandong [运行时间：0.080000s][吞吐率：12.50req/s] [内存消耗：2,709.34kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'detail',
+    2 => 'guandong',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.020000s ]
+[ info ] [ RUN ] app\forum\home\Detail->guandong[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user_guan` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `c`.`id`,`c`.`uid`,`c`.`oid`,`c`.`vid`,`c`.`cid`,`c`.`sid`,`c`.`title`,`c`.`keyword`,`c`.`content`,`c`.`conimage`,`c`.`images`,`c`.`videos`,`c`.`firsturl`,`c`.`status`,`c`.`type`,`c`.`zan_num`,`c`.`guan_num`,`c`.`view_num`,`c`.`com_num`,`c`.`flag`,`c`.`stick`,`c`.`add_time` FROM `ysz_user_guan` `a` INNER JOIN `ysz_forum_thread` `c` ON `a`.`threadid`=`c`.`uid` WHERE  `dangid` = 59  AND `a`.`status` = 0 LIMIT 0,10 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_forum_thread` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`uid` FROM `ysz_forum_thread` WHERE  `type` = 0 [ RunTime:0.000000s ]
+[ error ] [8]未定义数组索引: conimage[D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php:192]
+---------------------------------------------------------------
+[ 2018-09-12T16:31:42+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/detail/guandong
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/detail/guandong [运行时间：0.060000s][吞吐率：16.67req/s] [内存消耗：2,675.43kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'detail',
+    2 => 'guandong',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.010000s ]
+[ info ] [ RUN ] app\forum\home\Detail->guandong[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user_guan` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `c`.`id`,`c`.`uid`,`c`.`oid`,`c`.`vid`,`c`.`cid`,`c`.`sid`,`c`.`title`,`c`.`keyword`,`c`.`content`,`c`.`conimage`,`c`.`images`,`c`.`videos`,`c`.`firsturl`,`c`.`status`,`c`.`type`,`c`.`zan_num`,`c`.`guan_num`,`c`.`view_num`,`c`.`com_num`,`c`.`flag`,`c`.`stick`,`c`.`add_time` FROM `ysz_user_guan` `a` INNER JOIN `ysz_forum_thread` `c` ON `a`.`threadid`=`c`.`uid` WHERE  `dangid` = 59  AND `a`.`status` = 0 LIMIT 0,10 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_forum_thread` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`uid` FROM `ysz_forum_thread` WHERE  `type` = 0 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-09-12T16:31:48+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/detail/guandong
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/detail/guandong [运行时间：0.061000s][吞吐率：16.39req/s] [内存消耗：2,675.48kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'detail',
+    2 => 'guandong',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020000s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.020000s ]
+[ info ] [ RUN ] app\forum\home\Detail->guandong[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user_guan` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `c`.`id`,`c`.`uid`,`c`.`oid`,`c`.`vid`,`c`.`cid`,`c`.`sid`,`c`.`title`,`c`.`keyword`,`c`.`content`,`c`.`conimage`,`c`.`images`,`c`.`videos`,`c`.`firsturl`,`c`.`status`,`c`.`type`,`c`.`zan_num`,`c`.`guan_num`,`c`.`view_num`,`c`.`com_num`,`c`.`flag`,`c`.`stick`,`c`.`add_time` FROM `ysz_user_guan` `a` INNER JOIN `ysz_forum_thread` `c` ON `a`.`threadid`=`c`.`uid` WHERE  `dangid` = 59  AND `a`.`status` = 0 LIMIT 0,10 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_forum_thread` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `id`,`uid` FROM `ysz_forum_thread` WHERE  `type` = 0 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-09-12T17:26:12+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/detail/guandong
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/detail/guandong [运行时间：0.074004s][吞吐率：13.51req/s] [内存消耗：2,655.20kb] [文件加载：78]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'detail',
+    2 => 'guandong',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.019001s ]
+[ info ] [ RUN ] app\forum\home\Detail->guandong[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.005001s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_forum_thread` [ RunTime:0.004001s ]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 'w.threadid'' at line 1[D:\phpStudy\WWW\yusuzhou\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2018-09-12T17:27:44+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/detail/guandong
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/detail/guandong [运行时间：0.054003s][吞吐率：18.52req/s] [内存消耗：2,621.66kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'detail',
+    2 => 'guandong',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.017001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.014001s ]
+[ info ] [ RUN ] app\forum\home\Detail->guandong[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_forum_thread` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_forum_thread` `a` INNER JOIN `ysz_forum_wenzan` `w` ON `a`.`id`=`w`.`threadid` INNER JOIN `ysz_user_guan` `u` ON `a`.`uid`=`u`.`threadid` WHERE  `w`.`userid` = '59' [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-09-12T17:31:48+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/detail/guandong
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/detail/guandong [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：2,623.69kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'detail',
+    2 => 'guandong',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.030001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.013001s ]
+[ info ] [ RUN ] app\forum\home\Detail->guandong[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_forum_thread` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_forum_thread` `c` INNER JOIN `ysz_forum_wenzan` `w` ON `c`.`id`=`w`.`threadid` INNER JOIN `ysz_user_guan` `u` ON `c`.`uid`=`u`.`threadid` WHERE  `w`.`userid` = '59'  AND `c`.`id` IN ('c.id','c.uid','c.oid','c.vid','c.cid','c.sid','c.title','c.keyword','c.content','c.conimage','c.images','c.videos','c.firsturl','c.status','c.type','c.zan_num','c.guan_num','c.view_num','c.com_num','c.flag','c.stick','c.add_time') [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-09-12T17:32:16+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/detail/guandong
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/detail/guandong [运行时间：0.062004s][吞吐率：16.13req/s] [内存消耗：2,654.16kb] [文件加载：78]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'detail',
+    2 => 'guandong',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.022001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.013001s ]
+[ info ] [ RUN ] app\forum\home\Detail->guandong[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_forum_thread` [ RunTime:0.003000s ]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.userid' in 'where clause'[D:\phpStudy\WWW\yusuzhou\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2018-09-12T17:43:49+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/detail/guandong
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/detail/guandong [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：2,745.89kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'detail',
+    2 => 'guandong',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.020002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.013000s ]
+[ info ] [ RUN ] app\forum\home\Detail->guandong[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user_guan` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `c`.`id`,`c`.`uid`,`c`.`oid`,`c`.`vid`,`c`.`cid`,`c`.`sid`,`c`.`title`,`c`.`keyword`,`c`.`content`,`c`.`conimage`,`c`.`images`,`c`.`videos`,`c`.`firsturl`,`c`.`status`,`c`.`type`,`c`.`zan_num`,`c`.`guan_num`,`c`.`view_num`,`c`.`com_num`,`c`.`flag`,`c`.`stick`,`c`.`add_time` FROM `ysz_user_guan` `a` INNER JOIN `ysz_forum_thread` `c` ON `a`.`threadid`=`c`.`uid` WHERE  `dangid` = 59  AND `a`.`status` = 0  AND `c`.`status` = 1 LIMIT 0,10 [ RunTime:0.000000s ]
+[ error ] [8]未定义变量: shi[D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php:194]
+---------------------------------------------------------------
+[ 2018-09-12T17:44:26+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/detail/guandong
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/detail/guandong [运行时间：0.056003s][吞吐率：17.86req/s] [内存消耗：2,745.34kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'detail',
+    2 => 'guandong',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.017001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.012001s ]
+[ info ] [ RUN ] app\forum\home\Detail->guandong[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user_guan` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `c`.`id`,`c`.`uid`,`c`.`oid`,`c`.`vid`,`c`.`cid`,`c`.`sid`,`c`.`title`,`c`.`keyword`,`c`.`content`,`c`.`conimage`,`c`.`images`,`c`.`videos`,`c`.`firsturl`,`c`.`status`,`c`.`type`,`c`.`zan_num`,`c`.`guan_num`,`c`.`view_num`,`c`.`com_num`,`c`.`flag`,`c`.`stick`,`c`.`add_time` FROM `ysz_user_guan` `a` INNER JOIN `ysz_forum_thread` `c` ON `a`.`threadid`=`c`.`uid` WHERE  `dangid` = 59  AND `a`.`status` = 0  AND `c`.`status` = 1 LIMIT 0,10 [ RunTime:0.001000s ]
+[ error ] [8]未定义变量: key[D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php:194]
+---------------------------------------------------------------
+[ 2018-09-12T17:44:58+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/detail/guandong
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/detail/guandong [运行时间：0.056003s][吞吐率：17.86req/s] [内存消耗：2,745.61kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'detail',
+    2 => 'guandong',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.017001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.013001s ]
+[ info ] [ RUN ] app\forum\home\Detail->guandong[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user_guan` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `c`.`id`,`c`.`uid`,`c`.`oid`,`c`.`vid`,`c`.`cid`,`c`.`sid`,`c`.`title`,`c`.`keyword`,`c`.`content`,`c`.`conimage`,`c`.`images`,`c`.`videos`,`c`.`firsturl`,`c`.`status`,`c`.`type`,`c`.`zan_num`,`c`.`guan_num`,`c`.`view_num`,`c`.`com_num`,`c`.`flag`,`c`.`stick`,`c`.`add_time` FROM `ysz_user_guan` `a` INNER JOIN `ysz_forum_thread` `c` ON `a`.`threadid`=`c`.`uid` WHERE  `dangid` = 59  AND `a`.`status` = 0  AND `c`.`status` = 1 LIMIT 0,10 [ RunTime:0.000000s ]
+[ error ] [8]未定义变量: dang[D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php:194]
+---------------------------------------------------------------
+[ 2018-09-12T17:45:33+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/detail/guandong
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/detail/guandong [运行时间：0.057004s][吞吐率：17.54req/s] [内存消耗：2,681.34kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'detail',
+    2 => 'guandong',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.019001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.014001s ]
+[ info ] [ RUN ] app\forum\home\Detail->guandong[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001001s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user_guan` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `c`.`id`,`c`.`uid`,`c`.`oid`,`c`.`vid`,`c`.`cid`,`c`.`sid`,`c`.`title`,`c`.`keyword`,`c`.`content`,`c`.`conimage`,`c`.`images`,`c`.`videos`,`c`.`firsturl`,`c`.`status`,`c`.`type`,`c`.`zan_num`,`c`.`guan_num`,`c`.`view_num`,`c`.`com_num`,`c`.`flag`,`c`.`stick`,`c`.`add_time` FROM `ysz_user_guan` `a` INNER JOIN `ysz_forum_thread` `c` ON `a`.`threadid`=`c`.`uid` WHERE  `dangid` = 59  AND `a`.`status` = 0  AND `c`.`status` = 1 LIMIT 0,10 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-09-12T17:46:31+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/detail/guandong
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/detail/guandong [运行时间：0.062004s][吞吐率：16.13req/s] [内存消耗：2,745.55kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'detail',
+    2 => 'guandong',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.016001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.016001s ]
+[ info ] [ RUN ] app\forum\home\Detail->guandong[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user_guan` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT `c`.`id`,`c`.`uid`,`c`.`oid`,`c`.`vid`,`c`.`cid`,`c`.`sid`,`c`.`title`,`c`.`keyword`,`c`.`content`,`c`.`conimage`,`c`.`images`,`c`.`videos`,`c`.`firsturl`,`c`.`status`,`c`.`type`,`c`.`zan_num`,`c`.`guan_num`,`c`.`view_num`,`c`.`com_num`,`c`.`flag`,`c`.`stick`,`c`.`add_time` FROM `ysz_user_guan` `a` INNER JOIN `ysz_forum_thread` `c` ON `a`.`threadid`=`c`.`uid` WHERE  `dangid` = 59  AND `a`.`status` = 0  AND `c`.`status` = 1 LIMIT 0,10 [ RunTime:0.000000s ]
+[ error ] [8]未定义变量: dang[D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php:195]
+---------------------------------------------------------------
+[ 2018-09-12T17:46:48+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/detail/guandong
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/detail/guandong [运行时间：0.074004s][吞吐率：13.51req/s] [内存消耗：2,684.60kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'detail',
+    2 => 'guandong',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.017001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.012001s ]
+[ info ] [ RUN ] app\forum\home\Detail->guandong[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user_guan` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `c`.`id`,`c`.`uid`,`c`.`oid`,`c`.`vid`,`c`.`cid`,`c`.`sid`,`c`.`title`,`c`.`keyword`,`c`.`content`,`c`.`conimage`,`c`.`images`,`c`.`videos`,`c`.`firsturl`,`c`.`status`,`c`.`type`,`c`.`zan_num`,`c`.`guan_num`,`c`.`view_num`,`c`.`com_num`,`c`.`flag`,`c`.`stick`,`c`.`add_time` FROM `ysz_user_guan` `a` INNER JOIN `ysz_forum_thread` `c` ON `a`.`threadid`=`c`.`uid` WHERE  `dangid` = 59  AND `a`.`status` = 0  AND `c`.`status` = 1 LIMIT 0,10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_forum_wenzan` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 297  AND `userid` = 59 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 298  AND `userid` = 59 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 329  AND `userid` = 59 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 336  AND `userid` = 59 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 340  AND `userid` = 59 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 341  AND `userid` = 59 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 344  AND `userid` = 59 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 345  AND `userid` = 59 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 361  AND `userid` = 59 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 363  AND `userid` = 59 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-09-12T17:46:56+08:00 ] 127.0.0.1 127.0.0.1 GET /yusuzhou/index.php/forum/detail/guandong
+[ info ] 127.0.0.1/yusuzhou/index.php/forum/detail/guandong [运行时间：0.073004s][吞吐率：13.70req/s] [内存消耗：2,684.66kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\yusuzhou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'forum',
+    1 => 'detail',
+    2 => 'guandong',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=nv7rfspld3sbsmh7kvh61mn154',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.017001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.011000s ]
+[ info ] [ RUN ] app\forum\home\Detail->guandong[ D:\phpStudy\WWW\yusuzhou\application\forum\home\Detail.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=yusuzhou_youacl;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_config` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `ysz_admin_config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_module` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `ysz_admin_module` WHERE  `config` <> '' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_hook` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `ysz_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_admin_hook_plugin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ysz_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_user_guan` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `c`.`id`,`c`.`uid`,`c`.`oid`,`c`.`vid`,`c`.`cid`,`c`.`sid`,`c`.`title`,`c`.`keyword`,`c`.`content`,`c`.`conimage`,`c`.`images`,`c`.`videos`,`c`.`firsturl`,`c`.`status`,`c`.`type`,`c`.`zan_num`,`c`.`guan_num`,`c`.`view_num`,`c`.`com_num`,`c`.`flag`,`c`.`stick`,`c`.`add_time` FROM `ysz_user_guan` `a` INNER JOIN `ysz_forum_thread` `c` ON `a`.`threadid`=`c`.`uid` WHERE  `dangid` = 59  AND `a`.`status` = 0  AND `c`.`status` = 1 LIMIT 0,10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ysz_forum_wenzan` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 297  AND `userid` = 59 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 298  AND `userid` = 59 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 329  AND `userid` = 59 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 336  AND `userid` = 59 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 340  AND `userid` = 59 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 341  AND `userid` = 59 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 344  AND `userid` = 59 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 345  AND `userid` = 59 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 361  AND `userid` = 59 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ysz_forum_wenzan` WHERE  `threadid` = 363  AND `userid` = 59 LIMIT 1 [ RunTime:0.000000s ]

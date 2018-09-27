@@ -1,0 +1,188 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:75:"/www/wwwroot/yusuzhou.youacloud.com/application/forum/view/user/thread.html";i:1511946988;}*/ ?>
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="black" name="apple-mobile-web-app-status-bar-style">
+        <meta content="telephone=no" name="format-detection">
+        <script language="javascript" src="__STATIC__/home/js/jquery.js"></script>
+        <style>
+            a, a:visited {
+                text-decoration: none;    cursor: auto; }
+            #container{
+                margin-bottom:50px;
+            }
+        </style>
+    </head>
+    <body>
+        <title>我的帖子</title>
+        <style type="text/css">
+            body,html{height:100%;overflow:hidden;}
+            body {margin:0px;background:#efefef; -moz-appearance:none; -webkit-appearance: none;}
+            .order_topbar {height:44px; width:100%; background:#fff; border-bottom:1px solid #e3e3e3;}
+            .order_topbar .nav {height:44px; width:20%; line-height:44px; text-align:center; font-size:14px; float:left; color:#666;}
+            .order_topbar .on {height:42px; color:#ff771b; border-bottom:2px solid #ff771b;}
+            .order_noinfo {height:20px; width:150px; background:url(img/order_img1.png) top center no-repeat; margin:50px auto 0px; padding-top:100px; line-height:20px; font-size:14px; text-align:center; color:#c9c9c9;}
+            .order_main {height:auto; position:relative;width:94%; background:#fff; padding:0px 3%; margin-top:6px; border-bottom:1px solid #e2e2e2; border-top:1px solid #e2e2e2;}
+            .order_main .title {height:42px; width:100%; border-bottom:1px solid #e2e2e2; font-size:14px; line-height:42px; color:#666;}
+            .order_main .title span {height:42px; width:auto; float:right; color:#ff771b;}
+
+
+            .order_main .good {height:50px; width:100%; padding:10px 0px; border-bottom:1px solid #eaeaea;}
+            .order_main .good .img {height:50px; width:50px; float:left;}
+            .order_main .good  .img img {height:100%; width:100%;}
+            .order_main .good  .info {width:100%;float:left; margin-left:-50px;margin-right:-60px;}
+            .order_main .good .info .inner { margin-left:60px;margin-right:60px; }
+            .order_main .good .info .inner .name {height:32px; width:100%; float:left; font-size:12px; color:#555;overflow:hidden;}
+            .order_main .good .info .inner .option {height:18px; width:40px; position:absolute;right:0;top:30px; font-size:12px; color:#888;overflow:hidden;word-break: break-all}
+            .order_main .good span { color:#666;}
+            .order_main .good  .price { float:right;width:60px;;height:54px;margin-left:-60px;;}
+            .order_main .good  .price .pnum { height:20px;width:100%;text-align:right;font-size:14px; }
+            .order_main .good  .price .num { height:20px;width:100%;text-align:right;}
+            .order_main .info1 {height:42px; width:100%; border-bottom:1px solid #e2e2e2; font-size:14px; color:#999; line-height:42px; text-align:right;}
+            .order_main .info1 span {color:#666;}
+
+            .order_main .sub {height:50px; width:100%;}
+            .order_main .sub1 {height:30px; width:auto; padding:0px 10px; border:1px solid #ff771b; float:right; border-radius:5px; line-height:30px; font-size:14px; margin:10px 5px 10px 0px; color:#fff; background:#ff771b;}
+            .order_main .sub2 {height:30px; width:auto; padding:0px 10px; border:1px solid #5f6e8b; float:right; border-radius:5px; line-height:30px; font-size:14px; margin:10px 5px 10px 0px; color:#5f6e8b;}
+            select { width:80px;height:30px;position:absolute;left:0; filter:alpha(Opacity=0); opacity: 0;-webkit-appearance: none;background:#fff; -webkit-tap-highlight-color: transparent };
+            .order_no {height:40px; width:100%;  padding-top:180px; margin:50px 0px;}
+
+            .order_no {height:100px; width:100%; margin:50px 0px 60px; color:#ccc; font-size:12px; text-align:center;}
+            .order_no_menu {height:40px; width:100%; text-align:center;}
+            .order_no_nav {height:38px;padding:10px; width:100px; background:#eee; border:1px solid #d4d4d4; border-radius:5px; text-align:center; line-height:38px; color:#666;}
+            #order_loading { width:94%;padding:10px;color:#666;text-align: center;}
+            .login{
+                width: 80%;
+                margin: 200px auto;
+                height: 45px;
+                line-height: 45px;
+                border-radius: 5px;
+                background: #ef5555;
+                color: #fff;
+                text-align: center;
+            }
+        </style>
+        <div id='container' style="margin:0;height:100%;overflow:auto;">
+            <div id='order_container' >
+
+            <?php if(!$thread): ?>
+            <div class="order_no"><i class="fa fa-file-text-o" style="font-size:100px;"></i><br><span style="line-height:18px; font-size:16px;" </span>您还没有帖子<br></div>
+            <?php else: if(is_array($thread) || $thread instanceof \think\Collection || $thread instanceof \think\Paginator): $i = 0; $__LIST__ = $thread;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+            <div class="order_main" data-id="<?php echo $v['id']; ?>">
+                <div class="good" >
+                    <div class="img"><img src="<?php echo $v['images']; ?>"/></div>
+                    <div class="info">
+                        <div class='inner'>
+                            <div class="name"><?php echo $v['title']; ?></div>     
+                            <div class='option'>删除</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php endforeach; endif; else: echo "" ;endif; endif; ?>
+            <div class="login" style="display:none">
+                点击登录
+            </div>
+        </div>
+
+        </div>
+        <script type="text/javascript" src="__STATIC__/home/js/api.js?121"></script>
+        <script>
+          apiready = function () {
+                   var user = decodeURIComponent($api.getCookie('userLogin'));
+                    user = user ? JSON.parse(user) : {};
+                    if( !user.id ){
+                        $(".login").show();
+                        $(".order_no").hide();
+                    }
+                    $(".login").click(function(){
+                        $api.openLogin();
+                    });
+            	}
+               
+            $(function(){
+                  $(".option").click(function(){
+                      var p = $(this).parents('.order_main');
+                      var id = p.attr('data-id');
+                       $.ajax({
+                            url: "<?php echo url('del'); ?>",
+                            type: "get",
+                            data: {id},
+                            dataType:'json',
+                            success: function (res) {
+                                if(res.status == 1){
+                                    alert('操作成功');
+                                    p.remove();
+                                }else{
+                                    alert('网络错误');
+                                }
+                            }
+                        });
+                  });
+                  
+                  var page_count = <?php echo $page_count; ?>;
+                  load_data('#order_container',page_count,{page_count},'<?php echo url(); ?>',{body_main:'#order_container',doc_main:'#container'});
+                 function load_data( item_main,iMaxPage,datas,data_url,doc_main,before,after ){
+                        var page_main = doc_main || {doc_main:document,body_main:document};
+                        var view_height = $(window).height();
+                        var iNowPage = 1;
+                        var onOff = true;
+                        var time = null;
+                        var loading_item = null;
+
+                        $(document).bind('touchmove',move);
+                        $(window).bind('resize',function (){
+                            view_height = $(window).height();
+                        });
+
+                        function move(ev){
+                            var ev = ev || window.event;
+                            var aTouch = ev.changedTouches;
+                            var scr_top = $(page_main.doc_main).scrollTop();
+
+                            if( onOff && iNowPage < iMaxPage && scr_top + view_height > $(page_main.body_main).height() - 50){
+                                ajax_post();
+                                onOff = false;
+                                before && before();
+                            }else{
+                                var prevScrollTop = scr_top;
+                                clearInterval(time);
+                                time = setInterval(function (){
+                                    var thisScrollTop = $(page_main.doc_main).scrollTop();
+                                    if(thisScrollTop==prevScrollTop){
+                                        clearInterval(time);
+                                    }
+                                    prevScrollTop = $(page_main.doc_main).scrollTop();
+                                },200);
+                            }
+                        }
+
+                        function ajax_post(){
+                            if(!data_url)return;
+                            $.ajax({
+                                type:'post',
+                                url:data_url,
+                                data:$.extend(datas,{start:iNowPage*10}),
+                                success:function ( data ){
+                                    if( !data ){
+                                        onOff = false;
+                                    }else{
+                                        iNowPage++;
+                                        onOff = true;
+                                        after && after();
+                                        $(item_main).append(data);
+                                    }
+                                }
+                            });
+                        }
+                    }
+            })    
+            
+             
+          	
+        </script>
+    </body>
+</html>

@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="__STATIC__/home/css/api.css"/>
+  <link rel="stylesheet" type="text/css" href="__STATIC__/home/css/aui.css"/>
+  <title>视频详情</title>
+  <style media="screen">
+    * {
+      margin: 0; padding: 0;
+    }
+
+    body,html{
+      width: 100%;
+      height: 100%;
+    }
+
+    #container {
+      overflow: hidden;
+      background: #edeae8;
+      position: relative;
+    }
+    video {
+      position: absolute;
+      /* Vertical and Horizontal center*/
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    /*视频上面*/
+    .mask{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    /*视频播放暂停按钮*/
+    .video-play {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100
+    }
+    .videoPlay {
+        width: 50px!important;
+        height: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        z-index: 0;
+    }
+    /*视频头部*/
+    .video_top{
+      display: flex;
+      display: -webkit-flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 101;
+    }
+    .aui-card-list{
+      /*width: 8.5rem;*/
+      border-radius: 2rem;
+    }
+    .aui-card-list-header{
+      padding: 0.2rem 0.2rem 0.2rem 0.2rem!important;
+    }
+    .aui-card-list{
+      margin-bottom: 0!important;
+    }
+    .aui-card-list{
+      background-color: rgba(0,0,0,0.5);
+    }
+    .aui-card-list-user-name{
+      color: #fff!important;
+      margin-right: 0.4rem;
+      font-size: 0.6rem;
+    }
+    .aui-card-list-user-name span{
+      padding-left: 10px;
+      padding-right: 10px;
+      box-sizing: border-box;
+      border-radius: 2em;
+      font-size: 0.6rem;
+      margin-top: -0.1625rem;
+      position: relative;
+      z-index: 101;
+      /*margin-left: 15px;*/
+    }
+    .aui-card-list-user-info{
+    	/*position: relative;
+    	display: flex;
+    	display: -webkit-flex;
+    	justify-content: space-between;
+    	align-items: center;*/
+      color: #fff!important;
+      background: url(__STATIC__/home/image/icon_yan.png) 0 0.5rem no-repeat;
+      background-size: 0.5rem 0.3rem;
+      padding-left: 0.6rem;
+      padding-top: 0.2rem;
+      box-sizing: border-box;
+    }
+    .aui-video-name{
+      /*width: 3rem;*/
+      /*overflow: hidden;*/
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .aui-video-time{
+      /*margin-right: 0.5rem;*/
+    }
+    .video_top_right{
+      height: 2.5rem;
+      border-radius: 2em;
+    }
+    .video_top_right{
+      display: flex;
+      display: -webkit-flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .video_right{
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      color: #fff;
+      line-height: 30px;
+      text-align: center;
+      position: relative;
+      z-index: 101;
+    }
+    .video_share{
+      margin-right: 20px;
+      background: url('__STATIC__/home/image/video_share.png') 6px 6px no-repeat;
+      background-size: 18px;
+      background-color: rgba(0,0,0,0.5);
+    }
+    .video_close{
+      background: url('__STATIC__/home/image/video_close.png') 5px 5px no-repeat;
+      background-size: 20px;
+      background-color: rgba(0,0,0,0.5);
+    }
+    /*视频内容*/
+    .video_title{
+      width: 80%;
+      color: #fff;
+      position: absolute;;
+      left: 10px;
+      bottom: 60px;
+      z-index: 101;
+      font-size: 0.6rem;
+      line-height: 20px;
+    }
+    /*底部*/
+    .video_bottom{
+      /*此标签惊呆了*/
+      width: calc(100% - 20px);
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      z-index: 101;
+      box-sizing: border-box;
+      display: flex;
+      display: -webkit-flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .video_comment-left{
+      width: 50%;
+      height: 30px;
+      background-color: rgba(0,0,0,0.5);
+      border-radius: 2em;
+      color: #999;
+      line-height: 30px;
+      padding-left: 15px;
+      font-size: 0.6rem;
+    }
+    .video_comment-right{
+      height: 30px;
+      display: flex;
+      display: -webkit-flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .video_pinglun{
+      margin-right: 20px;
+      background: url('__STATIC__/home/image/video_pinglun.png') 7px 2px no-repeat;
+      background-size: 16px;
+      background-color: rgba(0,0,0,0.5);
+      font-size: 0.375rem;
+      line-height: 45px;
+    }
+    .video_nozan{
+      background: url('__STATIC__/home/image/video_zan.png') 6px 0 no-repeat;
+      background-size: 18px;
+      background-color: rgba(0,0,0,0.5);
+      font-size: 0.375rem;
+      line-height: 45px;
+    }
+    .video_zan{
+    	background: url('__STATIC__/home/image/video_zan_red.png') 6px 0 no-repeat;
+      background-size: 18px;
+      background-color: rgba(0,0,0,0.5);
+      font-size: 0.375rem;
+      line-height: 45px;
+    }
+    .aui-follow{
+    	visibility: hidden;
+    }
+    .follow_no{
+    	background: #fff;
+    	color: red;
+    	border: none;
+    }
+    .follw_person{
+    	background: rgba(0,0,0,0.5);
+    	color: #fff;
+    	border: 1px #fff solid;
+    }
+    .aui-img-round{
+    	width: 2rem;
+   		height: 2rem;
+   		border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="video_detail">
+    <div class="mask">
+      <div class="video_top">
+        <div class="aui-card-list">
+            <div class="aui-card-list-header aui-card-list-user">
+                <div class="aui-card-list-user-avatar">
+                    <img src="{$thread.headimg}" class="aui-img-round" />
+                </div>
+                <div class="aui-card-list-user-name">
+                    <div class="aui-video-name">
+                    	{$thread.name}
+	                    {if condition="$guan eq 0"}
+                          <span style="margin-left: 15px;" class="aui-follow follow_no">关注</span>
+                      {elseif condition="$guan eq 1"}
+                          <span style="margin-left: 15px;" class="aui-follow follw_person">已关注</span>
+                      {/if}
+                    </div>
+                </div>
+                <div class="aui-card-list-user-name">
+                    <div class="aui-video-name aui-card-list-user-info">
+                    			{$thread.view_num}
+                          <span style="padding-right: 50px;" class="aui-video-time"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="video_top_right">
+          <div class="video_right video_share"></div>
+          <div class="video_right video_close"></div>
+        </div>
+      </div>
+      <div class="video_title">{$thread.title}</div>
+      <div class="video_bottom">
+        <div class="video_comment-left">写评论</div>
+        <div class="video_comment-right">
+          <div class="video_right video_pinglun">{$thread.com_num}</div>
+          <!--没有赞的状态-->
+          <div class="video_right video_zans video_nozan">{$thread.zan_num}</div>
+          <!--赞的状态-->
+          <!--<div class="video_right video_zans video_zan">{$thread.zan_num}</div>-->
+        </div>
+      </div>
+    </div>
+    <div id="container">
+			<video id="video_good" autoplay="autoplay" poster="{$thread.firsturl}">
+        <source src="{$thread.videos}" x-webkit-airplay="true" webkit-airplay="true" webkit-playsinline="true" playsinline="true"  type="video/mp4">
+      </video> 
+      <div class="video-play"><img style="display: none;" class="videoPlay" src="__STATIC__/home/image/videoPlays.png" alt=""></div>
+    </div>
+  </div>
+<script type="text/javascript" src="__STATIC__/home/js/api.js"></script>
+<script type="text/javascript" src="__STATIC__/home/js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript">
+	var zShare = {};
+  apiready = function() {
+//  var user = decodeURIComponent($api.getCookie('userLogin'));
+//  user = user ? JSON.parse(user) : {};
+		user = api.getPrefs({sync: true,key: 'userLogin'});
+		var u = navigator.userAgent, app = navigator.appVersion;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+    var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    if (isAndroid) {
+        user = JSON.parse(user);
+    }
+    if (isIOS) {
+    	if(user.indexOf('str-') === 0){
+    		user = user.slice(4);
+    	}
+        user = JSON.parse(user);
+    }
+    //是否是自己的视频
+    var lid = user.data.id;
+    var uid = {$thread.uid};
+    if(lid == uid){
+    	$(".aui-follow").css('visibility','hidden');
+    }else{
+    	$(".aui-follow").css('visibility','visible');
+    }
+    //时间转换
+    var time = {$thread.add_time};
+    var nowtime = (new Date).getTime();
+    var t = comptime(time,nowtime);
+    $(".aui-video-time").html(t);
+    function comptime(beginTime,endTime){ 
+		    var secondNum = parseInt((endTime-beginTime*1000)/1000);//计算时间戳差值   
+		 	if(secondNum>=0 && secondNum<30){
+		 		return '刚刚';
+		 	}
+		    if(secondNum>=0&&secondNum<60){
+		        return secondNum+'秒前';
+		    }
+		    else if (secondNum>=60&&secondNum<3600){
+		        var nTime=parseInt(secondNum/60);
+		        return nTime+'分钟前';
+		    } 
+		    else if (secondNum>=3600&&secondNum<3600*24){ 
+		        var nTime=parseInt(secondNum/3600);
+		        return nTime+'小时前';
+		    }
+		    else if(secondNum >= 3600*24 && secondNum < 3600*24*7){
+		        var nTime = parseInt(secondNum/86400);
+		        return nTime+'天前';
+		    } else{
+		    	return	to_date(beginTime);
+		    }
+		}
+		function to_date(phpstr){  
+	        str = parseInt(phpstr)*1000;//将php时间戳转化为整形并乘以1000  
+	        var newDate = new Date(str);  
+	        var year = newDate.getUTCFullYear();//取年份  
+	        var month = newDate.getUTCMonth()+1;//取月份  
+	        var nowday = newDate.getUTCDate();//取天数  
+	        var hours = newDate.getHours();//取小时  
+	        var minutes = newDate.getMinutes();//取分钟  
+	        var seconds = newDate.getSeconds();//取秒  
+	        if (month >= 1 && month <= 9) {
+                month = "0" + month;
+          }
+	        return year+"."+month+"."+nowday;//拼接 2017-2-21 12:23:43  
+	   }  
+    //写评论
+    $(".video_comment-left").on('click',function(){
+      if( user.data.id ){
+        api.openWin({
+			    name: 'thread_comment',
+			    url: 'widget://html/thread/thread_video_comment.html',
+	        pageParam: {
+				    id: {$thread.id},
+				    pl: 0
+				  },
+	        animation: {
+	          type: 'movein',
+	          subType: 'from_bottom',
+	          duration: 300
+	        }
+				});
+    	}else{
+      	$api.openLogin()
+    	}
+    })
+    // 评论区
+    $(".video_pinglun").on('click',function(){
+      if( user.data.id ){
+	      api.openFrame({
+	        name: 'thread_comment',
+	        url: 'widget://html/video_comment.html',
+	        rect: {
+	            x: 0,
+	            y: api.winHeight/2 - 100,
+	            w: 'auto',
+	            h: 'auto'
+	        },
+	        pageParam: {
+				    id: {$thread.id},
+				    pl: 1
+				  },
+	        animation: {
+	          type: 'movein',
+	          subType: 'from_bottom',
+	          duration: 300
+	        }
+	      });
+	    }else{
+	    	$api.openLogin()
+	    }
+    })
+    //关注
+    $(".aui-follow").on('click',function(){
+    	if( user.code != 1 ){
+				return $api.openLogin();
+			}
+    	if($(".aui-follow").hasClass('follow_no')){
+    		$.ajax({
+        	type: 'post',
+        	dataType: 'json',
+        	url: 'http://yusuzhou.youacloud.com/index.php/forum/detail/guan',
+        	data: {
+        		uid: user.data.id,
+        		tid: {$thread.uid},
+        		status: 0
+        	},
+        	success: function(data){
+        		$(".aui-follow").removeClass('follow_no').addClass('follw_person');
+		        $(".aui-follow").html('已关注');
+		        api.sendEvent({
+		        	name: 'updata'
+		        })
+			    }
+       })
+    	}else{
+        $.ajax({
+        	type: 'post',
+        	dataType: 'json',
+        	url: 'http://yusuzhou.youacloud.com/index.php/forum/detail/quxiao',
+        	data: {
+        		uid: user.data.id,
+        		tid: {$thread.uid},
+        		status: 1
+        	},
+        	success: function(data){
+		        $(".aui-follow").html('关注');
+		        $(".aui-follow").removeClass('follw_person').addClass('follow_no');
+		        api.sendEvent({
+		        	name: 'updata'
+		        })
+			    }
+        })
+    	}
+    })
+    // 赞
+    $(".video_zans").on('click',function(){
+      if($(".video_zans").hasClass('video_nozan')){
+      	//赞了赞了
+        $.ajax({
+        	type: 'post',
+        	dataType: 'json',
+        	url: 'http://yusuzhou.youacloud.com/index.php/forum/detail/dianzan',
+        	data: {
+        		userid: user.data.id,
+        		threadid: {$thread.id},
+        		status: 0
+        	},
+        	success: function(data){
+        		$(".video_zans").html(data.data.zan_num);
+        		$(".video_zans").removeClass('video_nozan').addClass('video_zan');
+			    }
+       })
+      }else{
+        //取消赞
+				$.ajax({
+        	type: 'post',
+        	dataType: 'json',
+        	url: 'http://yusuzhou.youacloud.com/index.php/forum/detail/quzan',
+        	data: {
+        		userid: user.data.id,
+        		threadid: {$thread.id},
+        		status: 1
+        	},
+        	success: function(data){
+        		$(".video_zans").html(data.data.zan_num);
+        		$(".video_zans").removeClass('video_zan').addClass('video_nozan');
+			    }
+       })
+        
+      }
+    })
+    //分享
+  	$(".video_share").on('click',function(){
+  		var MNActionButton = api.require('MNActionButton');
+      MNActionButton.open({
+	      layout: {
+	            row: 1,
+	            col: 4,
+	            rowSpacing: 30,
+	            colSpacing: 30,
+	            offset: 0
+	        },
+	        animation: false,
+	        autoHide: true,
+	        styles: {
+	            maskBg: 'rgba(0,0,0,0.5)',
+	            bg: '#fff',
+	            cancelButton: {
+	                size: 0,
+	                bg: '#fff',
+	                icon: 'widget://image/cancel.png'
+	            },
+	            item: {
+	                titleColor: '#888',
+	                titleHighlight: 'dd2727',
+	                titleSize: 12
+	            },
+	            indicator: {
+	                color: '#c4c4c4',
+	                highlight: '#9e9e9e'
+	            }
+	        },
+          items: [{
+              icon: 'widget://image/weixin.png',
+              title: '微信好友'
+          }, {
+              icon: 'widget://image/pengyouquan.png',
+              title: '朋友圈'
+          }, {
+              icon: 'widget://image/qq.png',
+              title: 'QQ'
+          }, {
+              icon: 'widget://image/weibo.png',
+              title: '微博'
+          }]
+      }, function(ret) {
+          if (ret) {
+          	var test = window.location.href;
+      		if(ret.index == 0){
+      			zShare.wxNews('session','{$thread.name}','{$thread.title}',''+test,'{$thread.headimg}');
+      		}else if(ret.index == 1){
+        		zShare.wxNews('timeline','{$thread.name}','{$thread.title}',''+test,'{$thread.headimg}');
+        	}else if(ret.index == 2){
+        		zShare.qqNews('QFriend','{$thread.name}','{$thread.title}',''+test,'{$thread.headimg}');
+        	}else if(ret.index == 3){
+        		zShare.weiboNews('sinaWb','{$thread.name}','{$thread.title}',''+test,'{$thread.headimg}');
+        	}
+        }
+      });
+    });
+    //关闭
+    $(".video_close").on('click',function(){
+      api.closeWin();
+    })
+    // 视频点击播放暂停功能
+    $(".video-play").on('click', function() {
+    		api.closeFrame({
+            name: 'thread_comment'
+        });
+        if ($("#video_good").get(0).paused) {
+            $("#video_good").get(0).play();
+            $(".videoPlay").css("display", "none");
+        } else {
+            $("#video_good").get(0).pause();
+            $(".videoPlay").css("display", "block");
+        }
+    })
+    // 视频播放完毕重新加载
+    $('#video_good').bind('error ended', function() {
+        $(".videoPlay").css("display", "block");
+        // $('#video_good').load();
+    });
+    //监听评论1事件
+    api.addEventListener({
+    	name: 'video_comment1'
+    },function(ret,err){
+    	var plNum = parseInt($('.video_pinglun').text()) + 1;
+			$('.video_pinglun').text(plNum);
+    })
+    //弹出评论成功
+    api.addEventListener({
+		    name: 'video_comment0'
+		}, function(ret, err) {
+			if(ret){
+				var plNum = parseInt($('.video_pinglun').text()) + 1;
+				$('.video_pinglun').text(plNum);
+			  api.toast({
+				    msg: '评论成功',
+				    location: 'bottom',
+				    duration: 2000,
+				});
+			}
+		});
+  }
+	videoAll();
+  function videoAll(){
+    var video = document.querySelector('video')
+    var container = document.querySelector('#container');
+    var height = document.documentElement.clientHeight | document.body.clientHeight;
+    container.style.height = height + 'px';
+    var setVideoDimensions = function () {
+    // 获取视频本身的宽度和高度
+    var w = video.videoWidth
+    var h = video.videoHeight;
+
+    // 获取视频的比例
+    var videoRatio = (w / h).toFixed(2);
+
+    // 获取容器的宽和高
+    var containerStyles = window.getComputedStyle(container)
+    var minW = parseInt( containerStyles.getPropertyValue('width') )
+    var minH = parseInt( containerStyles.getPropertyValue('height') );
+
+    //计算和调整容器比例
+    var widthRatio = minW / w
+    var heightRatio = minH / h;
+
+    //根据比例做调整
+    if (widthRatio > heightRatio) {
+      var newWidth = minW;
+      var newHeight = Math.ceil( newWidth / videoRatio );
+    }
+    else {
+      var newHeight = minH;
+      var newWidth = Math.ceil( newHeight * videoRatio );
+    }
+
+    video.style.width = newWidth + 'px';
+    video.style.height = newHeight + 'px';
+    };
+    video.addEventListener('loadedmetadata', setVideoDimensions, false);
+    window.addEventListener('resize', setVideoDimensions, false);
+  }
+  	//分享
+		//微信  朋友圈
+		zShare.wxNews = function(tar, title, text, url, img) {
+        filename = (new Date()).valueOf() + '.' + zShare.ext(img);
+        api.download({
+            url: img,
+            savePath: 'fs://' + filename,
+            report: false,
+            cache: true,
+            allowResume: true
+        }, function(ret, err) {
+            var wx = api.require('wx');
+            wx.isInstalled(function(ret) {
+                if (ret.installed) {
+                    api.toast({
+                        msg: '分享中，请稍候',
+                        duration: 2000,
+                        location: "middle"
+                    });
+                } else {
+                    api.toast({
+                        msg: '没有安装微信，无法进行分享',
+                        duration: 2000,
+                        location: "middle"
+                    });
+                }
+            });
+            wx.shareWebpage({
+                apiKey: '',
+                scene: tar,
+                title: title,
+                description: text,
+                thumb: 'fs://' + filename,
+                contentUrl: url
+            }, function(ret, err) {
+                if (ret.status) {
+                    api.toast({
+                        msg: '分享成功',
+                        duration: 2000,
+                        location: "middle"
+                    });
+                }
+            });
+        });
+	    }
+		//QQ好友
+		zShare.qqNews = function(tar,title,text,url,img){
+	    var qq = api.require('qq');
+	    qq.installed(function(ret){
+	        if(ret.status) {
+	            api.toast({msg:'分享中，请稍候',duration:2000,location:"middle"});
+	        } else {
+	            api.toast({msg:'没有安装QQ，无法进行分享',duration:2000,location:"middle"});
+	        }
+	    });
+	    qq.shareNews({
+	        url: url,
+	        title: title,
+	        description: text,
+	        imgUrl: img,
+	        type: tar
+	    },function(ret,err){
+	        if (ret.status){
+	            api.toast({msg: '分享成功',duration:2000, location: "botoom"});
+	        }
+	    });
+		}
+		//微博
+		zShare.weiboNews = function(tar,title,text,url,img){
+	    filename = (new Date()).valueOf()+'.'+zShare.ext(img);
+	    api.download({
+	        url: img,
+	        savePath: 'fs://'+filename,
+	        report: false,
+	        cache: true,
+	        allowResume: true
+	    }, function(ret, err) {
+	        var weibo = api.require('weibo');
+	        weibo.shareImage({
+	            text: title+text+url,
+	            imageUrl: 'fs://'+filename
+	        }, function(ret, err) {
+	            if (ret.status) {
+	                api.toast({msg:'分享成功',duration:2000,location:"middle"});
+	            }
+	        });
+	    });
+		}
+		zShare.ext = function(fileName) {
+	  	return fileName.substring(fileName.lastIndexOf('.') + 1);
+		}
+</script>
+</body>
+</html>

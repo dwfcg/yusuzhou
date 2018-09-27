@@ -1,0 +1,13 @@
+{volist name="$thread" id="v"}
+<div class="order_main" data-id="{$v['id']}">
+    <div class="good" >
+        <div class="img"><img src="{$v['images']}"/></div>
+        <div class="info">
+            <div class='inner'>
+                <div class="name">{$v['title']}</div>     
+                <div class='option'>删除</div>
+            </div>
+        </div>
+    </div>
+</div>
+{/volist}

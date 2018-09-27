@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta charset="utf-8">
+		<meta name="format-detection" content="telephone=no" />
+		<link rel="stylesheet" href="{$UrlPath}/css/style1.css" />
+		<script type="text/javascript" src="{$UrlPath}/js/jquery-2.1.0.js"></script>
+
+		<!-- Swiper CSS -->
+		<link rel="stylesheet" href="{$UrlPath}/css/swiper-3.4.1.min.css" />
+		<!-- Swiper JS -->
+		<script src="{$UrlPath}/js/swiper-3.4.1.jquery.min.js"></script>
+
+		<title>{$config['title']}</title>
+		<script type="text/javascript">
+			var user_info = {
+				"openid": "ortmCw2iSqvLvqgn3-jWOLcCHiUA",
+				"uid": "2730",
+				"nickname": "rain",
+				"headimgurl": "http:\/\/wx.qlogo.cn\/mmopen\/qYKGJ56YbNA3ibQO5nC0ITJv496CRORxPBcEDKO8UTSo8Z1OicQ2gW7rrOLqJfNk8xhS1hvPTdOwqfGlNbbIClWHtgnmdRRYJK\/0",
+				"uniacid": 16
+			};
+			//var data_setting=;
+			//var isactive_end=;
+			//var isactive_begin=;
+			var down_url = '';
+			var sub_pages = 0;
+			var discuss_pages = 0;
+			//var reward_url='';
+			var data_overurl = "./index.php?i=16&c=entry&do=chat_over&m=dg_welive";
+			//var begin_time=0;
+			var current_ppt_id = 0;
+
+			//var is_refresh=;
+		</script>
+		<script type="text/javascript" src="{$UrlPath}/js/live_main.js"></script>
+	</head>
+
+	<body>
+		<div class="main-home">
+			<!--silder start-->
+			{if $banner[0][0]}
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					{loop $banner $v}
+					<div class="swiper-slide">
+						<a href="{$v[1]}"><img src="{$v[0]}" width="100%"></a>
+					</div>
+					{/loop}
+				</div>
+				<!-- Add Pagination -->
+				<div class="swiper-pagination"></div>
+			</div>
+			{/if}
+			<script>
+				var swiper = new Swiper('.swiper-container', {
+					pagination: '.swiper-pagination',
+					autoplay: 3000,
+					speed: 400,
+					autoplayDisableOnInteraction: false,
+				});
+			</script>
+			<!--silder end-->
+
+			<div class="tHome clearfix">
+				{if $zzzb}
+				<div class="tit">{lang qidou_video_live:zzjxdzb}</div>
+				<ul class="clearfix living">
+					{loop $zzzb $v}
+					<li>
+						<a href="{$_G['siteurl']}plugin.php?id=qidou_video_live&act=live&lid={$v['id']}">
+							<div class="imgBox" style="background-image:url({$v['listpic']});">
+								<div class="state"><i>{lang qidou_video_live:zheng}</i><i>{lang qidou_video_live:zai}</i><i>{lang qidou_video_live:zhi}</i><i>{lang qidou_video_live:bo}</i></div>
+								<div class="info">
+									{if $v['code']}<span class="pr">{lang qidou_video_live:jiami}</span>{elseif $v['jifen']}<span class="pr">{lang qidou_video_live:jifen}</span>{else}<span class="pr">{lang qidou_video_live:mianfei}</span>{/if}
+									<span>{$v['partake']}{lang qidou_video_live:rzzcj}</span>
+								</div>
+							</div>
+							<p class="f16">{$v['title']}</p>
+						</a>
+					</li>
+					{/loop}
+				</ul>
+				{/if}
+				{if $lszb}
+				<div class="tit">{lang qidou_video_live:lszb}</div>
+				<ul class="clearfix">
+					{loop $lszb $v}
+					<li>
+						<a href="{$_G['siteurl']}plugin.php?id=qidou_video_live&act=live&lid={$v['id']}">
+							<div class="imgBox" style="background-image:url({$v['listpic']});">
+								<div class="info">
+									<p class="f16">{$v['title']}</p>
+									{if $v['code']}<span class="pr">{lang qidou_video_live:jiami}</span>{elseif $v['jifen']}<span class="pr">{lang qidou_video_live:jifen}</span>{else}<span class="pr">{lang qidou_video_live:mianfei}</span>{/if}
+									<span>{$v['partake']}{lang qidou_video_live:rzzcj}</span>
+								</div>
+							</div>
+						</a>
+					</li>
+					{/loop}
+				</ul>
+				{/if}
+			</div>
+		</div>
+		<!--支付弹出层 start-->
+		<div class="floatBox popupPay" style="display: none;" id="paydiv">
+			<div class="mid box">
+				<div class="close fr"></div>
+				<div class="info tc">
+					<p class="mb10 f16">您需要支付以下金额<br>才能观看直播</p>
+					<span id="payspan"></span>
+				</div>
+				<button class="f18" onclick="gopay()">立即支付</button>
+			</div>
+		</div>
+		<!--支付弹出层 end-->
+
+		<!--输入密码   start-->
+		<div class="floatBox popupPay" style="display:none;" id="keydiv">
+			<div class="mid box">
+				<div class="close fr"></div>
+				<div class="info tc">
+					<p class="mb10 f16">该直播为私密直播<br>您需要输入密码才能观看</p>
+				</div>
+				<div class="recharge mt20">
+					<input id="keyspan" type="password" placeholder="******" value="" class="inputStyle">
+				</div>
+				<button class="f18" onclick="gokey()">确定</button>
+			</div>
+		</div>
+		<!--输入密码 end-->
+		<div class="textTip" style="display:none;">
+			<p></p>
+		</div>
+	</body>
+
+	<script>
+		$(".popupPay .close").click(function() {
+			$(this).closest(".popupPay").hide();
+		})
+		var pmoney = 0;
+		var active_id = 0;
+		var jumpurl = "./index.php?i=16&c=entry&do=live_index&m=dg_welive";
+		var is_vod = 0;
+		var vod_id = 0;
+
+		function goset(id, op, money, isvod, vodid) {
+			active_id = id;
+			is_vod = isvod;
+			vod_id = vodid;
+			if(op == "pay") {
+				location.href = "./index.php?i=16&c=entry&do=live_detail&m=dg_welive&active_id=" + active_id;
+			} else {
+				$("#keydiv").show();
+			}
+			/**
+			$("#"+op+"div").show();
+			if(op=="pay"){
+				pmoney=money;
+				$("#payspan").text("¥ "+money);
+			}*/
+		}
+
+		function gokey() {
+			var key = $("#keyspan").val();
+			if(key == "") {
+				showTips("请输入密码", 1000);
+				$("#keyspan").focus();
+				return;
+			}
+			$.getJSON(location.href, {
+				active_id: active_id,
+				op: "key",
+				key: key,
+				is_vod: is_vod,
+				vod_id: vod_id
+			}, function(result) {
+				if(result.success == 1) {
+					if(result.is_vod == 0) {
+						location.href = "./index.php?i=16&c=entry&do=live_index&m=dg_welive&active_id=" + result.active_id;
+					} else {
+						location.href = "./index.php?i=16&c=entry&do=live_index&m=dg_welive&vod_id=" + result.vod_id + "&active_id=" + result.active_id;
+					}
+				} else {
+					showTips("密码错误，无法进入", 1000);
+				}
+			});
+		}
+	</script>
+
+</html>
