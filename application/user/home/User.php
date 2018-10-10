@@ -327,4 +327,107 @@ class User extends Common
                ->select();
        show_api($data);
     }
+//    申请闲置
+
+    /**
+     * user_id
+     * images
+     * name
+     * price
+     *commont
+     */
+    public function applyUnuse()
+    {
+        $data=input('post.');
+        if(Db::name('shop_unuse')->insert($data))
+        {
+            show_api();
+        }else
+        {
+            show_api('','','0');
+        }
+    }
+    /**
+     **用户闲置商品快递
+     * user_id
+     * express
+     * express_no
+     */
+    public function getExpress()
+    {
+        $data=input('post.');
+        $update=[
+            'express'=>$data['express'],
+            'express_no'=>$data['express_no'],
+            'status'=>3
+        ];
+        $where=['user_id'=>$data['user_id']];
+        $userdata=Db::name('shop_unuse')->where($where)->find();
+        if(!$userdata)
+        {
+            show_api('','',0);
+        }
+        Db::name('shop_unuse')->where($where)->update($update);
+        show_api();
+    }
+    /**
+     * 快递信息表
+     */
+    public function express(){
+        $address=Db::name('order_delivery')->select();
+//        dump($address);
+        $data=[];
+        foreach ($address as $k => $v)
+        {
+            $data[$k]=$address[$k]['name'];
+        }
+//        dump($data);
+        return show_api($data);
+    }
+
+    /**
+     * 获取全部用户闲置商品信息
+     */
+    public function getUnuse()
+    {
+        $data=input('post');
+        $info['goods']=Db::name('shop_unuse')->where('user_id',$data['user_id'])->select();
+        foreach ($info['goods'] as &$goods) {
+            $goods['images'] = array_filter(explode(',',$goods['images']));
+        }
+        return show_api($info);
+    }
+    /**
+     * 取消申请
+     * 闲置商品ID
+     * 用户user_ID
+     */
+    public  function del(){
+        $data=input('post');
+        $where=[
+            'user_id'=>$data['user_id'],
+            'id'=>$data['id']
+        ];
+        $unuseData=Db::name('shop_unuse')->where($where)->find();
+        if($unuseData['status']==0)
+        {
+            $unuseData=Db::name('shop_unuse')->where($where)->delete();
+            show_api();
+        }
+        show_api('','不能取消',0);
+
+    }
+    /**
+     * 获取用户单个闲置商品信息
+     * 闲置ID
+     */
+    public  function getUnusedata(){
+        $data=input('post');
+        $where=[
+            'id'=>$data['id']
+        ];
+        $goods=Db::name('shop_unuse')->where($where)->find();
+        $goods['images'] = array_filter(explode(',',$goods['images']));
+        return show_api($goods);
+    }
 }

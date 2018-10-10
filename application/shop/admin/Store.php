@@ -53,7 +53,7 @@ class Store extends Admin
                 ['images', '商品图片','img_url'],
                 ['name', '分类名称'],
                 ['price', '商品价格','link',url('edit',['id'=>'__id__'])],
-                ['status', '商品类型', 'status','',['已结缘','上架', '下架','定时发布','闲置商品']],
+                ['status', '商品类型', 'status','',['已结缘','上架', '下架','定时发布']],
                 ['right_button', '操作', 'btn']
             ])
             ->addTopButtons('delete')
@@ -83,7 +83,7 @@ class Store extends Admin
                 ['images', '商品图片','img_url'],
                 ['name', '分类名称'],
                 ['price', '商品价格','link',url('edit',['id'=>'__id__'])],
-                ['status', '商品类型', 'status','',['已结缘','上架', '下架','定时发布','闲置商品']],
+                ['status', '商品类型', 'status','',['已结缘','上架', '下架','定时发布']],
                 ['right_button', '操作', 'btn']
             ])
             ->addTopButtons('delete')
@@ -113,7 +113,7 @@ class Store extends Admin
                 ['images', '商品图片','img_url'],
                 ['name', '分类名称'],
                 ['price', '商品价格','link',url('edit',['id'=>'__id__'])],
-                ['status', '商品类型', 'status','',['已结缘','上架', '下架','定时发布','闲置商品']],
+                ['status', '商品类型', 'status','',['已结缘','上架', '下架','定时发布']],
                 ['right_button', '操作', 'btn']
             ])
             ->addTopButtons('delete')
@@ -123,36 +123,29 @@ class Store extends Admin
             ->setRowList($data_list)
             ->fetch();
     }
-    //上架
-    public function unuse(){
-        $map = $this->getMap();
-        $map['status'] = array('eq',4);
-        // $fied = Db::name('shop_category')->where('status',1)->column('id,name');
-        // $count = Db::name('shop_goods')->where('status',1)->count();
-        $data_list = Db::name('shop_goods')->alias('a')
-            ->join('shop_category b','a.cid = b.id')
-            ->where(['a.status'=>$map['status']])
-            ->field('a.*,b.name')
-            ->order('add_time desc')
-            ->paginate();
-        return ZBuilder::make('table')
-            ->addColumns([
-                // 批量添加数据列
-                ['id', 'ID'],
-                ['title', '商品标题','link',url('edit',['id'=>'__id__'])],
-                ['images', '商品图片','img_url'],
-                ['name', '分类名称'],
-                ['price', '商品价格','link',url('edit',['id'=>'__id__'])],
-                ['status', '商品类型', 'status','',['已结缘','上架', '下架','定时发布','闲置商品']],
-                ['right_button', '操作', 'btn']
-            ])
-            ->addTopButtons('delete')
-            ->addTopButtons('enable',['status'])
-            ->addTopButtons('disable',['status'])
-            ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
-            ->setRowList($data_list)
-            ->fetch();
-    }
+//    //闲置
+//    public function unuse(){
+//        $map = $this->getMap();
+//        $data_list = Db::name('shop_unuse')
+//            ->paginate();
+//        return ZBuilder::make('table')
+//            ->addColumns([
+//                // 批量添加数据列
+//                ['id', 'ID'],
+//                ['title', '商品标题','link',url('edit',['id'=>'__id__'])],
+//                ['images', '商品图片','img_url'],
+//                ['name', '分类名称'],
+//                ['price', '商品价格','link',url('edit',['id'=>'__id__'])],
+//                ['status', '商品类型', 'status','',['已结缘','上架', '下架','定时发布']],
+//                ['right_button', '操作', 'btn']
+//            ])
+//            ->addTopButtons('delete',['table'=>'shop_goods'])
+//            ->addTopButtons('enable',['status'])
+//            ->addTopButtons('disable',['status'])
+//            ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。','table'=>'shop_goods']])
+//            ->setRowList($data_list)
+//            ->fetch();
+//    }
     //定时发布
     public function timing(){
         $map = $this->getMap();
@@ -172,7 +165,7 @@ class Store extends Admin
                 ['images', '商品图片','img_url'],
                 ['name', '分类名称'],
                 ['price', '商品价格','link',url('edit',['id'=>'__id__'])],
-                ['status', '商品类型', 'status','',['已结缘','上架','下架','定时发布','闲置商品']],
+                ['status', '商品类型', 'status','',['已结缘','上架','下架','定时发布']],
                 // ['ding_time','定时发布时间','datetime'],
                 ['right_button', '操作', 'btn']
             ])
@@ -216,7 +209,7 @@ class Store extends Admin
             $data['add_time'] = time();
             $data['cid'] = implode(",",$data['cid']);
             if ($advert = Db::name('shop_goods')->where('id',$data['id'])->update($data)) {
-                $this->success('编辑成功', 'index');
+                $this->success('编辑成功');
             } else {
                 $this->error('编辑失败');
             }
@@ -255,7 +248,8 @@ class Store extends Admin
                 ['number','sku','库存'],
                 ['number','com_num','评论数'],
                 ['radio','is_free','是否包邮','', ['是','否'], 0],
-                ['ueditor','content','商品内容']
+                ['ueditor','content','商品内容'],
+//                ['radio','shopstatus', '默认为本店商品','', ['0' => '本店商品', '1' => '闲置商品', '2' => '积分商品'],0],
             ])
             ->setFormData($info)
             ->layout([

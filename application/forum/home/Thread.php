@@ -47,8 +47,8 @@ class Thread extends Common
         $limit = 10;
         $title = $data['title'];
         $da = ['like','%'.$title.'%'];
-//        商品搜索
-        $ta['shop_goods'] = Db::name('shop_goods')->where(['title'=>$da])
+//        除去闲置商品搜索信息
+        $ta['shop_goods'] = Db::name('shop_goods')->where(['title'=>$da])->where('shopstatus','eq',0)
             ->order('price desc')
             ->field('id,cid,title,tags,price,content,images,video,status,sort,goods_num,shou_num,click_num,com_num,is_free,thoughid,originid,rockid,kindid,weight,size,sku,add_time')
             ->limit($data['page']*$limit,$limit)
@@ -57,6 +57,14 @@ class Thread extends Common
             $th['images'] = array_filter(explode(',',$th['images']));
             $th['tags'] = array_filter(explode(',',$th['tags']));
             $th['add_time'] = date('Y-m-d H:i',$th['add_time']);
+        }
+        //        闲置商品搜索
+        $ta['shop_goodsUnuse'] = Db::name('shop_unuse')->where(['title'=>$da])->where('status',4)
+            ->order('price desc')
+            ->limit($data['page']*$limit,$limit)
+            ->select();
+        foreach( $ta['shop_goodsUnuse'] as &$th ){
+            $th['images'] = array_filter(explode(',',$th['images']));
         }
 //        用户搜索
         $ta['user'] = Db::name('user')->where(['name'=>$da])

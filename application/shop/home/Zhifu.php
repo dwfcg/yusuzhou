@@ -13,6 +13,27 @@ use Yansongda\Pay\Pay;
  */
 class Zhifu extends Common
 {
+    //    钱包支付
+    public function walletpay()
+    {
+        if(!$mid=input('request.mid')) show_api('','用户信息不存在',0);
+        $order_sn = input("request.order_sn");
+        // $order_sn = '152877458092';
+        if($order_sn == 0){
+            show_api('','非法数据',0);
+        }
+        $order_info = Db::name('shop_order')->where("order_sn={$order_sn}")->find();
+        $out_trade_no = $order_info['order_sn'];
+        $total_fee = $order_info['price'];
+        $user=Db::name('user')->where('id',$order_info['user_id'])->find();
+        $money=$user['wallet']-$total_fee;
+        if(is_int($money))
+        {
+            //优惠券逻辑走完做支付的全部修改
+        }else{
+            return show_api('','',0);
+        }
+    }
     //支付宝支付
     function  alipay_before(){
         // $mid = '50';

@@ -175,5 +175,23 @@ class Redis extends Driver
         }
         return $this->handler->flushDB();
     }
+    /**
+     * 在队列头部插入一个元素
+     * @param unknown $key
+     * @param unknown $value
+     * 返回队列长度
+     */
+    public function lPush($key,$value)
+    {
+        return $this->handler->lPush($key,$value);
+    }
+    /**
+     * 返回队列长度
+     * @param unknown $key
+     */
+    public function lLen($key)
+    {
+        return $this->handler->lLen($key);
+    }
 
 }

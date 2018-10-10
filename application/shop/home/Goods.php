@@ -428,7 +428,8 @@ class Goods extends Common
 
         // $order['user_id'] = $this->user['id'];
         $order['user_id'] = input('post.uid');
-    	$order['price'] = array_sum(array_column($goods,'price'));
+    	$price= array_sum(array_column($goods,'price'));
+
 
     	$order['add_time'] = time();
 
@@ -449,8 +450,18 @@ class Goods extends Common
         $order['city_name'] = $region['shi'];
 
         $order['district_name'] = $region['xian'];
-
-    	Db::startTrans();
+        Db::startTrans();
+        if(array_key_exists('coupon_id',$data))
+        {
+            $order['coupon_price'] = $data['coupon_price'];
+            Db::name('shop_couponlist')
+                ->where('cid',$data['coupon_id'])
+                ->where('uid',$data['uid'])
+                ->update(['status'=>1]);
+            $price=$price-$data['coupon_price'];
+        }
+        $order['price'] = $price;
+//    	Db::startTrans();
 
         $orderid = DB::name('shop_order')->insertGetId( $order );
 
@@ -469,10 +480,11 @@ class Goods extends Common
      * 购物车订单详情页
      * 订单ID
      */
-    public function cartOrder()
+        public function cartOrder()
     {
         $data = input('post.');
-        $goods_id = explode(',',$data['goods_id']);
+        $orderData=Db::name('shop_order')->where('id',$data['orderID'])->find();
+        $goods_id = explode(',',$orderData['goods_id']);
         $goods = Db::name('shop_goods')->where('id','in',$goods_id)->select();
         $goods['images'] = array_filter(explode(',',$goods['images']));
         return show_api($goods);

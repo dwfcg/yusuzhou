@@ -66,6 +66,7 @@ class Order extends Admin
         ->join('address d','a.address_id=d.address_id')
         ->field("a.*,b.title,b.images,c.name,c.headimg,d.consignee, d.sheng, d.shi, d.xian, d.address, d.mobile")
         ->where($map)
+        ->where('order_status',0)
         ->order('add_time desc')->paginate();
         // echo Db::table('shop_order')->getLastSql();die;
         // dump($data_list);exit;

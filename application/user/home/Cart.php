@@ -103,12 +103,37 @@ class Cart  extends Common
         {
 //            dump($cartData[$k]['goods_id']);
             $cartData[$k]['goods']=Db::name('shop_goods')->where('id',$cartData[$k]['goods_id'])->select();
-//            dump($cartData[$k]['goods'][0]);
+            dump($cartData[$k]['goods'][0]);die();
            $cartData[$k]['goods'][0]['content'] = str_replace("<img "," <img title=\"\" alt=\"\" class=\"lazy\"",$cartData[$k]['goods'][0]['content']);//替换img
 //            // print_r($goods['content']);die;
             $cartData[$k]['goods'][0]['images'] = array_filter(explode(',',$cartData[$k]['goods'][0]['images']));
 
         }
         dump( $cartData);
+    }
+    //积分商品展示页
+    public function goodsInfo(){
+//        $data = input('post.');
+//        $limit = 8;
+        $info['goods']=Db::name('integralshop_index')
+            ->order('id asc')
+//            ->limit($data['page']*$limit,$limit)
+            ->paginate();
+        foreach ($info['goods'] as &$goods) {
+            $goods['images'] = array_filter(explode(',',$goods['images']));
+        }
+        dump( $info);
+    }
+    public function getUnuse(){
+        $data = input('post.');
+        $limit = 8;
+        $info['goods']=Db::name('shop_unuse')
+            ->where('status',4)
+            ->limit($data['page']*$limit,$limit)
+            ->paginate();
+        foreach ($info['goods'] as &$goods) {
+            $goods['images'] = array_filter(explode(',',$goods['images']));
+        }
+        show_api($info);
     }
 }

@@ -232,7 +232,7 @@ class Index extends Common
         $data = input('post.');
         $limit = 8;
         $info['goods'] = Db::name('shop_goods')
-            ->where(['status'=>4])
+            ->where(['shopstatus'=>1])
             ->order('add_time desc')
             ->field('id,cid,title,tags,price,content,images,video,status,sort,goods_num,shou_num,click_num,com_num,is_free,thoughid,originid,rockid,kindid,weight,size,sku,add_time')
             ->limit($data['page']*$limit,$limit)
@@ -241,6 +241,23 @@ class Index extends Common
             $goods['images'] = array_filter(explode(',',$goods['images']));
             $goods['tags'] = array_filter(explode(',',$goods['tags']));
         }
+        show_api($info);
+    }
+    //积分商品数据
+    public function integral(){
+        $data = input('post.');
+        $limit = 8;
+        $info['goods'] = Db::name('shop_goods')
+            ->where(['shopstatus'=>2])
+            ->order('add_time desc')
+            ->field('id,cid,title,tags,price,content,images,video,status,sort,goods_num,shou_num,click_num,com_num,is_free,thoughid,originid,rockid,kindid,weight,size,sku,add_time')
+            ->limit($data['page']*$limit,$limit)
+            ->select();
+        foreach ($info['goods'] as &$goods) {
+            $goods['images'] = array_filter(explode(',',$goods['images']));
+            $goods['tags'] = array_filter(explode(',',$goods['tags']));
+        }
+//        dump($info);
         show_api($info);
     }
 }

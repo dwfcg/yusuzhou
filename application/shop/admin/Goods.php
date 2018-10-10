@@ -149,7 +149,8 @@ class Goods extends Admin
                 ['number','com_num','评论数'],
                 ['images', 'images', '商品图片'],
                 ['file','video','上传商品视频','<span class="text-danger">上传商品视频地址</span>'],
-                ['ueditor','content','商品内容','<span class="text-danger">请直接上传图片就行,不要对图片进行过多操作</span>']
+                ['ueditor','content','商品内容','<span class="text-danger">请直接上传图片就行,不要对图片进行过多操作</span>'],
+//                ['radio','shopstatus', '默认为本店商品','', ['0' => '本店商品', '1' => '闲置商品', '2' => '积分商品'],0],
             ])
             ->layout([
                 'cid' => 2, 
