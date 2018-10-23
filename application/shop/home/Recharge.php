@@ -19,6 +19,7 @@ use Yansongda\Pay\Pay;
 
 class Recharge  extends Common
 {
+
     public function demo()
     {
         $str='2,7,36,38';

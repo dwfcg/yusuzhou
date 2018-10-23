@@ -39,10 +39,10 @@ class Store extends Admin
         $map['status']=array('eq',2);
         // $fied = Db::name('shop_category')->where('status',1)->column('id,name');
         $data_list = Db::name('shop_goods')->alias('a')
-                     ->join('shop_category b','a.cid = b.id')
+//                     ->join('shop_category b','a.cid = b.id')
                      ->where(['a.status'=>$map['status']])
                         ->where('shopstatus',0)
-                     ->field('a.*,b.name')
+//                     ->field('a.*,b.name')
                      ->order('add_time desc')
                      ->paginate();
         // var_dump($data_list);die;
@@ -53,7 +53,7 @@ class Store extends Admin
                 ['id', 'ID'],
                 ['title', '商品标题','link',url('edit',['id'=>'__id__'])],
                 ['images', '商品图片','img_url'],
-                ['name', '分类名称'],
+//                ['name', '分类名称'],
                 ['price', '商品价格','link',url('edit',['id'=>'__id__'])],
                 ['status', '商品类型', 'status','',['已结缘','上架', '下架','定时发布']],
                 ['right_button', '操作', 'btn']
@@ -70,19 +70,20 @@ class Store extends Admin
         // $fied = Db::name('shop_category')->where('status',1)->column('id,name');
         // $count = Db::name('shop_goods')->where('status',1)->count();
         $data_list = Db::name('shop_goods')->alias('a')
-                     ->join('shop_category b','a.cid = b.id')
+//                     ->join('shop_category b','a.cid = b.id')
                      ->where(['a.status'=>$map['status']])
                      ->where('shopstatus',0)
-                     ->field('a.*,b.name')
+//                     ->field('a.*,b.name')
                      ->order('add_time desc')
                      ->paginate();
 		return ZBuilder::make('table')
+            ->setTableName('shop_goods')
 		   ->addColumns([ 
             // 批量添加数据列
                 ['id', 'ID','link',url('dign',['id'=>'__id__'])],
                 ['title', '商品标题','link',url('edit',['id'=>'__id__'])],
                 ['images', '商品图片','img_url'],
-                ['name', '分类名称'],
+//                ['name', '分类名称'],
                 ['price', '商品价格','link',url('edit',['id'=>'__id__'])],
                 ['status', '商品类型', 'status','',['已结缘','上架', '下架','定时发布']],
                 ['right_button', '操作', 'btn']
@@ -99,19 +100,20 @@ class Store extends Admin
         // $fied = Db::name('shop_category')->where('status',1)->column('id,name');
         // $count = Db::name('shop_goods')->where('status',1)->count();
         $data_list = Db::name('shop_goods')->alias('a')
-                     ->join('shop_category b','a.cid = b.id')
+//                     ->join('shop_category b','a.cid = b.id')
             ->where('shopstatus',0)
                      ->where(['a.status'=>$map['status']])
-                     ->field('a.*,b.name')
+//                     ->field('a.*,b.name')
                      ->order('add_time desc')
                      ->paginate();
         return ZBuilder::make('table')
+            ->setTableName('shop_goods')
            ->addColumns([ 
             // 批量添加数据列
                 ['id', 'ID'],
                 ['title', '商品标题','link',url('edit',['id'=>'__id__'])],
                 ['images', '商品图片','img_url'],
-                ['name', '分类名称'],
+//                ['name', '分类名称'],
                 ['price', '商品价格','link',url('edit',['id'=>'__id__'])],
                 ['status', '商品类型', 'status','',['已结缘','上架', '下架','定时发布']],
                 ['right_button', '操作', 'btn']
@@ -149,10 +151,10 @@ class Store extends Admin
         $map = $this->getMap();
         $map['status'] = array('eq',3);
         $data_list = Db::name('shop_goods')->alias('a')
-                     ->join('shop_category b','a.cid = b.id')
+//                     ->join('shop_category b','a.cid = b.id')
                      ->where(['a.status'=>$map['status']])
             ->where('shopstatus',0)
-                     ->field('a.*,b.name')
+//                     ->field('a.*,b.name')
                      ->order('add_time desc')
                      ->paginate();
         return ZBuilder::make('table')
@@ -162,7 +164,7 @@ class Store extends Admin
                 ['id', 'ID','link',url('Store/dign',['id'=>'__id__'])],
                 ['title', '商品标题','link',url('edit',['id'=>'__id__'])],
                 ['images', '商品图片','img_url'],
-                ['name', '分类名称'],
+//                ['name', '分类名称'],
                 ['price', '商品价格','link',url('edit',['id'=>'__id__'])],
                 ['status', '商品类型', 'status','',['已结缘','上架','下架','定时发布']],
                 // ['ding_time','定时发布时间','datetime'],

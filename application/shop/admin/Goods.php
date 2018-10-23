@@ -60,8 +60,8 @@ class Goods extends Admin
         $fied = Db::name('shop_category')->where('status',1)->column('id,name');
         // $count = Db::name('shop_goods')->where('status',1)->count();
         $data_list = Db::name('shop_goods')->alias('a')
-                     ->join('shop_category b','a.cid = b.id')
-                     ->field('a.*,b.name')
+//                     ->join('shop_category b','a.cid = b.id')
+//                     ->field('a.*,b.name')
                      ->where($map)
                      ->where('shopstatus',0)
                      ->order('add_time desc')
@@ -75,7 +75,7 @@ class Goods extends Admin
                 ['id', 'ID'],
                 ['title', '商品标题','link',url('http://yusuzhou.youacloud.com/index.php/shop/goods/getUrl',['id'=>'__id__'])],
                 ['images', '商品图片','img_url'],
-                ['name', '分类名称'],
+//                ['name', '分类名称'],
                 ['price', '商品价格', 'text.edit'],
                 ['status', '商品状态', 'status','',['已卖出', '上架', '下架','定时发布']],
                 ['sort','排序','text.edit'],
@@ -87,7 +87,7 @@ class Goods extends Admin
                 ['right_button', '操作', 'btn']
 
             ])
-            ->addTopSelect('cid','分类',$fied)
+//            ->addTopSelect('cid','分类',$fied)
             ->addFilter('price')
             ->addTopButtons('add,delete')
 //            ->addTopButton('enable',['status'])

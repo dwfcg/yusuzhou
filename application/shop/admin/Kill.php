@@ -61,8 +61,8 @@ class Kill extends Admin
         $fied = Db::name('shop_category')->where('status',1)->column('id,name');
         // $count = Db::name('shop_goods')->where('status',1)->count();
         $data_list = Db::name('shop_goods')->alias('a')
-            ->join('shop_category b','a.cid = b.id')
-            ->field('a.*,b.name')
+//            ->join('shop_category b','a.cid = b.id')
+//            ->field('a.*,b.name')
             ->where($map)
             ->where('shopstatus',2)
             ->order('add_time desc')
@@ -77,7 +77,7 @@ class Kill extends Admin
                 ['id', 'ID'],
                 ['title', '商品标题','link',url('edit',['id'=>'__id__'])],
                 ['images', '商品图片','img_url'],
-                ['name', '分类名称'],
+//                ['name', '分类名称'],
                 ['price', '商品价格', 'text.edit'],
                 ['start_time','开始时间','datetime'],
                 ['end_time','结束时间','datetime'],
