@@ -133,28 +133,56 @@ class Order extends Common{
     //     show_api($result);
     // }
     // -----------------------------------------------------------------
-      public function comment_add(){
-          $data = input('post.');
-          $data['oid'] = input('post.oid');
-          $data['sid'] = 8;
-          $data['content'] = input('post.content');
-          $data['status'] = 1;
-          // $data['videos'] = '';
-          $data['add_time'] = time();
-          // $data['uid'] = $this->user['id'];
-          $data['user_id'] = input('post.uid');
-          //获取到前端传过来的图片路径
-          $data['images'] = input('post.images');
-          // var_dump($data);die;
-          //  if(!$data['images'] || $data['images'] == ""){
-          //     return "请确认图片是否上传成功";
-          // }
-          // var_dump($data);die;
-          $nam = Db::name('shop_order')->where('id',$data['oid'])->update(['status'=>4]);
-          //新增数据并返回主键值
-          $result = Db::name('forum_thread')->insertGetId($data);
-          show_api($result);
-      }
+//      public function comment_add(){
+//          $data = input('post.');
+//          $data['oid'] = input('post.oid');
+//          $data['sid'] = 8;
+//          $data['content'] = input('post.content');
+//          $data['status'] = 1;
+//          // $data['videos'] = '';
+//          $data['add_time'] = time();
+//          // $data['uid'] = $this->user['id'];
+//          $data['user_id'] = input('post.uid');
+//          //获取到前端传过来的图片路径
+//          $data['images'] = input('post.images');
+//          // var_dump($data);die;
+//          //  if(!$data['images'] || $data['images'] == ""){
+//          //     return "请确认图片是否上传成功";
+//          // }
+//          // var_dump($data);die;
+//          $nam = Db::name('shop_order')->where('id',$data['oid'])->update(['status'=>4]);
+//          //新增数据并返回主键值
+//          $result = Db::name('forum_thread')->insertGetId($data);
+//          show_api($result);
+//      }
+    public function comment_add(){
+        $data = input('post.');
+//        dump($data);
+        $orderInfo=Db::name('shop_order')->find($data['oid']);
+        $data['order_id'] = input('post.oid');
+        if(!array_key_exists('content',$data))
+        {
+            return show_api('','',0);
+        }
+        $data['content'] = input('post.content');
+        $data['goods_id']=$orderInfo['goods_id'];
+        $data['status'] = 1;
+        if(array_key_exists('addto',$data))
+        {
+            $data['addto'] = 1;
+        }
+        $data['add_time'] = time();
+        $data['uid'] = input('post.uid');
+        //获取到前端传过来的图片路径
+        $data['images'] = input('post.images');
+        // var_dump($data);die;
+        $nam = Db::name('shop_order')->where('id',$data['oid'])->update(['status'=>4]);
+        //新增数据并返回主键值
+        $result = Db::name('shop_comment')->insertGetId($data);
+//        dump($result);
+        show_api($result);
+    }
+
 //------------------------------------------之前---------------------------------------------------------
     /**
 

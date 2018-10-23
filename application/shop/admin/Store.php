@@ -41,11 +41,13 @@ class Store extends Admin
         $data_list = Db::name('shop_goods')->alias('a')
                      ->join('shop_category b','a.cid = b.id')
                      ->where(['a.status'=>$map['status']])
+                        ->where('shopstatus',0)
                      ->field('a.*,b.name')
                      ->order('add_time desc')
                      ->paginate();
         // var_dump($data_list);die;
 		return ZBuilder::make('table')
+            ->setTableName('shop_goods')
 		   ->addColumns([ 
             // 批量添加数据列
                 ['id', 'ID'],
@@ -57,8 +59,6 @@ class Store extends Admin
                 ['right_button', '操作', 'btn']
             ])
             ->addTopButtons('delete')
-            ->addTopButtons('enable',['status'])
-            ->addTopButtons('disable',['status'])
             ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
             ->setRowList($data_list)
 		    ->fetch();
@@ -72,6 +72,7 @@ class Store extends Admin
         $data_list = Db::name('shop_goods')->alias('a')
                      ->join('shop_category b','a.cid = b.id')
                      ->where(['a.status'=>$map['status']])
+                     ->where('shopstatus',0)
                      ->field('a.*,b.name')
                      ->order('add_time desc')
                      ->paginate();
@@ -87,9 +88,7 @@ class Store extends Admin
                 ['right_button', '操作', 'btn']
             ])
             ->addTopButtons('delete')
-            ->addTopButtons('enable',['status'])
-            ->addTopButtons('disable',['status'])
-            ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
+            ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。','table' => 'shop_goods']])
             ->setRowList($data_list)
 		    ->fetch();
 	}
@@ -101,6 +100,7 @@ class Store extends Admin
         // $count = Db::name('shop_goods')->where('status',1)->count();
         $data_list = Db::name('shop_goods')->alias('a')
                      ->join('shop_category b','a.cid = b.id')
+            ->where('shopstatus',0)
                      ->where(['a.status'=>$map['status']])
                      ->field('a.*,b.name')
                      ->order('add_time desc')
@@ -117,9 +117,7 @@ class Store extends Admin
                 ['right_button', '操作', 'btn']
             ])
             ->addTopButtons('delete')
-            ->addTopButtons('enable',['status'])
-            ->addTopButtons('disable',['status'])
-            ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
+            ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。','table' => 'shop_goods']])
             ->setRowList($data_list)
             ->fetch();
     }
@@ -153,6 +151,7 @@ class Store extends Admin
         $data_list = Db::name('shop_goods')->alias('a')
                      ->join('shop_category b','a.cid = b.id')
                      ->where(['a.status'=>$map['status']])
+            ->where('shopstatus',0)
                      ->field('a.*,b.name')
                      ->order('add_time desc')
                      ->paginate();
@@ -171,9 +170,7 @@ class Store extends Admin
             ])
             // ->raw('ding_time')
             ->addTopButtons('delete')
-            ->addTopButtons('enable',['status'])
-            ->addTopButtons('disable',['status'])
-            ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
+            ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。','table' => 'shop_goods']])
             ->setRowList($data_list)
             ->fetch();
     }
@@ -199,6 +196,17 @@ class Store extends Admin
      * @author Lieber
      * @return mixed
      */
+    public function setCat($ca,$res)
+    {
+        foreach ($ca as $k =>$v)
+        {
+            $cate[]=[
+                'shopgoods_id'=>$res,
+                'category_id'=>$v,
+            ];
+        }
+        Db::name('categorygoods')->insertAll($cate);
+    }
     public function edit($id = null)
     {
         if ($id === null) $this->error('缺少参数');
@@ -207,6 +215,8 @@ class Store extends Admin
             // 表单数据
             $data = $this->request->post();
             $data['add_time'] = time();
+            Db::name('categorygoods')->where('shopgoods_id',$id)->delete();
+            $this->setCat($data['s'],$id);
             $data['cid'] = implode(",",$data['cid']);
             if ($advert = Db::name('shop_goods')->where('id',$data['id'])->update($data)) {
                 $this->success('编辑成功');
@@ -214,6 +224,7 @@ class Store extends Admin
                 $this->error('编辑失败');
             }
         }
+        $catedata = Db::name('categorygoods')->where('shopgoods_id',$id)->column('category_id');
         $cate = Db::name('shop_category')->column('id,name');
         $though = Db::name('shop_though')->column('id,name');
         $cation = Db::name('shop_cation')->column('id,name');
@@ -226,7 +237,9 @@ class Store extends Admin
         return ZBuilder::make('form')
             ->addFormItems([
                 ['hidden','id'],
-                ['select','cid', '商品分类', '请选择',$cate,'','multiple'],
+                ['text', 'title', '商品名称'],
+                ['select','s','商品分类','请选择',$cate,$catedata,'multiple'],
+//                ['select','cid', '商品分类', '请选择',$cate,'','multiple'],
                 ['select','thoughid','属性皮色','请选择',$though],
                 ['select','cationid','属性分类','请选择',$cation],
                 ['select','originid','属性产地','请选择',$origin],
@@ -235,7 +248,7 @@ class Store extends Admin
                 ['select','kindid','属性种类','请选择',$kind],
                 ['text','weight','商品重量'],
                 ['text','size','商品尺寸'],
-                ['text', 'title', '商品名称'],
+
                 ['number', 'price', '商品价格'],
                 ['images', 'images', '商品图片'],
                 ['text', 'video', '编辑商品视频地址','<span class="text-danger">编辑商品视频地址</span>'],
@@ -265,7 +278,6 @@ class Store extends Admin
                 'size'=>3,
                 'video'=>5,
                 'ding_time'=>2,
-                'title' => 3, 
                 'price' => 2, 
                 'tags' => 3,
                 'goods_num'=>3,

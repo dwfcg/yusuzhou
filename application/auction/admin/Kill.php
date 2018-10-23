@@ -11,7 +11,9 @@ namespace app\auction\admin;
 
 use app\admin\controller\Admin;
 use app\common\builder\ZBuilder;
+use think\cache\driver\Redis;
 use think\Db;
+use app\auction\home\Kill as KillClass;
 
 class Kill  extends Admin
 {
@@ -31,7 +33,7 @@ class Kill  extends Admin
                 ['price','当前价格'],
                 ['start_time','开始时间','datetime'],
                 ['end_time','结束时间','datetime'],
-                ['status', '状态', 'status','',['上架', '下架']],
+                ['status', '状态', 'status','',['上架', '下架','被抢购','流拍']],
                 ['addtime', '创建时间', 'datetime'],
                 ['right_button', '操作', 'btn']
             ])
@@ -56,8 +58,12 @@ class Kill  extends Admin
                 $this->error($result);
             }
             $data['addtime'] = time();
-            if ($advert = Db::name('auction_kill')->insert($data)) {
-                $this->success('新增成功', 'index');
+            $advert = Db::name('auction_kill')->insertGetId($data);
+//            若移植数据库确保auction——kill这个表的ID是从1开始自增的，否则报错
+           $killclass=new KillClass();
+           $re=$killclass->ruhuo($advert);
+            if ($advert) {
+                $this->success('新增失败', 'index');
             } else {
                 $this->error('新增失败');
             }

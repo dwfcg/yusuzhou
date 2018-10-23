@@ -361,7 +361,8 @@ class User extends Common
             'express_no'=>$data['express_no'],
             'status'=>3
         ];
-        $where=['user_id'=>$data['user_id']];
+        $where['user_id']=$data['user_id'];
+//        $where=['user_id'=>$data['user_id']];
         $userdata=Db::name('shop_unuse')->where($where)->find();
         if(!$userdata)
         {
@@ -379,7 +380,7 @@ class User extends Common
         $data=[];
         foreach ($address as $k => $v)
         {
-            $data[$k]=$address[$k]['name'];
+            $data[$address[$k]['id']]=$address[$k]['name'];
         }
 //        dump($data);
         return show_api($data);
@@ -390,7 +391,7 @@ class User extends Common
      */
     public function getUnuse()
     {
-        $data=input('post');
+        $data=input('post.');
         $info['goods']=Db::name('shop_unuse')->where('user_id',$data['user_id'])->select();
         foreach ($info['goods'] as &$goods) {
             $goods['images'] = array_filter(explode(',',$goods['images']));
@@ -403,7 +404,7 @@ class User extends Common
      * 用户user_ID
      */
     public  function del(){
-        $data=input('post');
+        $data=input('post.');
         $where=[
             'user_id'=>$data['user_id'],
             'id'=>$data['id']
@@ -422,7 +423,7 @@ class User extends Common
      * 闲置ID
      */
     public  function getUnusedata(){
-        $data=input('post');
+        $data=input('post.');
         $where=[
             'id'=>$data['id']
         ];

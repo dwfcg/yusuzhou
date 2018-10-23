@@ -2,38 +2,56 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a818a6c5-3366-473a-b809-4f853c1cf64e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/application/auction/admin/Kill.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/auction/home/Kill.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/auction/validate/Kill.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/integralshop/admin/Index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/integralshop/admin/Money.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/integralshop/admin/Order.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/integralshop/home/Goods.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/integralshop/info.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/shop/admin/Coupon.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/shop/admin/Integral.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/shop/home/Unuse.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/shop/validate/Coupon.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/user/home/Coupon.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/user/home/Demo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/user/model/GoodsCoupon.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/user/model/ShopCategory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/user/model/ShopCoupon.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/user/model/ShopCouponlist.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/user/model/ShopGoods.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/auction/admin/Aorder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/collect/home/Comment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/shop/admin/Kill.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/shop/admin/Korder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/shop/admin/Kstore.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/shop/admin/Refund.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/shop/admin/Ugoods.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/shop/admin/Uorder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/shop/admin/Ustore.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/shop/home/Comment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/shop/home/Recharge.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/shop/home/Refund.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/user/admin/Setintegral.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/user/admin/Ship.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/user/validate/Ship.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/yusuzhou.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/yusuzhou.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/auction/admin/Kill.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/auction/admin/Kill.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/auction/admin/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/auction/admin/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/auction/home/Kill.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/auction/home/Kill.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/auction/view/admin/order/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/auction/view/admin/order/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/collect/admin/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/collect/admin/Comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/collect/admin/Slider.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/collect/admin/Slider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/collect/home/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/collect/home/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/collect/home/Zhifu.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/collect/home/Zhifu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/forum/home/Detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/forum/home/Detail.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/forum/home/Thread.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/forum/home/Thread.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/function.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/integralshop/admin/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/integralshop/admin/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/shop/admin/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/shop/admin/Comment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/shop/admin/Goods.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/shop/admin/Goods.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/shop/admin/Kind.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/shop/admin/Kind.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/shop/admin/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/shop/admin/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/shop/admin/Origin.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/shop/admin/Origin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/shop/admin/Rock.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/shop/admin/Rock.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/shop/admin/Store.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/shop/admin/Store.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/shop/admin/Though.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/shop/admin/Though.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/shop/admin/Unuse.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/shop/admin/Unuse.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/shop/home/Goods.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/shop/home/Goods.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/shop/home/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/shop/home/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/shop/home/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/shop/home/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/shop/home/Unuse.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/shop/home/Unuse.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/shop/home/Zhifu.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/shop/home/Zhifu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/user/home/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/user/home/Cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/user/admin/Member.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/user/admin/Member.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/user/home/Coupon.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/user/home/Coupon.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/user/home/Member.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/user/home/Member.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/user/home/Sign.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/user/home/Sign.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/user/home/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/user/home/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thinkphp/library/think/cache/driver/Redis.php" beforeDir="false" afterPath="$PROJECT_DIR$/thinkphp/library/think/cache/driver/Redis.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extend/Wxpay/Wxpay.php" beforeDir="false" afterPath="$PROJECT_DIR$/extend/Wxpay/Wxpay.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,43 +66,58 @@
     <session id="772043960">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
-          <entry key="project.open.time.0" value="5" />
+          <entry key="project.closed" value="25" />
+          <entry key="project.open.time.0" value="6" />
           <entry key="project.open.time.5" value="5" />
-          <entry key="project.open.time.7" value="4" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.open.time.7" value="13" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.opened" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="9" />
-          <entry key="php" value="281" />
+          <entry key="LICENSE" value="1" />
+          <entry key="html" value="22" />
+          <entry key="iml" value="1" />
+          <entry key="ini" value="1" />
+          <entry key="json" value="1" />
+          <entry key="md" value="5" />
+          <entry key="pem" value="5" />
+          <entry key="php" value="601" />
+          <entry key="txt" value="5" />
+          <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="9" />
-          <entry key="PHP" value="281" />
+          <entry key="HTML" value="22" />
+          <entry key="IDEA_MODULE" value="1" />
+          <entry key="Ini" value="1" />
+          <entry key="JSON" value="1" />
+          <entry key="Markdown" value="5" />
+          <entry key="PHP" value="601" />
+          <entry key="PLAIN_TEXT" value="11" />
+          <entry key="XML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="9" />
           <entry key="html" value="82" />
-          <entry key="php" value="13866" />
+          <entry key="php" value="26837" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="82" />
-          <entry key="PHP" value="13866" />
+          <entry key="HTML" value="83" />
+          <entry key="PHP" value="26836" />
           <entry key="PLAIN_TEXT" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.test" />
       <usages-collector id="statistics.php.new.class">
         <counts>
-          <entry key="PHP Class.type" value="31" />
+          <entry key="PHP Class.type" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.rename.constructor" />
@@ -97,137 +130,135 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/user/home/Coupon.php">
+        <entry file="file://$PROJECT_DIR$/application/shop/admin/Store.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582">
-              <caret line="132" column="5" lean-forward="true" selection-start-line="125" selection-start-column="4" selection-end-line="132" selection-end-column="5" />
+            <state relative-caret-position="462">
+              <caret line="240" column="71" lean-forward="true" selection-start-line="240" selection-start-column="16" selection-end-line="240" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/collect/home/Zhifu.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1220">
+              <caret line="70" column="63" selection-start-line="70" selection-start-column="63" selection-end-line="70" selection-end-column="63" />
               <folding>
-                <element signature="e#123#153#0#PHP" expanded="true" />
+                <element signature="e#34#51#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/auction/admin/Kill.php">
+        <entry file="file://$PROJECT_DIR$/application/auction/home/Zhifu.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="75" column="69" lean-forward="true" selection-start-line="75" selection-start-column="69" selection-end-line="75" selection-end-column="69" />
-              <folding>
-                <element signature="e#128#159#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/user/home/Demo.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="49" column="46" lean-forward="true" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="46" />
-              <folding>
-                <element signature="e#123#153#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/user/home/Common.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="42" column="25" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/auction/home/Common.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-              <folding>
-                <element signature="e#601#631#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="80">
+              <caret line="26" column="27" lean-forward="true" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/auction/home/Order.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="73" column="11" lean-forward="true" selection-start-line="73" selection-start-column="11" selection-end-line="73" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/auction/home/Kill.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-              <folding>
-                <element signature="e#127#156#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="-180" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/auction/admin/Kill.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/auction/admin/Pai.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/shop/admin/Kill.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="245" column="56" lean-forward="true" selection-start-line="245" selection-start-column="56" selection-end-line="245" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/auction/home/Index.php">
+        <entry file="file://$PROJECT_DIR$/application/shop/admin/Kstore.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+            <state relative-caret-position="380">
+              <caret line="254" column="60" lean-forward="true" selection-start-line="254" selection-start-column="60" selection-end-line="254" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/auction/validate/Kill.php">
+        <entry file="file://$PROJECT_DIR$/application/collect/home/Comment.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="14" column="74" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/shop/validate/Coupon.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-40">
-              <caret line="39" column="14" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="14" />
+            <state relative-caret-position="260">
+              <caret line="18" column="49" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dele</find>
-      <find>address_id</find>
-      <find>tuibao</find>
-      <find>$this-&gt;user['id']</find>
-      <find>sear</find>
-      <find>getSearch</find>
-      <find>search</find>
-      <find>profile</find>
-      <find>plugin_action</find>
-      <find>add_cart</find>
-      <find>detail</find>
-      <find>getGoodsYi</find>
-      <find>create_order</find>
-      <find>getGoodsUnuse</find>
-      <find>searchInfo</find>
-      <find>闲置商品</find>
-      <find>add</find>
+      <find>note</find>
+      <find>shop_order</find>
+      <find>sign</find>
+      <find>partner</find>
+      <find>use Wxpay\Wxpay;</find>
+      <find>Wxpay</find>
+      <find>Wxpay()</find>
+      <find>seller_id</find>
+      <find>refund_notify_url</find>
+      <find>-&gt;where('shopstatus',0)</find>
+      <find>默认为本店商</find>
+      <find>getgoodsquan</find>
+      <find>getThreadList</find>
+      <find>pingjia</find>
+      <find>getthreadlist</find>
+      <find>addto</find>
       <find>index</find>
-      <find>cartOrder</find>
-      <find>result</find>
-      <find>im</find>
-      <find>image</find>
-      <find>region</find>
-      <find>get_re</find>
-      <find>__PUBLIC__</find>
-      <find>&lt;if condition=&quot;$coupon['cat_id2'] gt 0&quot;&gt;</find>
-      <find>coupon_id</find>
-      <find>user_list</find>
-      <find>boolean</find>
+      <find>search</find>
+      <find>tieurl</find>
+      <find>create</find>
+      <find>common</find>
+      <find>include_path</find>
+      <find>argSort</find>
+      <find>parseQString</find>
+      <find>convertStringToArray</find>
+      <find>putKeyValueToDictionary</find>
+      <find>createLinkString</find>
+      <find>txnType</find>
+      <find>signMethod</find>
+      <find>yongjin</find>
     </findStrings>
     <replaceStrings>
       <replace>__ROOT__/public/</replace>
+      <replace>self::createLinkString</replace>
+      <replace>self:: convertStringToArray</replace>
+      <replace>self::putKeyValueToDictionary</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -236,57 +267,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/user/model/User.php" />
-        <option value="$PROJECT_DIR$/application/unuse/info.php" />
-        <option value="$PROJECT_DIR$/application/shop/home/Zhifu.php" />
-        <option value="$PROJECT_DIR$/application/user/home/Sign.php" />
-        <option value="$PROJECT_DIR$/application/shop/admin/Integral.php" />
-        <option value="$PROJECT_DIR$/application/shop/home/Index.php" />
-        <option value="$PROJECT_DIR$/application/integral/config.php" />
-        <option value="$PROJECT_DIR$/application/jifen/admin/index.php" />
-        <option value="$PROJECT_DIR$/application/integral/admin/controller/index.php" />
-        <option value="$PROJECT_DIR$/application/integral/info.php" />
-        <option value="$PROJECT_DIR$/application/integral/admin/index.php" />
-        <option value="$PROJECT_DIR$/application/integral/admin/Index.php" />
-        <option value="$PROJECT_DIR$/application/jifen/info.php" />
-        <option value="$PROJECT_DIR$/application/jifen/admin/Index.php" />
-        <option value="$PROJECT_DIR$/application/integralshop/info.php" />
-        <option value="$PROJECT_DIR$/application/shop/admin/Goods.php" />
-        <option value="$PROJECT_DIR$/application/shop/admin/Store.php" />
-        <option value="$PROJECT_DIR$/application/user/home/Cart.php" />
-        <option value="$PROJECT_DIR$/application/integralshop/admin/Index.php" />
-        <option value="$PROJECT_DIR$/application/integralshop/admin/Money.php" />
-        <option value="$PROJECT_DIR$/application/forum/home/Thread.php" />
-        <option value="$PROJECT_DIR$/application/user/home/Common.php" />
-        <option value="$PROJECT_DIR$/application/integralshop/home/Goods.php" />
-        <option value="$PROJECT_DIR$/application/shop/admin/Order.php" />
-        <option value="$PROJECT_DIR$/application/integralshop/admin/Order.php" />
-        <option value="$PROJECT_DIR$/application/shop/admin/OrderUnuse.php" />
-        <option value="$PROJECT_DIR$/application/shop/admin/Unuse.php" />
-        <option value="$PROJECT_DIR$/application/shop/view/admin/coupon/coupon_info.html" />
-        <option value="$PROJECT_DIR$/application/shop/view/admin/public/layout.html" />
-        <option value="$PROJECT_DIR$/application/index/controller/Home.php" />
-        <option value="$PROJECT_DIR$/application/shop/home/Coupon.php" />
-        <option value="$PROJECT_DIR$/application/user/home/User.php" />
-        <option value="$PROJECT_DIR$/application/user/home/GoodsCoupon.php" />
-        <option value="$PROJECT_DIR$/application/user/model/ShopGoods.php" />
-        <option value="$PROJECT_DIR$/application/user/model/GoodsCoupon.php" />
-        <option value="$PROJECT_DIR$/application/user/model/ShopCategory.php" />
-        <option value="$PROJECT_DIR$/application/user/model/ShopCouponlist.php" />
-        <option value="$PROJECT_DIR$/application/user/model/ShopCoupon.php" />
+        <option value="$PROJECT_DIR$/application/shop/admin/Refund.php" />
+        <option value="$PROJECT_DIR$/extend/refund/alirefund/refund.php" />
+        <option value="$PROJECT_DIR$/extend/refund/alirefund/rnotify.php" />
+        <option value="$PROJECT_DIR$/extend/refund/alirefund/Rsa.php" />
+        <option value="$PROJECT_DIR$/extend/Wxpay/WxPay.Config.php" />
+        <option value="$PROJECT_DIR$/extend/Wxpay/Wxpay.php" />
+        <option value="$PROJECT_DIR$/extend/refund/alirefund/Base.php" />
+        <option value="$PROJECT_DIR$/application/shop/view/admin/refund.html" />
+        <option value="$PROJECT_DIR$/extend/refund/alirefund/Refund.php" />
         <option value="$PROJECT_DIR$/application/shop/home/Unuse.php" />
-        <option value="$PROJECT_DIR$/application/shop/home/Goods.php" />
-        <option value="$PROJECT_DIR$/application/shop/admin/Coupon.php" />
-        <option value="$PROJECT_DIR$/application/user/home/Coupon.php" />
-        <option value="$PROJECT_DIR$/application/user/home/Redis.php" />
-        <option value="$PROJECT_DIR$/thinkphp/library/think/cache/driver/Redis.php" />
-        <option value="$PROJECT_DIR$/application/shop/validate/Coupon.php" />
-        <option value="$PROJECT_DIR$/application/auction/validate/Kill.php" />
-        <option value="$PROJECT_DIR$/application/auction/home/Index.php" />
-        <option value="$PROJECT_DIR$/application/auction/home/Demo.php" />
+        <option value="$PROJECT_DIR$/application/user/home/User.php" />
+        <option value="$PROJECT_DIR$/application/shop/admin/Kind.php" />
+        <option value="$PROJECT_DIR$/application/shop/admin/Though.php" />
+        <option value="$PROJECT_DIR$/application/shop/admin/Origin.php" />
+        <option value="$PROJECT_DIR$/application/shop/admin/Rock.php" />
+        <option value="$PROJECT_DIR$/application/shop/admin/Order.php" />
+        <option value="$PROJECT_DIR$/application/collect/admin/Slider.php" />
+        <option value="$PROJECT_DIR$/application/shop/admin/Unuse.php" />
         <option value="$PROJECT_DIR$/application/auction/admin/Kill.php" />
-        <option value="$PROJECT_DIR$/application/user/home/Demo.php" />
         <option value="$PROJECT_DIR$/application/auction/home/Kill.php" />
+        <option value="$PROJECT_DIR$/application/shop/admin/Uorder.php" />
+        <option value="$PROJECT_DIR$/application/shop/admin/Korder.php" />
+        <option value="$PROJECT_DIR$/application/user/home/Member.php" />
+        <option value="$PROJECT_DIR$/application/user/admin/Setintegral.php" />
+        <option value="$PROJECT_DIR$/application/user/home/Sign.php" />
+        <option value="$PROJECT_DIR$/application/shop/home/Refund.php" />
+        <option value="$PROJECT_DIR$/application/shop/home/Order.php" />
+        <option value="$PROJECT_DIR$/application/collect/home/Order.php" />
+        <option value="$PROJECT_DIR$/application/forum/home/Thread.php" />
+        <option value="$PROJECT_DIR$/application/collect/home/Comment.php" />
+        <option value="$PROJECT_DIR$/application/shop/home/Comment.php" />
+        <option value="$PROJECT_DIR$/application/shop/home/Index.php" />
+        <option value="$PROJECT_DIR$/application/collect/admin/Comment.php" />
+        <option value="$PROJECT_DIR$/application/shop/admin/Comment.php" />
+        <option value="$PROJECT_DIR$/application/forum/home/Detail.php" />
+        <option value="$PROJECT_DIR$/application/shop/home/Goods.php" />
+        <option value="$PROJECT_DIR$/vendor/payment/README.md" />
+        <option value="$PROJECT_DIR$/extend/com/unionpay/acp/sdk/SDKConfig.php" />
+        <option value="$PROJECT_DIR$/extend/com/unionpay/acp/sdk/acp_service.php" />
+        <option value="$PROJECT_DIR$/extend/com/unionpay/acp/sdk/cert_util.php" />
+        <option value="$PROJECT_DIR$/extend/com/unionpay/acp/sdk/AcpService.php" />
+        <option value="$PROJECT_DIR$/extend/com/unionpay/acp/sdk/common.php" />
+        <option value="$PROJECT_DIR$/application/collect/home/Zhifu.php" />
+        <option value="$PROJECT_DIR$/application/shop/home/Zhifu.php" />
+        <option value="$PROJECT_DIR$/application/shop/home/Recharge.php" />
+        <option value="$PROJECT_DIR$/application/shop/admin/Store.php" />
+        <option value="$PROJECT_DIR$/application/shop/admin/Goods.php" />
+        <option value="$PROJECT_DIR$/application/shop/admin/Ugoods.php" />
+        <option value="$PROJECT_DIR$/application/shop/admin/Ustore.php" />
+        <option value="$PROJECT_DIR$/application/shop/admin/Kill.php" />
+        <option value="$PROJECT_DIR$/application/shop/admin/Kstore.php" />
       </list>
     </option>
   </component>
@@ -318,6 +349,8 @@
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/topthink/think-captcha" />
       <path value="$PROJECT_DIR$/vendor/topthink/think-image" />
+      <path value="$PROJECT_DIR$/vendor/payment/src" />
+      <path value="$PROJECT_DIR$/vendor/payment/example" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
@@ -332,7 +365,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -349,41 +381,56 @@
               <item name="yusuzhou" type="b2602c69:ProjectViewProjectNode" />
               <item name="yusuzhou" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="auction" type="462c0819:PsiDirectoryNode" />
+              <item name="shop" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yusuzhou" type="b2602c69:ProjectViewProjectNode" />
               <item name="yusuzhou" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="auction" type="462c0819:PsiDirectoryNode" />
+              <item name="shop" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yusuzhou" type="b2602c69:ProjectViewProjectNode" />
               <item name="yusuzhou" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="auction" type="462c0819:PsiDirectoryNode" />
+              <item name="shop" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yusuzhou" type="b2602c69:ProjectViewProjectNode" />
               <item name="yusuzhou" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="auction" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="extend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yusuzhou" type="b2602c69:ProjectViewProjectNode" />
               <item name="yusuzhou" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="extend" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yusuzhou" type="b2602c69:ProjectViewProjectNode" />
               <item name="yusuzhou" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="extend" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="unionpay" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yusuzhou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yusuzhou" type="462c0819:PsiDirectoryNode" />
+              <item name="extend" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="unionpay" type="462c0819:PsiDirectoryNode" />
+              <item name="acp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yusuzhou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yusuzhou" type="462c0819:PsiDirectoryNode" />
+              <item name="extend" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="unionpay" type="462c0819:PsiDirectoryNode" />
+              <item name="acp" type="462c0819:PsiDirectoryNode" />
+              <item name="sdk" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yusuzhou" type="b2602c69:ProjectViewProjectNode" />
@@ -393,17 +440,22 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../iwebshop" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\phpStudy\WWW\yusuzhou\extend\com\unionpay\acp" />
+      <recent name="D:\phpStudy\WWW\yusuzhou\application\user\admin" />
+      <recent name="D:\phpStudy\WWW\yusuzhou\application\shop\view\admin\refund" />
       <recent name="D:\phpStudy\WWW\yusuzhou\application\integral\admin" />
       <recent name="D:\phpStudy\WWW\yusuzhou\application\integral\admin\controller" />
     </key>
@@ -443,18 +495,39 @@
       <workItem from="1538182003679" duration="13020000" />
       <workItem from="1538960570882" duration="27142000" />
       <workItem from="1539047100508" duration="29237000" />
-      <workItem from="1539132660992" duration="23743000" />
+      <workItem from="1539132660992" duration="23983000" />
+      <workItem from="1539164484783" duration="1298000" />
+      <workItem from="1539219499813" duration="30848000" />
+      <workItem from="1539305623329" duration="29470000" />
+      <workItem from="1539392175460" duration="27560000" />
+      <workItem from="1539565343284" duration="24312000" />
+      <workItem from="1539651585148" duration="26903000" />
+      <workItem from="1539738398698" duration="23339000" />
+      <workItem from="1539823776903" duration="14292000" />
+      <workItem from="1539910433905" duration="5730000" />
+      <workItem from="1539941944841" duration="1836000" />
+      <workItem from="1540169809021" duration="17516000" />
+      <workItem from="1540256137178" duration="8322000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184357000" />
+    <option name="totallyTimeSpent" value="396023000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2167382" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34817597" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -463,10 +536,10 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32925472" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32925472" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32925472" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -478,340 +551,336 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/admin/controller/Admin.php">
+    <entry file="file://$PROJECT_DIR$/application/shop/home/Index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2880" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/validate/Plugin.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/validate/Menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="26" column="9" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="9" />
+        <state relative-caret-position="5840">
+          <caret line="293" column="29" selection-start-line="293" selection-start-column="21" selection-end-line="293" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/validate/Config.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/controller/Action.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/user/admin/Publics.php">
+    <entry file="file://$PROJECT_DIR$/application/shop/home/Comment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1600">
-          <caret line="84" column="50" selection-start-line="84" selection-start-column="46" selection-end-line="84" selection-end-column="50" />
+        <state relative-caret-position="2380">
+          <caret line="124" column="5" selection-start-line="117" selection-start-column="3" selection-end-line="124" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/user/validate/User.php">
+    <entry file="file://$PROJECT_DIR$/application/forum/admin/Thread.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" selection-start-line="22" selection-end-line="27" />
+        <state relative-caret-position="1860">
+          <caret line="97" column="38" selection-start-line="97" selection-start-column="38" selection-end-line="97" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/shop/view/admin/public/layout.html">
+    <entry file="file://$PROJECT_DIR$/application/shop/admin/Uorder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+        <state relative-caret-position="3780">
+          <caret line="197" column="67" selection-start-line="197" selection-start-column="67" selection-end-line="197" selection-end-column="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/shop/view/admin/coupon/coupon_info.html">
+    <entry file="file://$PROJECT_DIR$/application/shop/home/Order.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="262" lean-forward="true" selection-start-line="262" selection-end-line="262" />
+        <state relative-caret-position="3520">
+          <caret line="180" column="34" selection-start-line="180" selection-start-column="34" selection-end-line="180" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/shop/admin/Integral.php">
+    <entry file="file://$PROJECT_DIR$/application/forum/view/detail/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1060">
-          <caret line="76" column="19" lean-forward="true" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+        <state relative-caret-position="7960">
+          <caret line="398" column="47" selection-start-line="398" selection-start-column="47" selection-end-line="398" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/shop/admin/Unuse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2360">
-          <caret line="249" column="35" selection-start-line="249" selection-start-column="31" selection-end-line="249" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/shop/admin/Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="64" column="41" lean-forward="true" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/shop/admin/Goods.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="71" column="79" selection-start-line="71" selection-start-column="11" selection-end-line="71" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/shop/home/Common.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="42" column="25" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
-          <folding>
-            <element signature="e#598#628#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/index/controller/Home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="68" column="32" lean-forward="true" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/shop/home/Coupon.php" />
-    <entry file="file://$PROJECT_DIR$/application/user/home/Member.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/user/model/User.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/user/home/GoodsCoupon.php" />
-    <entry file="file://$PROJECT_DIR$/application/user/model/ShopGoods.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="13" column="15" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/user/model/ShopCategory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/user/model/ShopCouponlist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/user/model/UserGuan.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/user/model/GoodsCoupon.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="21" column="42" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/user/home/Cart.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1820">
-          <caret line="98" column="28" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/shop/home/Unuse.php">
+    <entry file="file://$PROJECT_DIR$/application/collect/admin/Comment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1040">
-          <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
-          <folding>
-            <element signature="e#123#153#0#PHP" expanded="true" />
-          </folding>
+          <caret line="56" column="59" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/integralshop/home/Goods.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2780">
-          <caret line="148" column="25" selection-start-line="148" selection-start-column="25" selection-end-line="148" selection-end-column="25" />
-          <folding>
-            <element signature="e#128#158#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/integralshop/admin/Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2140">
-          <caret line="114" column="55" selection-start-line="114" selection-start-column="55" selection-end-line="114" selection-end-column="55" />
-          <folding>
-            <element signature="e#132#163#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/command.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/user/model/ShopCoupon.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/shop/home/Goods.php">
+    <entry file="file://$PROJECT_DIR$/vendor/payment/example/NotifyClass.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
-          <caret line="340" lean-forward="true" selection-start-line="340" selection-end-line="340" />
+          <caret line="97" column="68" lean-forward="true" selection-start-line="97" selection-start-column="68" selection-end-line="97" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendors/alipay/index.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendors/alipay/alipay.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendors/wxpay/WxPay_Data.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendors/wxpay/WxPay_Exception.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendors/wxpay/WxPay_NativePay.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendors/wxpay/WxPay_Config.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendors/wxpay/WxPay_Api.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/payment/autoload.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/payment/composer.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/payment/LICENSE">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/payment/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="220">
+            <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/payment/example/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="31" column="12" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/payment/example/notify.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/payment/example/yse/webGatewayCharge.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="31" column="37" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/payment/src/Config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="27" column="72" selection-start-line="27" selection-start-column="72" selection-end-line="27" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/com/unionpay/acp/sdk/log.class.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/com/unionpay/acp/sdk/cert_util.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="12" selection-start-line="3" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/com/unionpay/acp/sdk/AcpService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="309" column="21" selection-start-line="309" selection-start-column="21" selection-end-line="309" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/com/unionpay/acp/sdk/acp_sdk.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="33" column="17" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/com/unionpay/acp/sdk/common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3160">
+          <caret line="158" column="36" selection-start-line="158" selection-start-column="20" selection-end-line="158" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/com/unionpay/acp/sdk/SDKConfig.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/shop/home/Zhifu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1300">
+          <caret line="71" column="63" selection-start-line="71" selection-start-column="11" selection-end-line="71" selection-end-column="63" />
           <folding>
-            <element signature="e#596#637#0#PHP" expanded="true" />
+            <element signature="e#31#66#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/user/home/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="827">
-          <caret line="422" column="7" selection-start-line="422" selection-start-column="7" selection-end-line="422" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thinkphp/library/think/session/driver/Redis.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-520">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thinkphp/library/think/cache/driver/Redis.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="164" column="25" selection-start-line="164" selection-start-column="20" selection-end-line="164" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/auction/admin/Pai.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="146" column="5" lean-forward="true" selection-start-line="38" selection-start-column="3" selection-end-line="146" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thinkphp/library/think/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="174" column="23" selection-start-line="174" selection-start-column="23" selection-end-line="174" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/shop/admin/Coupon.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/auction/menus.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/auction/info.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/auction/config.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/shop/validate/Coupon.php">
+    <entry file="file://$PROJECT_DIR$/application/user/home/Sale.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-40">
-          <caret line="39" column="14" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="14" />
+        <state relative-caret-position="2920">
+          <caret line="150" column="37" selection-start-line="150" selection-start-column="37" selection-end-line="150" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/auction/validate/Kill.php">
+    <entry file="file://$PROJECT_DIR$/application/shop/home/Refund.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="74" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="74" />
+        <state relative-caret-position="6080">
+          <caret line="314" column="5" selection-start-line="299" selection-start-column="3" selection-end-line="314" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/user/home/Common.php">
+    <entry file="file://$PROJECT_DIR$/application/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="42" column="25" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="25" />
+        <state relative-caret-position="-640">
+          <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/auction/home/Index.php">
+    <entry file="file://$PROJECT_DIR$/application/shop/home/Goods.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+        <state relative-caret-position="1427">
+          <caret line="437" column="78" selection-start-line="434" selection-start-column="7" selection-end-line="437" selection-end-column="78" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/auction/home/Common.php">
+    <entry file="file://$PROJECT_DIR$/application/shop/home/Recharge.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="380">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="20" />
           <folding>
-            <element signature="e#601#631#0#PHP" expanded="true" />
+            <element signature="e#122#157#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/auction/home/Demo.php">
+    <entry file="file://$PROJECT_DIR$/application/shop/admin/Ugoods.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+        <state relative-caret-position="387">
+          <caret line="123" column="36" lean-forward="true" selection-start-line="123" selection-start-column="36" selection-end-line="123" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/user/home/Coupon.php">
+    <entry file="file://$PROJECT_DIR$/application/shop/admin/Ustore.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="132" column="5" lean-forward="true" selection-start-line="125" selection-start-column="4" selection-end-line="132" selection-end-column="5" />
+        <state relative-caret-position="400">
+          <caret line="225" column="37" lean-forward="true" selection-start-line="225" selection-start-column="37" selection-end-line="225" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/shop/admin/Goods.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="240" column="71" lean-forward="true" selection-start-line="240" selection-start-column="15" selection-end-line="240" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/shop/admin/Kill.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="245" column="56" lean-forward="true" selection-start-line="245" selection-start-column="56" selection-end-line="245" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/shop/admin/Store.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="240" column="71" lean-forward="true" selection-start-line="240" selection-start-column="16" selection-end-line="240" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/shop/admin/Kstore.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="254" column="60" lean-forward="true" selection-start-line="254" selection-start-column="60" selection-end-line="254" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/collect/home/Comment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="18" column="49" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/collect/home/Zhifu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1220">
+          <caret line="70" column="63" selection-start-line="70" selection-start-column="63" selection-end-line="70" selection-end-column="63" />
           <folding>
-            <element signature="e#123#153#0#PHP" expanded="true" />
+            <element signature="e#34#51#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/auction/admin/Kill.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="75" column="69" lean-forward="true" selection-start-line="75" selection-start-column="69" selection-end-line="75" selection-end-column="69" />
-          <folding>
-            <element signature="e#128#159#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/user/home/Demo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="49" column="46" lean-forward="true" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="46" />
-          <folding>
-            <element signature="e#123#153#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Documents/Downloads/seckill-master/seckill-master/app/seckill.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="40" column="38" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="38" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/application/auction/admin/Pai.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/application/auction/home/Kill.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-          <folding>
-            <element signature="e#127#156#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="-180" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/auction/home/Zhifu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="26" column="27" lean-forward="true" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/auction/home/Order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="73" column="11" lean-forward="true" selection-start-line="73" selection-start-column="11" selection-end-line="73" selection-end-column="11" />
         </state>
       </provider>
     </entry>

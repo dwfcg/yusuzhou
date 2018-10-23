@@ -107,7 +107,7 @@ class Order extends Admin
         $data=[];
         foreach ($address as $k => $v)
         {
-         $data[$k]=$address[$k]['name'];
+            $data[$address[$k]['id']]=$address[$k]['name'];
         }
         return ZBuilder::make('form')
             ->addFormItems([

@@ -79,11 +79,6 @@ class Coupon    extends Common
         $return= $this->get_coupon($data['id'],$data['user_id']);
        return json($return);
     }
-    /**
-     * 领券
-     * @param $id 优惠券id
-     * @param $user_id
-     */
     public function get_coupon($id, $user_id)
     {
         if (empty($id)){
@@ -116,13 +111,6 @@ class Coupon    extends Common
 
         return $return;
     }
-    /**
-     * 获取用户可用的优惠券
-     * @param $user_id|用户id
-     * @param array $goods_ids|限定商品ID数组
-     * @param array $goods_cat_id||限定商品分类ID数组
-     * @return array
-     */
     public function get_arr_column($arr, $key_name)
     {
         $arr2 = array();
@@ -131,31 +119,39 @@ class Coupon    extends Common
         }
         return $arr2;
     }
-    //获取用户可用的优惠券
+    /**
+     * 获取用户可用的优惠券
+     * UID用户ID
+     */
     public function getUserAble()
     {
         $data=input('post.');
-        dump($data);
+//        dump($data);
         $re=$this->getUserAbleCouponList($data['uid']);
         $data=[];
         foreach ($re as $k => $v)
         {
             $data[$k]=$re[$k]->toArray();
         }
-        dump($data);
+        show_api($data);
     }
-//    获取购物车优惠券
+
+    /**
+     *  获取商品优惠券
+     * @cartList商品总价格
+     * @UID 用户id
+     */
     public  function getCartCoupon()
     {
         $data=input('post.');
         $userCouponList=$this->getUserAbleCouponList($data['uid']);
         $coupondata=$this->getCouponCartList($data['cartList'],$userCouponList);
-        dump($coupondata);
+        show_api($coupondata);
 
     }
     /**
      * 转换购物车的优惠券数据
-     * @param $cartList |购物车商品
+     * @param $cartList |购物车商品总价信息
      * @param $userCouponList |用户优惠券列表
      * @return mixedable
      */

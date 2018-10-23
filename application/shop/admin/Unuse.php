@@ -12,6 +12,7 @@ namespace app\shop\admin;
 use app\admin\controller\Admin;
 use app\common\builder\ZBuilder;
 use think\Db;
+use think\Image;
 
 class Unuse extends Admin
 {
@@ -20,7 +21,7 @@ class Unuse extends Admin
         // 查询
         $map = $this->getMap();
         // 数据列表
-        $fied=['0'=>'待审核','1'=>'通过','3'=>'对方发货','4'=>'上架'];
+        $fied=['0'=>'待审核','1'=>'通过','3'=>'对方发货'];
         if(!$map)
         {
             $data=Db::name('shop_unuse')->where($map)->where('status','>',-1)->paginate();
@@ -32,11 +33,10 @@ class Unuse extends Admin
         return ZBuilder::make('table')
             ->addColumns([ // 批量添加列
                 ['id', 'ID','link',url('unuse/sea',['id'=>'__id__'])],
-                ['name', '商品名称','text.edit'],
+                ['name', '商品名称'],
                 ['images', '商品图片','img_url'],
-                ['express_no', '快递单号'],
-                ['comment', '商品描述','text'],
-                ['status', '申请状态', 'status','',['待审核', '通过', '拒绝','对方已发货','上架']],
+                ['price', '价格'],
+                ['status', '申请状态', 'status','',['待审核', '通过', '拒绝','对方已发货']],
                 ['right_button', '操作', 'btn'],
 
 
@@ -112,7 +112,7 @@ class Unuse extends Admin
         $data=[];
         foreach ($address as $k => $v)
         {
-            $data[$k]=$address[$k]['name'];
+            $data[$address[$k]['id']]=$address[$k]['name'];
         }
         return ZBuilder::make('form')
             ->addFormItems([
@@ -197,7 +197,7 @@ class Unuse extends Admin
             ->addColumns([ // 批量添加数据列
                 ['id', 'ID','link',url('Order/sea',['id'=>'__id__'])],
                 ['order_sn', '订单号'],
-                ['price', '金额','link',url('edit',['id'=>'__id__'])],
+                ['price', '金额'],
                 ['title', '商品名称'],
                 ['images', '商品图','img_url'],
                 ['name', '下单用户'],
@@ -220,6 +220,46 @@ class Unuse extends Admin
             ->fetch(); // 渲染模板
 
     }
+//    public function edit($id = '')
+//    {
+//        if ($id === null) $this->error('缺少参数');
+//        // 保存数据
+//        if ($this->request->isPost()) {
+//            // 表单数据
+//            $data = $this->request->post();
+//            $data['add_time']=time();
+//            if ($advert = Db::name('shop_unuse')->where('id',$data['id'])->update($data)) {
+//                $this->success('编辑成功', 'index');
+//            } else {
+//                $this->error('编辑失败');
+//            }
+//        }
+//        $info = Db::name('shop_unuse')->alias('a')
+//            ->join('user c','a.user_id=c.id')
+//            ->where('a.id',$id)
+//            ->field('a.*,c.name as username')
+//            ->find();
+////      dump($info);
+//        $addressinfo=Db::name('order_delivery')->find($info['express']);
+//
+//        $addressinfo1=Db::name('region')->select();
+////        dump($addressinfo1);
+////        $data=$this->getParents($addressinfo1,166);
+////        dump($data);
+//        $info['express']=$addressinfo['name'];
+////        dump($addressinfo);
+//        return ZBuilder::make('form')
+//            ->addFormItems([
+//                ['hidden','id'],
+//                ['static','express', '快递公司'],
+//                ['static', 'express_no', '物流编号'],
+//                ['radio','recommend', '','', ['0' => '不推荐', '1' => '推荐']],
+//                ['radio','status', '','', ['1' => '通过', '2' => '拒绝', '4' => '上架']],
+//            ])
+//
+//            ->setFormData($info)
+//            ->fetch();
+//    }
     public function edit($id = '')
     {
         if ($id === null) $this->error('缺少参数');
@@ -227,6 +267,7 @@ class Unuse extends Admin
         if ($this->request->isPost()) {
             // 表单数据
             $data = $this->request->post();
+            $data['add_time']=time();
             if ($advert = Db::name('shop_unuse')->where('id',$data['id'])->update($data)) {
                 $this->success('编辑成功', 'index');
             } else {
@@ -237,28 +278,26 @@ class Unuse extends Admin
             ->join('user c','a.user_id=c.id')
             ->where('a.id',$id)
             ->field('a.*,c.name as username')
-            ->find();
-//      dump($info);
-        $addressinfo=Db::name('order_delivery')->find($info['express']);
-
-        $addressinfo1=Db::name('region')->select();
-//        dump($addressinfo1);
-//        $data=$this->getParents($addressinfo1,166);
-//        dump($data);
-        $info['express']=$addressinfo['name'];
-//        dump($addressinfo);
+            ->find($id);
+        $info['images']=array_filter(explode(',',$info['images']));
+        $html='';
+        foreach ($info['images'] as $k =>$v)
+        {
+            $html=$html.'<img  src="'.$v.'" height="150" width="150" />';
+        }
         return ZBuilder::make('form')
             ->addFormItems([
                 ['hidden','id'],
-                ['static','express', '快递公司'],
-                ['static', 'express_no', '物流编号'],
-                ['radio','status', '','', ['1' => '通过', '2' => '拒绝', '4' => '上架']],
+                ['static','name', '商品名称'],
+                ['static','comment', '详细描述'],
+                ['radio','status', '','', ['1' => '通过', '2' => '拒绝']],
             ])
-
+            ->setExtraHtml($html, 'form_top')
             ->setFormData($info)
             ->fetch();
     }
-   public function getParents($categorys,$catId){
+
+    public function getParents($categorys,$catId){
         $tree=array();
         foreach($categorys as $item)
         {

@@ -63,6 +63,7 @@ class Goods extends Admin
                      ->join('shop_category b','a.cid = b.id')
                      ->field('a.*,b.name')
                      ->where($map)
+                     ->where('shopstatus',0)
                      ->order('add_time desc')
                      ->paginate();
 
@@ -72,7 +73,7 @@ class Goods extends Admin
             ->setSearch(['title' => '标题','price'=>'价格'], '', '', true) // 设置搜索框
             ->addColumns([ // 批量添加数据列
                 ['id', 'ID'],
-                ['title', '商品标题','link',url('edit',['id'=>'__id__'])],
+                ['title', '商品标题','link',url('http://yusuzhou.youacloud.com/index.php/shop/goods/getUrl',['id'=>'__id__'])],
                 ['images', '商品图片','img_url'],
                 ['name', '分类名称'],
                 ['price', '商品价格', 'text.edit'],
@@ -89,7 +90,7 @@ class Goods extends Admin
             ->addTopSelect('cid','分类',$fied)
             ->addFilter('price')
             ->addTopButtons('add,delete')
-            ->addTopButton('enable',['status'])
+//            ->addTopButton('enable',['status'])
             ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
             ->setRowList($data_list)
             ->fetch(); // 渲染模板
@@ -100,6 +101,17 @@ class Goods extends Admin
      * @author Lieber
      * @return mixed
      */
+    public function setCat($ca,$res)
+    {
+        foreach ($ca as $k =>$v)
+        {
+            $cate[]=[
+                'shopgoods_id'=>$res,
+                'category_id'=>$v,
+            ];
+        }
+        Db::name('categorygoods')->insertAll($cate);
+    }
     public function add()
     {
         // 保存数据
@@ -107,14 +119,20 @@ class Goods extends Admin
             // 表单数据
             $data = $this->request->post();
             $data['add_time'] = time();
-            // $data['cid'] = implode(",",$data['cid']);
+//            dump($data);die;
+            $ca=$data['s'];
+            unset($data['s']);
+            $res=Db::name('shop_goods')->insertGetId($data);
+           $this->setCat($ca,$res);
+//             $data['cid'] = implode(",",$data['cid']);
             // echo Db::table('shop_goods')->getLastSql();die;
-            if (Db::name('shop_goods')->insert($data)) {
+            if ($res) {
                 $this->success('新增成功', 'index');
             } else {
                 $this->error('新增失败');
             }
         }
+
         $cates = Db::name('shop_category')->where('status',1)->column('id,name');
         $though = Db::name('shop_though')->where('status',1)->column('id,name');
         // $cation = Db::name('shop_cation')->column('id,name');
@@ -127,9 +145,10 @@ class Goods extends Admin
             ->addFormItems([
                 ['hidden','id'],
                 ['text', 'title', '商品名称','请输入'],
-                ['select','cid', '商品分类', '请选择',$cates],
+                ['select','s','商品分类','请选择',$cates,'','multiple'],
+//                ['select','cid', '商品分类', '请选择',$cates],
                 ['select','thoughid','属性皮色','请选择',$though],
-                // ['select','cationid','属性分类','请选择',$cation],
+
                 ['select','originid','属性产地','请选择',$origin],
                 ['select','rockid','属性籽料','请选择',$rock],
                 // ['select','themeid','属性题材','请选择',$theme],
@@ -150,8 +169,9 @@ class Goods extends Admin
                 ['images', 'images', '商品图片'],
                 ['file','video','上传商品视频','<span class="text-danger">上传商品视频地址</span>'],
                 ['ueditor','content','商品内容','<span class="text-danger">请直接上传图片就行,不要对图片进行过多操作</span>'],
-//                ['radio','shopstatus', '默认为本店商品','', ['0' => '本店商品', '1' => '闲置商品', '2' => '积分商品'],0],
+                ['radio','shopstatus', '','', ['0' => '本店商品'],0],
             ])
+//            ->addSelect()
             ->layout([
                 'cid' => 2, 
                 'tid'=>2,
@@ -163,13 +183,13 @@ class Goods extends Admin
                 'kindid'=>2,
                 'weight'=>2,
                 'size'=>2,
-                'title' => 3,
-                'images'=>3,
-                'video'=>4,
+//                'title' => 3,
+//                'images'=>3,
+//                'video'=>4,
                 'price' => 2,
                 'tags' => 3,
                 'keyword'=>3,
-                'status'=>4,
+//                'status'=>2,
                 'ding_time'=>2,
                 'goods_num'=>1,
                 'click_num'=>1,
@@ -194,6 +214,8 @@ class Goods extends Admin
             // 表单数据
             $data = $this->request->post();
             $data['add_time'] = time();
+            Db::name('categorygoods')->where('shopgoods_id',$id)->delete();
+            $this->setCat($data['s'],$id);
             // $data['cid'] = implode(",",$data['cid']);
             if ($advert = Db::name('shop_goods')->where('id',$data['id'])->update($data)) {
                 $this->success('编辑成功', 'index');
@@ -201,6 +223,8 @@ class Goods extends Admin
                 $this->error('编辑失败');
             }
         }
+
+        $catedata = Db::name('categorygoods')->where('shopgoods_id',$id)->column('category_id');
         $cate = Db::name('shop_category')->where('status',1)->column('id,name');
         $though = Db::name('shop_though')->where('status',1)->column('id,name');
         // $cation = Db::name('shop_cation')->column('id,name');
@@ -214,7 +238,8 @@ class Goods extends Admin
             ->addFormItems([
                 ['hidden','id'],
                 ['text', 'title', '商品名称','请输入'],
-                ['select','cid', '商品分类', '请选择',$cate],
+                ['select','s','商品分类','请选择',$cate,$catedata,'multiple'],
+//                ['select','cid', '商品分类', '请选择',$cate],
                 ['select','thoughid','属性皮色','请选择',$though],
                 // ['select','cationid','属性分类','请选择',$cation],
                 ['select','originid','属性产地','请选择',$origin],
@@ -240,7 +265,7 @@ class Goods extends Admin
             ])
             ->setFormData($info)
             ->layout([
-                'cid'=>2,
+                'cid' => 2,
                 'tid'=>2,
                 'thoughid'=>2,
                 'cationid'=>2,
@@ -250,20 +275,21 @@ class Goods extends Admin
                 'kindid'=>2,
                 'weight'=>2,
                 'size'=>2,
-                'title' => 3, 
-                'price' => 2, 
+//                'title' => 3,
+//                'images'=>3,
+//                'video'=>4,
+                'price' => 2,
                 'tags' => 3,
                 'keyword'=>3,
+//                'status'=>2,
+                'ding_time'=>2,
                 'goods_num'=>1,
                 'click_num'=>1,
-                'status'=>4,
-                'ding_time'=>2,
                 'sku'=>1,
-                'comment_num'=>1,
                 'com_num'=>1,
                 'is_free'=>2,
                 'sort' => 1
-                ])
+            ])
             ->fetch();
 
     }

@@ -39,8 +39,10 @@ class Sign extends Common
     {
     	$data = input('post.');
     	$uid = input('post.uid');
-    	$uid = '7';
+//    	$uid = '7';
     	$data['last_time'] = time();
+    	$integraldata=Db::name('user_setintegral')->find(1);
+    	dump($integraldata);
     	//点击签到先查表里有没有用户签到过的记录
     	$qian = Db::name('user')->where(['id'=>$uid])->find();
     	//有就判断时间戳,处理签到次数
@@ -53,7 +55,7 @@ class Sign extends Common
                 show_api($qian,'已经签到了',2);
             }else if($sign_str != $today_str){
                 $use = Db::name('user')->where(['id'=>$uid])->update(['last_time'=>$data['last_time']]);
-                Db::name('user')->where(['id'=>$uid])->setInc('integral',5);
+                Db::name('user')->where(['id'=>$uid])->setInc('integral',$integraldata['sign']);
                 show_api($use,'签到成功');
             }
     	}

@@ -63,7 +63,7 @@ class Detail extends Common
     }
     // 文章详情
     public function index(){
-        $id = input('id');$id=297;
+        $id = input('id');//$id=297;
         $dangid = input('uid');$uid=4;
         $thread = Db::name('forum_thread')->alias('t')->join('user u','t.uid = u.id')
                   ->where(['t.id'=>$id])

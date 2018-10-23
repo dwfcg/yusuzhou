@@ -125,8 +125,12 @@ class Index extends Common
         $data = input('post.');
         $limit = 10;
         $title = $data['title'];
-        $da = ['like','%'.$title.'%'];
-        $ta['search'] = Db::name('shop_goods')->where(['title'=>$da])
+        $search =$this-> demo($title);
+        $map = [
+            'title' => ['like', "%{$search}%"]
+        ];
+//        $da = ['like','%'.$title.'%'];
+        $ta['search'] = Db::name('shop_goods')->where($map)
                 ->order('price desc')
                 ->field('id,cid,title,tags,price,content,images,video,status,sort,goods_num,shou_num,click_num,com_num,is_free,thoughid,originid,rockid,kindid,weight,size,sku,add_time')
                 ->limit($data['page']*$limit,$limit)
@@ -141,6 +145,77 @@ class Index extends Common
            }
         show_api($ta);
 
+    }
+    public function get_arr_column($arr, $key_name)
+    {
+        $arr2 = array();
+        foreach($arr as $key => $val){
+            $arr2[] = $val[$key_name];
+        }
+        return $arr2;
+    }
+    public function demo($title)
+    {
+        $data=[
+            'data'=>$title,
+            'respond'=>'php',
+        ];
+        $url='http://www.xunsearch.com/scws/api.php';
+        $re=$this->postStr($url,$data);
+        $re=unserialize($re);
+        $str="";
+        $re=$this->get_arr_column($re['words'],'word');
+        $str='%'.implode($re, '%').'%';
+       return  $str;
+    }
+    //post 字符串到接口
+    public function postStr($url,$postfields){
+        $ch = curl_init();
+        $params[CURLOPT_URL] = $url;    //请求url地址
+        $params[CURLOPT_HEADER] = false; //是否返回响应头信息
+        $params[CURLOPT_RETURNTRANSFER] = true; //是否将结果返回
+        $params[CURLOPT_FOLLOWLOCATION] = true; //是否重定向
+        $params[CURLOPT_POST] = true;
+        $params[CURLOPT_SSL_VERIFYPEER] = false;//禁用证书校验
+        $params[CURLOPT_SSL_VERIFYHOST] = false;
+        $params[CURLOPT_POSTFIELDS] = $postfields;
+        curl_setopt_array($ch, $params); //传入curl参数
+        $content = curl_exec($ch); //执行
+        curl_close($ch); //关闭连接
+        return $content;
+    }
+    /**
+     * 模糊搜索中文分词
+     */
+   public function decorateSearch_pre()
+    {
+        $words="玉苏周镯子的";
+        $tempArr = str_split($words);
+        $wordArr = array();
+        $temp = '';
+        $count = 0;
+        $chineseLen = 3;
+        foreach($tempArr as $word){
+            if ($count == $chineseLen){
+                $wordArr[] = $temp;
+                $temp = '';
+                $count = 0;
+            }
+
+            // 中文
+            if(ord($word) > 127){
+                $temp .= $word;
+                ++$count;
+            }else if (ord($word) != 32){
+                $wordArr[] = $word;
+            }
+        }
+
+        if ($count == $chineseLen){
+            $wordArr[] = $temp;
+        }
+        dump($wordArr);
+        return '%'.implode($wordArr, '%').'%';
     }
 
     /*
@@ -175,13 +250,14 @@ class Index extends Common
 
     }
    }
-   //全部
+   //全部本店商品
    public function getGoodsQuan()
    {
         $data = input('post.');
         $limit = 8;
         $info['goods'] = Db::name('shop_goods')->where(['status'=>1])
                 ->order('price desc')
+            ->where('shopstatus',0)
                 ->field('id,cid,title,tags,price,content,images,video,status,sort,goods_num,shou_num,click_num,com_num,is_free,thoughid,originid,rockid,kindid,weight,size,sku,add_time')
                 ->limit($data['page']*$limit,$limit)
                 ->select();
@@ -191,6 +267,79 @@ class Index extends Common
        }
        show_api($info);
    }
+    //全部闲置商品
+    public function unuseGetGoodsQuan()
+    {
+        $data = input('post.');
+        $limit = 8;
+        $info = Db::name('shop_goods')->where(['status'=>1])
+            ->order('price desc')
+            ->where('shopstatus',1)
+            ->field('shopstatus,id,cid,title,tags,price,content,images,video,status,sort,goods_num,shou_num,click_num,com_num,is_free,thoughid,originid,rockid,kindid,weight,size,sku,add_time')
+            ->limit($data['page']*$limit,$limit)
+            ->select();
+        foreach ($info as &$goods) {
+            $goods['images'] = array_filter(explode(',',$goods['images']));
+            $goods['tags'] = array_filter(explode(',',$goods['tags']));
+        }
+//        dump($info);
+        show_api($info);
+    }
+    //全部热门闲置商品
+    public function unuseHotGetGoodsQuan()
+    {
+        $data = input('post.');
+        $limit = 8;
+        $info = Db::name('shop_goods')->where(['status'=>1])
+            ->order('add_time desc')
+            ->where('shopstatus',1)
+            ->field('shopstatus,id,cid,title,tags,price,content,images,video,status,sort,goods_num,shou_num,click_num,com_num,is_free,thoughid,originid,rockid,kindid,weight,size,sku,add_time')
+            ->limit($data['page']*$limit,$limit)
+            ->select();
+        foreach ($info as &$goods) {
+            $goods['images'] = array_filter(explode(',',$goods['images']));
+            $goods['tags'] = array_filter(explode(',',$goods['tags']));
+        }
+//        dump($info);
+        show_api($info);
+    }
+    //全部推荐闲置商品
+    public function unuseRecommendGoodsQuan()
+    {
+        $data = input('post.');
+        $limit = 8;
+        $info = Db::name('shop_goods')->where(['status'=>1])
+            ->order('price desc')
+            ->where('shopstatus',1)
+            ->where('recommend',0)
+            ->field('shopstatus,id,cid,title,tags,price,content,images,video,status,sort,goods_num,shou_num,click_num,com_num,is_free,thoughid,originid,rockid,kindid,weight,size,sku,add_time')
+            ->limit($data['page']*$limit,$limit)
+            ->select();
+        foreach ($info as &$goods) {
+            $goods['images'] = array_filter(explode(',',$goods['images']));
+            $goods['tags'] = array_filter(explode(',',$goods['tags']));
+        }
+//        dump($info);
+        show_api($info);
+    }
+    //全部秒杀商品
+    public function killGetGoodsQuan()
+    {
+        $data = input('post.');
+        $limit = 8;
+        $info = Db::name('shop_goods')->where(['status'=>1])
+            ->order('price desc')
+            ->where('shopstatus',2)
+            ->field('id,cid,title,tags,price,content,images,video,status,sort,goods_num,shou_num,click_num,com_num,is_free,thoughid,originid,rockid,kindid,weight,size,sku,add_time')
+            ->limit($data['page']*$limit,$limit)
+            ->select();
+        foreach ($info as &$goods) {
+            $goods['images'] = array_filter(explode(',',$goods['images']));
+            $goods['tags'] = array_filter(explode(',',$goods['tags']));
+        }
+        dump($info);
+        show_api($info);
+    }
     //每周新上1
     public function  getGoodsXin()
     {

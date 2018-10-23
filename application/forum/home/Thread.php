@@ -47,7 +47,7 @@ class Thread extends Common
         $limit = 10;
         $title = $data['title'];
         $da = ['like','%'.$title.'%'];
-//        除去闲置商品搜索信息
+//        本店商品搜索信息
         $ta['shop_goods'] = Db::name('shop_goods')->where(['title'=>$da])->where('shopstatus','eq',0)
             ->order('price desc')
             ->field('id,cid,title,tags,price,content,images,video,status,sort,goods_num,shou_num,click_num,com_num,is_free,thoughid,originid,rockid,kindid,weight,size,sku,add_time')
@@ -58,13 +58,16 @@ class Thread extends Common
             $th['tags'] = array_filter(explode(',',$th['tags']));
             $th['add_time'] = date('Y-m-d H:i',$th['add_time']);
         }
-        //        闲置商品搜索
-        $ta['shop_goodsUnuse'] = Db::name('shop_unuse')->where(['title'=>$da])->where('status',4)
+        //闲置商品搜索信息
+        $ta['shop_goods1'] = Db::name('shop_goods')->where(['title'=>$da])->where('shopstatus','eq',1)
             ->order('price desc')
+            ->field('id,shopstatus,cid,title,tags,price,content,images,video,status,sort,goods_num,shou_num,click_num,com_num,is_free,thoughid,originid,rockid,kindid,weight,size,sku,add_time')
             ->limit($data['page']*$limit,$limit)
             ->select();
-        foreach( $ta['shop_goodsUnuse'] as &$th ){
+        foreach( $ta['shop_goods1'] as &$th ){
             $th['images'] = array_filter(explode(',',$th['images']));
+            $th['tags'] = array_filter(explode(',',$th['tags']));
+            $th['add_time'] = date('Y-m-d H:i',$th['add_time']);
         }
 //        用户搜索
         $ta['user'] = Db::name('user')->where(['name'=>$da])
@@ -376,7 +379,7 @@ class Thread extends Common
                 }
             }
         }
-        //dump($thread);die;
+//        dump($thread);die;
         show_api($thread);
     }
     public function get()

@@ -34,9 +34,19 @@ class Member extends Admin
 
         // 获取查询条件
         $map = $this->getMap();
-
+        $data=Db::name('user_ship')->order('level asc')->select();
+        $data1=[];
+        $i=1;
+        foreach ($data as $k=>$v)
+        {
+            $data1[$i++]=$v['name'];
+        }
         // 数据列表
-        $data_list = MemberModel::where($map)->order('add_time,id desc')->paginate();
+        $data_list = Db::name('user')->alias('a')
+            ->join("user_ship b","a.level=b.level")
+            ->order('add_time,id desc')
+            ->field('a.*,b.name as title')
+            ->paginate();
 // dump($data_list);exit;
         // 分页数据
         $page = $data_list->render();
@@ -56,6 +66,7 @@ class Member extends Admin
             ->addColumns([ // 批量添加列
                 ['id', 'ID','link',url('edit',['id'=>'__id__'])],
                 ['name', '用户名', 'text.edit'],
+                ['level', '会员等级','status','',$data1],
                 ['sex', '性别','status','',[1=>'男','女']],
                 ['openid', 'openid'],
                 ['headimg', '头像','img_url'],

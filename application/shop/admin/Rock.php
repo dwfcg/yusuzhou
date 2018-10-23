@@ -109,7 +109,7 @@ class Rock extends Admin
                 ['right_button', '操作', 'btn']
 
             ])
-            ->addTopButtons('add,enable,disable,delete')
+            ->addTopButtons('add,delete')
             ->addRightButton('custom', $btnAdd)
             ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
             ->setRowList($data_list)

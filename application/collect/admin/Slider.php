@@ -86,7 +86,7 @@ class Slider extends Admin
 
             ])
 
-            ->addTopButtons('add,enable,disable,delete')
+            ->addTopButtons('add,delete')
 
             ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
 

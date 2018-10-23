@@ -36,7 +36,7 @@ class Order extends Admin
         $data_list = Db::name('auction_order')->alias('a')
         ->join('auction_goods b','a.gid=b.id')
         ->join('user c','a.uid=c.id')
-        ->join('address d','a.dizhi_id=d.address_id')
+        ->join('address d','a.addre_id=d.address_id')
         ->field("a.*,b.title,b.imgs,c.name,c.headimg,d.consignee, d.sheng, d.shi, d.xian, d.address, d.mobile")
         ->where($map)
         ->order('add_time desc')->paginate();
@@ -62,11 +62,11 @@ class Order extends Admin
                 ['pay_type','支付方式','status','',['微信','支付宝']],
                 ['pay_status', '支付状态', 'status','',['未支付', '已支付']],
                 ['status','订单状态','status','',['待付款','待发货','待收货','已完成','已评价']],
-                ['add_time','下单时间','datetime'],
+                ['addtime','下单时间','datetime'],
                 ['right_button', '操作', 'btn']
 
             ])
-            ->addTopButtons('add,enable,disable,delete')
+            ->addTopButtons('delete')
             ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
             ->setRowList($data_list)
             ->fetch(); // 渲染模板
@@ -77,16 +77,13 @@ class Order extends Admin
     {
         if ($id === null) $this->error('缺少参数');
         $sd = Db::name('auction_order')->where(['id'=>$id])->find();
-        $com = $sd["express"];
+        $address = Db::name('order_delivery')->where(['id'=>$sd['express']])->find();
+
+        $com = $address["code"];
         $nu = $sd["express_no"];
-        // $context = "查询";
-        // var_dump($com);
-        // var_dump($nu);die;
-        // $link="<a href='https://www.kuaidi100.com/chaxun?com=".$com."&nu=".$nu."'>".$context."</a >";
         return $this->redirect("https://www.kuaidi100.com/chaxun?com=".$com."&nu=".$nu."");
         // echo $link;
     }
-    //编辑
     public function edit($id = null)
     {
         if ($id === null) $this->error('缺少参数');
@@ -94,27 +91,103 @@ class Order extends Admin
         if ($this->request->isPost()) {
             // 表单数据
             $data = $this->request->post();
-            if ($advert = Db::name('auction_order')->where('id',$data['id'])->update($data)) {
-                // var_dump($advert);die;
+//            dump($data);
+            $addressinfo1=Db::name('region')->select();
+            $addressdata=$this->getParents($addressinfo1,$data['area']);
+//            dump($addressdata);
+            if($addressdata)
+            {
+                $whereaddress=[
+                    'address'=>$data['address1'],
+                    'sheng'=>$addressdata[1]['region_name'],
+                    'shi'=>$addressdata[2]['region_name'],
+                    'xian'=>$addressdata[3]['region_name'],
+                    'consignee'=>$data['consignee'],
+                    'mobile'=>$data['mobile']
+                ];
+            }else{
+                $whereaddress=[
+                    'address'=>$data['address1'],
+                    'consignee'=>$data['consignee'],
+                    'mobile'=>$data['mobile']
+                ];
+            }
+
+//            dump($data);
+            $whereorder=[
+                'express'=>$data['express'],
+                'express_no'=>$data['express_no'],
+                'status'=>$data['status']
+            ];
+            $advert = Db::name('auction_order')->where('id',$data['id'])->find();
+            $address=Db::name('address')->where('address_id',$advert['addre_id'])->update($whereaddress);
+//            unset($data['address']);
+            $advert1 = Db::name('auction_order')->where('id',$data['id'])->update($whereorder);
+            if ($advert1||$address) {
                 $this->success('编辑成功', 'index');
             } else {
                 $this->error('编辑失败');
             }
         }
-        $info = Db::name('auction_order')->find($id);
-        $goods = Db::name('auction_goods')->find($info['gid']);
-        $address = Db::name('address')->find($info['dizhi_id']);
-        $pics = explode(",",$goods['imgs']);
-        $goods['pic'] = $pics[0];
-        $this->assign('info',$info);
-        $this->assign('address',$address);
-        $this->assign('goods',$goods);
-   // 显示编辑页面
+        $info = Db::name('auction_order')->alias('a')
+            ->join('auction_goods b','a.gid=b.id')
+            ->join('user c','a.uid=c.id')
+            ->join('address d','a.addre_id=d.address_id')
+            ->field("a.*,b.title,b.imgs as images,c.name,c.headimg,d.consignee, d.sheng, d.shi, d.xian, d.address, d.mobile")
+            ->order('add_time desc')->find($id);
+//         显示编辑页面
+        $info['images']=array_filter(explode(',',$info['images']));
+//        dump($info);
+        $addressinfo=Db::name('packet_wechat_area')->select();
+//        $info['sheng']=$addressinfo['sheng']
+        $html = '<img  src="'.$info["images"][0].'" height="150" width="150" />';
+        unset($info['images']);
+        $address=Db::name('order_delivery')->select();
+//        dump($info);
+        $info['address']=$info['sheng'].$info['shi'].$info['xian'].$info['address'];
+        $data=[];
+        foreach ($address as $k => $v)
+        {
+            $data[$address[$k]['id']]=$address[$k]['name'];
+        }
         return ZBuilder::make('form')
+            ->addFormItems([
+                ['hidden','id'],
+                ['static','order_sn', '订单编号'],
+                ['static','title', '商品名称'],
+                ['static','price', '订单价格'],
+                ['text','consignee', '收货人'],
+                ['text','mobile', '手机号'],
+                ['select', 'express', '物流公司','',$data],
+                ['text', 'express_no', '物流编号'],
+                ['static', 'address', '收货地址'],
+                ['linkages', 'area', '修改收货地区', '', 'region', 4, '', ['pid' => 'parent_id','name' => 'region_name', 'id' => 'region_id']],
 
-            ->fetch('edit');
-            // ->fetch();
+                ['text', 'address1', '修改收货地址'],
+//                ['image','images', '订单编号'],
 
+//                ['text','comment', '商品描述'],
+//                ['images', 'images', '商品图片'],
+                ['radio','status', '','', [ '0' => '待付款','1' => '待发货','2' => '已发货', '3' => '已完成'],0],
+            ])
+            ->setExtraHtml($html, 'form_top')
+            ->setFormData($info)
+//            ->layout(['title' => 2, 'url' => 3, 'img' => 6, 'sort' => 2])
+            ->fetch();
+    }
+    public function getParents($categorys,$catId){
+        $tree=array();
+        foreach($categorys as $item)
+        {
+            if($item['region_id']==$catId)
+            {
+                if($item['parent_id']>0)
+                    $tree=array_merge($tree,$this->getParents($categorys,$item['parent_id']));
+                $tree[]=$item;
+                break;
+            }
+        }
+        return $tree;
     }
 
 }

@@ -14,23 +14,66 @@ use think\Db;
 
 class Unuse extends Home
 {
-//    闲置商品展示页
+    /**
+     * 获取单个闲置商品信息
+     * id
+     */
+    public function selectUnuse()
+    {
+        $data = input('post.');
+        $info=Db::name('shop_unuse')
+            ->find($data['id']);
+        $info['images'] = array_filter(explode(',',$info['images']));
+//        dump($info);
+        show_api($info);
+    }
+
+    /**
+     * @page
+     * @key
+     */
     public function getUnuse(){
         $data = input('post.');
         $limit = 8;
-        $info['goods']=Db::name('shop_unuse')
-            ->where('status',4)
-            ->limit($data['page']*$limit,$limit)
-            ->select();
-        foreach ($info['goods'] as &$goods) {
+        switch ($data['key'])
+        {
+            case 'hot':
+                $info=Db::name('shop_unuse')
+                    ->where('status',4)
+                    ->order('add_time desc')
+                    ->limit($data['page']*$limit,$limit)
+                    ->select();
+                break;
+            case 'all':
+                $info=Db::name('shop_unuse')
+                    ->where('status',4)
+                    ->limit($data['page']*$limit,$limit)
+                    ->select();
+                break;
+            case 'price':
+                $info=Db::name('shop_unuse')
+                    ->where('status',4)
+                    ->order('price desc')
+                    ->limit($data['page']*$limit,$limit)
+                    ->select();
+                break;
+            case 'recommend':
+                $info=Db::name('shop_unuse')
+                    ->where('status',4)
+                   ->where('recommend',1)
+                    ->limit($data['page']*$limit,$limit)
+                    ->select();
+                break;
+        }
+        foreach ($info as &$goods) {
             $goods['images'] = array_filter(explode(',',$goods['images']));
         }
-//        dump($info);
         show_api($info);
     }
     /*
 
     * 创建闲置订单
+     * 已goods.php下面为准留着备用
 
     */
 
@@ -96,5 +139,6 @@ class Unuse extends Home
             $this->result(0,2);
         }
     }
+
 
 }

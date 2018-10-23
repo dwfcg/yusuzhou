@@ -62,6 +62,10 @@ class Goods extends Common
             show_api($data,'没有视频',0);
         }
     }
+    public function getUrl($id)
+    {
+        echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?id='.$id;
+    }
 //---------详情------------------------------------------------------------
     public function index(){
         $id = input('id');
@@ -397,6 +401,14 @@ class Goods extends Common
         }
        return show_api($cartData);
     }
+    //判断用户等级
+    public function getLevel($uid)
+    {
+      $info=Db::name('user')->find($uid);
+      $ship=Db::name('user_ship')->where('level',$info['level'])->find();
+//      dump($ship);
+      return 0.01*$ship['discount'];
+    }
 
     /*
 
@@ -407,30 +419,51 @@ class Goods extends Common
     public function create_order(){
 
         $data = input('post.');
+        $data['order_status']=0;
 
         $address_id = input('address_id');
 
-        $region = AddressModel::where( 'address_id',$address_id )->find();
+        $region = AddressModel::where( 'address_id',$address_id )->find()->toArray();
+//        dump($region);
+//        if( !$region || !$region['address'] || !$region['sheng'] || !$region['shi'] || !$region['xian']){
+        if( !$region){
 
-        if( !$region || !$region['address'] || !$region['sheng'] || !$region['shi'] || !$region['xian']){
-
-            $this->result(0,'address');
+            show_api('','地址不能为空',0);
 
         }
 
         $goods_id = explode(',',$data['goods_id']);
-
-        $goods = Db::name('shop_goods')->where('id','in',$goods_id)->select();
-        // dump($goods);die;
         $order['goods_id'] = $data['goods_id'];
+        $order['order_status'] = $data['order_status'];
+        $goods = Db::name('shop_goods')->where('id','in',$goods_id)->select();
+        $price= array_sum(array_column($goods,'price'));
+        //判断订单类型order_status0本店订单存入goods_ID
+        //          order_status1闲置订单
+        //          order_status2秒杀订单
+        if($data['order_status']==0)
+        {
+            $order['order_status'] = 0;
+            //判断是否存在coupon_id，coupon_price有则使用优惠券
+            if(array_key_exists('coupon_id',$data))
+            {
+                $order['coupon_price'] = $data['coupon_price'];
+                Db::name('shop_couponlist')
+                    ->where('cid',$data['coupon_id'])
+                    ->where('uid',$data['uid'])
+                    ->update(['status'=>1]);
+                $price=$price-$data['coupon_price'];
+            }
+                //判断是否level
+                $discount=$this->getLevel($data['uid']);
+                $price=$discount*$price;
 
+        }
+        $order['price'] = $price;
+//         dump($goods);die;
         $order['address_id'] = $address_id;
 
         // $order['user_id'] = $this->user['id'];
         $order['user_id'] = input('post.uid');
-    	$price= array_sum(array_column($goods,'price'));
-
-
     	$order['add_time'] = time();
 
         $order['address'] = $region['address'];
@@ -450,19 +483,8 @@ class Goods extends Common
         $order['city_name'] = $region['shi'];
 
         $order['district_name'] = $region['xian'];
+//        dump($order);die;
         Db::startTrans();
-        if(array_key_exists('coupon_id',$data))
-        {
-            $order['coupon_price'] = $data['coupon_price'];
-            Db::name('shop_couponlist')
-                ->where('cid',$data['coupon_id'])
-                ->where('uid',$data['uid'])
-                ->update(['status'=>1]);
-            $price=$price-$data['coupon_price'];
-        }
-        $order['price'] = $price;
-//    	Db::startTrans();
-
         $orderid = DB::name('shop_order')->insertGetId( $order );
 
         $update['order_sn'] = time().$orderid;
@@ -470,10 +492,10 @@ class Goods extends Common
         DB::name('shop_order')->where( 'id',$orderid )->update($update);
         if( $orderid ){
             Db::commit();
-            $this->result($orderid);
+            show_api($orderid,'成功','1');
         }else{
 	    	Db::rollback();
-	    	$this->result(0,2);
+            show_api('','失败','0');
 	    }
     }
     /**
