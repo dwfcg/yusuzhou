@@ -20,8 +20,8 @@ class Goods extends Home
         $limit = 8;
         $info=Db::name('integralshop_index')
             ->order('id asc')
-            ->limit($data['page']*$limit,$limit)
-        ->select();
+//            ->limit($data['page']*$limit,$limit)
+            ->paginate(10,'',['page'=>$data['page']]);
         foreach ($info as &$goods) {
             $goods['images'] = array_filter(explode(',',$goods['images']));
         }
@@ -78,7 +78,7 @@ class Goods extends Home
         $data=input('post.');
         $rel=Db::name('integralshop_index')->where('id',$data['id'])->find();
         $rel['images']=array_filter(explode(',',$rel['images']));
-        dump($rel);
+//        dump($rel);
         show_api($rel);
     }
 
@@ -104,7 +104,7 @@ class Goods extends Home
         }
 
         $goods_id = explode(',',$data['goods_id']);
-        dump($goods_id);
+//        dump($goods_id);
         $goods = Db::name('integralshop_index')->where('id','in',$goods_id)->select();
 //         dump($goods);die;
         $order['integralshop_id'] = $data['goods_id'];
@@ -146,7 +146,7 @@ class Goods extends Home
         if( $orderid ){
             Db::commit();
             $goods['orderid']=$orderid;
-            dump($goods);
+//            dump($goods);
             show_api($goods);
         }else{
             Db::rollback();
@@ -184,8 +184,7 @@ class Goods extends Home
             ->where('user_id',$data['uid'])
             ->order('add_time desc')
             ->field('a.*,b.images,b.status as shopstatus,b.price,b.money,b.comment,b.name')
-            ->limit($data['page']*$limit,$limit)
-            ->select();
+            ->paginate(10,'',['page'=>$data['page']]);
         foreach ($info as &$goods) {
             $goods['images'] = array_filter(explode(',',$goods['images']));
         }
@@ -205,7 +204,7 @@ class Goods extends Home
         {
             show_api('','请仔细检查订单','0');
         }
-        Db::name('user_integral')->where('user_id',$data['uid'])->where('')->update(['status'=>3]);
+        Db::name('user_integral')->where('id',$data['orderid'])->where('')->update(['status'=>3]);
         show_api('','订单已完成','0');
     }
 }

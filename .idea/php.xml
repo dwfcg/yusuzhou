@@ -2,20 +2,19 @@
 <project version="4">
   <component name="PhpIncludePathManager">
     <include_path>
-      <path value="$PROJECT_DIR$/vendor/ezyang/htmlpurifier" />
       <path value="$PROJECT_DIR$/vendor/topthink/think-installer" />
-      <path value="$PROJECT_DIR$/vendor/yansongda/pay" />
-      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
-      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
-      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
-      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
-      <path value="$PROJECT_DIR$/vendor/zoujingli/pay-php-sdk" />
       <path value="$PROJECT_DIR$/vendor/topthink/think-helper" />
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/topthink/think-captcha" />
       <path value="$PROJECT_DIR$/vendor/topthink/think-image" />
-      <path value="$PROJECT_DIR$/vendor/payment/src" />
-      <path value="$PROJECT_DIR$/vendor/payment/example" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/zoujingli/pay-php-sdk" />
+      <path value="$PROJECT_DIR$/vendor/yansongda/pay" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/vendor/jpush/jpush" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />

@@ -13,6 +13,7 @@ use app\index\controller\Home;
 //use think\session\driver\Redis;
 use think\cache\driver\Redis;
 
+//这就是个测试redis
 class Demo extends Common
 {
     public function demo()

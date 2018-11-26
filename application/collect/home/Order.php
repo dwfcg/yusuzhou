@@ -177,6 +177,9 @@ class Order extends Common
         $nam = Db::name('collect_order')->where('id',$data['oid'])->update(['status'=>4]);
         //新增数据并返回主键值
         $result = Db::name('shop_comment')->insertGetId($data);
+        $newdata=Db::name('user_setintegral')->select();
+        Db::name('user')
+            ->where('id',$data['uid'])->setInc('integraal',$newdata[0]['commentgoods']);
 //        dump($result);
         show_api($result);
     }

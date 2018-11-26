@@ -307,7 +307,7 @@ class AcpService extends LogUtil {
      */
     static function convertStringToArray($str)
     {
-        return self::parseQString($str);
+        return self::wparseQString($str);
     }
 
 	/**

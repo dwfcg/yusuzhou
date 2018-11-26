@@ -21,7 +21,7 @@ class Unuse extends Admin
         // 查询
         $map = $this->getMap();
         // 数据列表
-        $fied=['0'=>'待审核','1'=>'通过','3'=>'对方发货'];
+        $fied=['0'=>'待审核','1'=>'通过','3'=>'已发货'];
         if(!$map)
         {
             $data=Db::name('shop_unuse')->where($map)->where('status','>',-1)->paginate();
@@ -36,7 +36,7 @@ class Unuse extends Admin
                 ['name', '商品名称'],
                 ['images', '商品图片','img_url'],
                 ['price', '价格'],
-                ['status', '申请状态', 'status','',['待审核', '通过', '拒绝','对方已发货']],
+                ['status', '申请状态', 'status','',['待审核', '通过', '拒绝','对方已发货','收到']],
                 ['right_button', '操作', 'btn'],
 
 
@@ -290,7 +290,7 @@ class Unuse extends Admin
                 ['hidden','id'],
                 ['static','name', '商品名称'],
                 ['static','comment', '详细描述'],
-                ['radio','status', '','', ['1' => '通过', '2' => '拒绝']],
+                ['radio','status', '','', ['1' => '通过', '2' => '拒绝','4'=>'收到货物']],
             ])
             ->setExtraHtml($html, 'form_top')
             ->setFormData($info)

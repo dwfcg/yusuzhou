@@ -252,8 +252,10 @@ class Store extends Admin
                 ['text','size','商品尺寸'],
 
                 ['number', 'price', '商品价格'],
+                ['number', 'back', '商品佣金','如100就是100元'],
                 ['images', 'images', '商品图片'],
                 ['text', 'video', '编辑商品视频地址','<span class="text-danger">编辑商品视频地址</span>'],
+                ['file', 'video'],
                 ['tags', 'tags', '商品标签'],
                 ['number', 'sort', '商品排序','','99'],
                 ['radio', 'status', '商品状态', '', ['已卖出', '上架', '下架','定时发布']],
@@ -268,28 +270,31 @@ class Store extends Admin
             ])
             ->setFormData($info)
             ->layout([
-                'cid'=>3,
-                'tid'=>3,
-                'thoughid'=>3,
-                'cationid'=>3,
-                'originid'=>3,
-                'rockid'=>3,
-                'themeid'=>3,
-                'kindid'=>3,
+                'cid' => 2,
+                'tid'=>2,
+                'thoughid'=>2,
+                'cationid'=>2,
+                'originid'=>2,
+                'rockid'=>2,
+                'themeid'=>2,
+                'kindid'=>2,
                 'weight'=>2,
-                'size'=>3,
-                'video'=>5,
-                'ding_time'=>2,
-                'price' => 2, 
+                'size'=>2,
+                'back' => 3,
+//                'images'=>3,
+//                'video'=>4,
+                'price' => 2,
                 'tags' => 3,
-                'goods_num'=>3,
-                'click_num'=>3,
-                'sku'=>3,
-                'comment_num'=>3,
-                'com_num'=>3,
-                'is_free'=>3,
-                'sort' => 2
-                ])
+                'keyword'=>3,
+//                'status'=>2,
+                'ding_time'=>2,
+                'goods_num'=>1,
+                'click_num'=>1,
+                'sku'=>1,
+                'com_num'=>1,
+                'is_free'=>2,
+                'sort' => 1
+            ])
             ->fetch();
 
     }

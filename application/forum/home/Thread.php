@@ -173,6 +173,9 @@ class Thread extends Common
             $info = "发布成功";
             $result = Db::name('forum_thread')->insertGetId($data);
             Db::name('user')->where(['id'=>$data['uid']])->setInc('fabu');
+            $newdata=Db::name('user_setintegral')->select();
+            Db::name('user')
+                ->where('id',$data['uid'])->setInc('integraal',$newdata[0]['releasetie']);
         }else{
             $result = 0;
             $info = $validate->getError();
@@ -196,6 +199,9 @@ class Thread extends Common
             $info = "发布成功";
             $result = Db::name('forum_thread')->insertGetId($data);
             Db::name('user')->where(['id'=>$data['uid']])->setInc('fabu');
+            $newdata=Db::name('user_setintegral')->select();
+            Db::name('user')
+                ->where('id',$data['uid'])->setInc('integraal',$newdata[0]['releasetie']);
         }else{
             $result = 0;
             $info = $validate->getError();
@@ -243,6 +249,9 @@ class Thread extends Common
             $info = '发布成功';
             $result = Db::name('forum_thread')->insertGetId($data);
             Db::name('user')->where(['id'=>$data['uid']])->setInc('fabu');
+            $newdata=Db::name('user_setintegral')->select();
+            Db::name('user')
+                ->where('id',$data['uid'])->setInc('integraal',$newdata[0]['releasetie']);
         }else{
             $result = 0;
             $info = $validate->getError();

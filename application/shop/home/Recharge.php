@@ -25,8 +25,8 @@ class Recharge  extends Common
         $str='2,7,36,38';
         $str=explode(',',$str);
         dump($str);
-//        $category=array_filter(explode(',',$str));
-//        dump($category);
+        $category=array_filter(explode(',',$str));
+        dump($category);
         foreach ($str as $k =>$v)
         {
            $cate[]=[
@@ -34,7 +34,7 @@ class Recharge  extends Common
                'category_id'=>$v,
                ];
         }
-        dump($cate);
+//        dump($cate);
         Db::name('categorygoods')->insertAll($cate);
     }
     /**
@@ -58,7 +58,7 @@ class Recharge  extends Common
     }
     public function recharge($uid,$price)
     {
-        $data=Db::name('user_recharge')->where('id',$uid)->setInc('wallet',$price);
+        $data=Db::name('user')->where('id',$uid)->setInc('wallet',$price);
     }
 
 //支付宝充值
@@ -115,8 +115,8 @@ class Recharge  extends Common
         //返回给客户端,建议在客户端使用私钥对应的公钥做一次验签，保证不是他人传输。
         // echo $data;
         $list['form'] = $data;
-         var_dump($list);die;
-//        show_api($list,'ok',1);
+//         var_dump($list);die;
+        show_api($list,'ok',1);
     }
 
 
@@ -299,7 +299,7 @@ class Recharge  extends Common
         $data=input('post.');
         $order_sn=$data['order_sn'];
         $orderInfo = Db::name("user_recharge")->where("order_sn={$order_sn}")->find();
-        dump($orderInfo);
+//        dump($orderInfo);
         $serves=new SDKConfig();
         $AcpService=new AcpService();
 //       echo $serves::getSDKConfig()->signMethod;die();
@@ -311,8 +311,8 @@ class Recharge  extends Common
             'txnType' => '01',				      //交易类型
             'txnSubType' => '01',				  //交易子类
             'bizType' => '000201',				  //业务类型
-            'frontUrl' =>  $serves::getSDKConfig()->frontUrl,  //前台通知地址
-            'backUrl' =>$serves::getSDKConfig()->backUrl,	  //后台通知地址
+//            'frontUrl' =>  $serves::getSDKConfig()->frontUrl,  //前台通知地址
+            'backUrl' =>'http://yusuzhou.youacloud.com/index.php/shop/recharge/unionpay_notifyUrl',	  //后台通知地址
             'signMethod' => $serves::getSDKConfig()->signMethod,	              //签名方法
             'channelType' => '08',	              //渠道类型，07-PC，08-手机
             'accessType' => '0',		          //接入类型
@@ -321,7 +321,7 @@ class Recharge  extends Common
             //TODO 以下信息需要填写
             'merId' => '880000000000761',		//商户代码，请改自己的测试商户号，此处默认取demo演示页面传递的参数
             'orderId' => $orderInfo['order_sn'],	//商户订单号，8-32位数字字母，不能含“-”或“_”，此处默认取demo演示页面传递的参数，可以自行定制规则
-            'txnTime' => date('YmdHis',$orderInfo['pay_time']),	//订单发送时间，格式为YYYYMMDDhhmmss，取北京时间，此处默认取demo演示页面传递的参数
+            'txnTime' => date('YmdHis',time()),	//订单发送时间，格式为YYYYMMDDhhmmss，取北京时间，此处默认取demo演示页面传递的参数
             'txnAmt' => $orderInfo['price']*10,	//交易金额，单位分，此处默认取demo演示页面传递的参数
 
             // 请求方保留域，
@@ -372,10 +372,15 @@ class Recharge  extends Common
     }
     public function printResult($url, $req, $resp) {
         $AcpService=new AcpService();
-        echo "=============<br>\n";
-        echo "地址：" . $url . "<br>\n";
-        echo "请求：" . str_replace ( "\n", "\n<br>", htmlentities ( $AcpService::createLinkString ( $req, false, true ) ) ) . "<br>\n";
-        echo "应答：" . str_replace ( "\n", "\n<br>", htmlentities ( $AcpService::createLinkString ( $resp , false, false )) ) . "<br>\n";
-        echo "=============<br>\n";
+//        echo "=============<br>\n";
+//        echo "地址：" . $url . "<br>\n";
+//        echo "请求：" . str_replace ( "\n", "\n<br>", htmlentities ( $AcpService::createLinkString ( $req, false, true ) ) ) . "<br>\n";
+//        echo "应答：" . str_replace ( "\n", "\n<br>", htmlentities ( $AcpService::createLinkString ( $resp , false, false )) ) . "<br>\n";
+//        echo "=============<br>\n";
+    }
+    //前端对接后测试的时候把这个写了
+    public function  unionpay_notifyUrl()
+    {
+        echo 11;
     }
 }

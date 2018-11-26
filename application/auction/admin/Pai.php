@@ -44,6 +44,7 @@ class Pai extends Admin
         $data_list = Db::name('auction_goods')->where($map)->order('addtime desc')->paginate();
         // 使用ZBuilder快速创建数据表格
         return ZBuilder::make('table')
+            ->setTableName('auction_goods')
             ->setSearch(['title' => '标题']) // 设置搜索框
             ->addColumns([ // 批量添加数据列
                 ['id', 'ID'],
@@ -53,8 +54,8 @@ class Pai extends Admin
                 ['price','当前价格'],
                 ['price_range','加价幅度'],
                 ['bands','保证金金额'],
-                ['start_time','开始时间','datetime'],
-                ['end_time','结束时间','datetime'],
+                ['start_time','开始时间','text'],
+                ['end_time','结束时间','text'],
                 ['status', '状态', 'status','',['即将开始', '进行中','流拍','已结束']],
                 ['partake','浏览人数','text.edit'],
                 ['offer','出价人数'],
@@ -79,7 +80,8 @@ class Pai extends Admin
             // 表单数据
             $data = $this->request->post();
             $data['addtime'] = time();
-            if ($advert = Db::name('auction_goods')->insert($data)) {
+            $advert = Db::name('auction_goods')->insert($data);
+            if ($advert) {
                 $this->success('新增成功', 'index');
             } else {
                 $this->error('新增失败');

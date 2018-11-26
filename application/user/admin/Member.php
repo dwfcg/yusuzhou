@@ -83,7 +83,7 @@ class Member extends Admin
                 ['add_time', '注册时间', 'datetime'],
                 ['right_button', '操作', 'btn']
             ])
-            ->addTopButtons('enable,disable,delete') // 批量添加顶部按钮
+            ->addTopButtons('delete') // 批量添加顶部按钮
             // ->addRightButton('custom', $btn_access) // 添加授权按钮
             // ->addRightButtons('edit,delete') // 批量添加右侧按钮
             ->addRightButtons(['edit','delete'=>['data-tips' => '删除后无法恢复。']]) // 批量添加右侧按钮

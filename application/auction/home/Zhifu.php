@@ -13,6 +13,36 @@ use Yansongda\Pay\Pay;
  */
 class Zhifu extends Common
 {
+    //    钱包支付
+    public function walletpay()
+    {
+        $order_sn = input("post.order_sn");
+        // $order_sn = '152877458092';
+        if($order_sn == 0){
+            show_api('','非法数据',0);
+        }
+        $order_info = Db::name('auction_band')->where("order_no={$order_sn}")->find();
+        $total_fee = $order_info['band'];
+        $user=Db::name('user')->where('id',$order_info['uid'])->find();
+        $money=$user['wallet']-$total_fee;
+//        dump($money);
+        if($money>=0)
+        {
+            Db::name('user')->where('id',$order_info['uid'])->setDec('wallet',$total_fee);
+            $update['pay_type']=3;
+            $update['pay_status']=1;
+            // $update['pay_sn']=$xmlArray['transaction_id'];
+            $update['addtime']=time();
+            $update['status']=1;
+            $where['order_no']=$order_info['order_no'];
+
+            $res=Db::name("auction_band")->where($where)->update($update);
+            show_api();
+        }else{
+            return show_api('','',0);
+        }
+    }
+
     //支付宝支付
     function  alipay_before(){
         // $mid = '50';
@@ -209,5 +239,45 @@ class Zhifu extends Common
             $str .= substr($chars, mt_rand(0, strlen($chars)-1), 1);
         }
         return $str;
+    }
+    //检测库存
+    public function setGoodsNum($good_id)
+    {
+//        $good_id="49,50,51";
+        $goods_id = explode(',',$good_id);
+        $goods = Db::name('shop_goods')
+            ->where('id','in',$goods_id)
+            ->field('id,sku')
+            ->select();
+        $data=[];
+        foreach ($goods as $k =>$v)
+        {
+            if($v['sku']==0)
+            {
+                $data[]=$v['id'];
+
+            }
+        }
+        if($data)
+        {
+            show_api($data,'存在库存不足',0);
+        }
+    }
+    //减少库存
+    public function descNum($good_id)
+    {
+        $goods_id = explode(',',$good_id);
+        Db::name('shop_goods')
+            ->where('id','in',$goods_id)
+            ->field('id,sku')
+            ->setDec('sku');
+    }
+    public function get_arr_column($arr, $key_name)
+    {
+        $arr2 = array();
+        foreach($arr as $key => $val){
+            $arr2[] = $val[$key_name];
+        }
+        return $arr2;
     }
 }

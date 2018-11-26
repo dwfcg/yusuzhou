@@ -81,6 +81,7 @@ class Index extends Common
                             ->select();
             $info['child'] = Db::name('shop_category')->where(['status'=>1,'pid'=>$info['first'][0]['id']])->order($oroderby)->field('id,pid,name,icon,sort,status,tuijian,update_time')->select();
         }
+//        dump($info);
         show_api($info);
     }
     /**
@@ -92,10 +93,14 @@ class Index extends Common
     {
         $data = input('post.');
         $limit = 10;
-        // $data['page'] = 0;
+//        dump($data);
+//         $data['page'] = 0;
         $map['status'] = array('eq',1);
         if( isset($data['cid']) ){
-            $map['cid'] = $data['cid'];
+//            $map['cid'] = $data['cid'];
+            $data1=Db::name('categorygoods')->where('category_id',$data['cid'])->select();
+            $arr=array_column($data1,'shopgoods_id');
+            $map['id'] = array('in',$arr);
         }
         if(isset($data['price'])){
             if($data['price'] === '80000以上'){
@@ -106,8 +111,14 @@ class Index extends Common
                 $map['price'] = [['>=',$price[0]],['<=',$price[1]]];
             }
         }
-        $info['goods'] = Db::name('shop_goods')->where($map)->field('id,cid,title,tags,price,content,images,video,status,sort,goods_num,shou_num,click_num,com_num,is_free,thoughid,originid,rockid,kindid,weight,size,sku,add_time')->order('sort asc')->limit($data['page']*$limit,$limit)->select();
-        // var_dump($info);die;
+        $info['goods'] = Db::name('shop_goods')
+            ->where($map)
+            ->field('id,cid,title,tags,price,content,images,video,status,sort,goods_num,shou_num,click_num,com_num,is_free,thoughid,originid,rockid,kindid,weight,size,sku,add_time')
+            ->order('sort asc')
+            ->limit($data['page']*$limit,$limit)
+            ->where('shopstatus',$data['shopstatus'])
+            ->select();
+//         var_dump($info);die;
         foreach( $info['goods'] as &$goods ){
             $goods['images'] = array_filter(explode(',',$goods['images']));
 
@@ -132,6 +143,7 @@ class Index extends Common
 //        $da = ['like','%'.$title.'%'];
         $ta['search'] = Db::name('shop_goods')->where($map)
                 ->order('price desc')
+            ->where('shopstatus',0)
                 ->field('id,cid,title,tags,price,content,images,video,status,sort,goods_num,shou_num,click_num,com_num,is_free,thoughid,originid,rockid,kindid,weight,size,sku,add_time')
                 ->limit($data['page']*$limit,$limit)
                 ->select();
@@ -276,8 +288,7 @@ class Index extends Common
             ->order('price desc')
             ->where('shopstatus',1)
             ->field('shopstatus,id,cid,title,tags,price,content,images,video,status,sort,goods_num,shou_num,click_num,com_num,is_free,thoughid,originid,rockid,kindid,weight,size,sku,add_time')
-            ->limit($data['page']*$limit,$limit)
-            ->select();
+            ->paginate(10,'',['page'=>$data['page']]);
         foreach ($info as &$goods) {
             $goods['images'] = array_filter(explode(',',$goods['images']));
             $goods['tags'] = array_filter(explode(',',$goods['tags']));
@@ -330,14 +341,12 @@ class Index extends Common
         $info = Db::name('shop_goods')->where(['status'=>1])
             ->order('price desc')
             ->where('shopstatus',2)
-            ->field('id,cid,title,tags,price,content,images,video,status,sort,goods_num,shou_num,click_num,com_num,is_free,thoughid,originid,rockid,kindid,weight,size,sku,add_time')
-            ->limit($data['page']*$limit,$limit)
-            ->select();
+            ->paginate(10,'',['page'=>$data['page']]);
         foreach ($info as &$goods) {
             $goods['images'] = array_filter(explode(',',$goods['images']));
             $goods['tags'] = array_filter(explode(',',$goods['tags']));
         }
-        dump($info);
+//        dump($info);
         show_api($info);
     }
     //每周新上1
@@ -348,6 +357,7 @@ class Index extends Common
         //此方法返回一个对象数组，所以要使用数据也必须转换，当然可以直接用对象
         $info['goods'] = Db::name('shop_goods')
                 ->where(['status'=>1])
+            ->where('shopstatus',0)
                 ->order('add_time desc')
                 ->field('id,cid,title,tags,price,content,images,video,status,sort,goods_num,shou_num,click_num,com_num,is_free,thoughid,originid,rockid,kindid,weight,size,sku,add_time')
                 ->limit($data['page']*$limit,$limit)
@@ -365,6 +375,7 @@ class Index extends Common
         $limit = 8;
         $info['goods'] = Db::name('shop_goods')
                 ->where(['status'=>0])
+            ->where('shopstatus',0)
                 ->order('add_time desc')
                 ->field('id,cid,title,tags,price,content,images,video,status,sort,goods_num,shou_num,click_num,com_num,is_free,thoughid,originid,rockid,kindid,weight,size,sku,add_time')
                 ->limit($data['page']*$limit,$limit)

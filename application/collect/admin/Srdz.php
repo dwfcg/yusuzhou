@@ -40,6 +40,7 @@ class Srdz extends Admin
 		$shop = Db::name('collect_good')->where('srdz_status',1)->select();
 		// var_dump($shop);
 		return ZBuilder::make('table')
+            ->setTableName('collect_good')
 		   ->addColumns([ // 批量添加数据列
                 ['id', 'ID'],
                 ['title', '定制标题','link',url('edit',['id'=>'__id__'])],
@@ -60,6 +61,7 @@ class Srdz extends Admin
         $shop = Db::name('collect_good')->where('srdz_status',0)->select();
         // var_dump($shop);
         return ZBuilder::make('table')
+            ->setTableName('collect_good')
            ->addColumns([ // 批量添加数据列
                 ['id', 'ID'],
                 ['title', '定制标题','link',url('edit',['id'=>'__id__'])],

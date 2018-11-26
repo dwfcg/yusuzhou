@@ -33,25 +33,27 @@ class Order extends Admin
         // 查询
         $map = $this->getMap();
         // 数据列表
-        $data_list = Db::name('auction_order')->alias('a')
-        ->join('auction_goods b','a.gid=b.id')
-        ->join('user c','a.uid=c.id')
-        ->join('address d','a.addre_id=d.address_id')
-        ->field("a.*,b.title,b.imgs,c.name,c.headimg,d.consignee, d.sheng, d.shi, d.xian, d.address, d.mobile")
-        ->where($map)
-        ->order('add_time desc')->paginate();
+        $data_list = Db::name('shop_order')->alias('a')
+            ->join("auction_goods b","a.goods_id=b.id")
+            ->join('user c','a.user_id=c.id')
+            ->join('address d','a.address_id=d.address_id')
+            ->field("a.*,b.title,b.imgs as images,c.name,c.headimg,d.consignee, d.sheng, d.shi, d.xian, d.address, d.mobile")
+            ->where($map)
+            ->where('order_status',3)
+            ->order('add_time desc')->paginate();
         // echo Db::table('shop_order')->getLastSql();die;
         // dump($data_list);exit;
         // 使用ZBuilder快速创建数据表格
 
         return ZBuilder::make('table')
+            ->setTableName('shop_order')
             ->setSearch(['title' => '商品名称','order_sn'=>'订单号','name'=>'下单用户'], '', '', true) // 设置搜索框
             ->addColumns([ // 批量添加数据列
                 ['id', 'ID','link',url('Order/sea',['id'=>'__id__'])],
                 ['order_sn', '订单号'],
-                ['price', '最终价格','link',url('edit',['id'=>'__id__'])],
+                ['price', '金额','link',url('edit',['id'=>'__id__'])],
                 ['title', '商品名称'],
-                ['imgs', '商品图','img_url'],
+                ['images', '商品图','img_url'],
                 ['name', '下单用户'],
                 ['consignee', '收货人'],
                 ['mobile', '手机'],
@@ -62,7 +64,7 @@ class Order extends Admin
                 ['pay_type','支付方式','status','',['微信','支付宝']],
                 ['pay_status', '支付状态', 'status','',['未支付', '已支付']],
                 ['status','订单状态','status','',['待付款','待发货','待收货','已完成','已评价']],
-                ['addtime','下单时间','datetime'],
+                ['add_time','下单时间','datetime'],
                 ['right_button', '操作', 'btn']
 
             ])
@@ -76,7 +78,7 @@ class Order extends Admin
     public function sea($id=null)
     {
         if ($id === null) $this->error('缺少参数');
-        $sd = Db::name('auction_order')->where(['id'=>$id])->find();
+        $sd = Db::name('shop_order')->where(['id'=>$id])->find();
         $address = Db::name('order_delivery')->where(['id'=>$sd['express']])->find();
 
         $com = $address["code"];
@@ -91,10 +93,8 @@ class Order extends Admin
         if ($this->request->isPost()) {
             // 表单数据
             $data = $this->request->post();
-//            dump($data);
             $addressinfo1=Db::name('region')->select();
             $addressdata=$this->getParents($addressinfo1,$data['area']);
-//            dump($addressdata);
             if($addressdata)
             {
                 $whereaddress=[
@@ -119,20 +119,20 @@ class Order extends Admin
                 'express_no'=>$data['express_no'],
                 'status'=>$data['status']
             ];
-            $advert = Db::name('auction_order')->where('id',$data['id'])->find();
-            $address=Db::name('address')->where('address_id',$advert['addre_id'])->update($whereaddress);
-//            unset($data['address']);
-            $advert1 = Db::name('auction_order')->where('id',$data['id'])->update($whereorder);
+            $advert = Db::name('shop_order')->where('id',$data['id'])->find();
+            $address=Db::name('address')->where('address_id',$advert['address_id'])->update($whereaddress);
+            unset($data['address']);
+            $advert1 = Db::name('shop_order')->where('id',$data['id'])->update($whereorder);
             if ($advert1||$address) {
                 $this->success('编辑成功', 'index');
             } else {
                 $this->error('编辑失败');
             }
         }
-        $info = Db::name('auction_order')->alias('a')
-            ->join('auction_goods b','a.gid=b.id')
-            ->join('user c','a.uid=c.id')
-            ->join('address d','a.addre_id=d.address_id')
+        $info = Db::name('shop_order')->alias('a')
+            ->join("auction_goods b","a.goods_id=b.id")
+            ->join('user c','a.user_id=c.id')
+            ->join('address d','a.address_id=d.address_id')
             ->field("a.*,b.title,b.imgs as images,c.name,c.headimg,d.consignee, d.sheng, d.shi, d.xian, d.address, d.mobile")
             ->order('add_time desc')->find($id);
 //         显示编辑页面

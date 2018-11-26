@@ -249,10 +249,26 @@ class Goods extends Common
     public function get_region(){
 
         $parent_id = input('parent_id','','intval');
+//        dump($parent_id);
 
         $region = RegionModel::where('parent_id',$parent_id)->select();
+//        dump($region);
+//        dump(json_encode($region));
 
         $this->result($region);
+
+    }
+    //return  JSon
+    public function get_region1(){
+
+        $parent_id = input('parent_id','','intval');
+//        dump($parent_id);
+
+        $region = RegionModel::where('parent_id',$parent_id)->select();
+//        dump($region);
+//        dump(json_encode($region));
+        show_api($region);
+//        $this->result($region);
 
     }
 
@@ -332,6 +348,68 @@ class Goods extends Common
         $this->result(0,$result);
 
     }
+    public function add_addressNew(){
+
+        $address_id = input('address_id','','intval');
+
+        // $data['user_id'] = $this->user['id'];
+        $data['user_id'] = input('userid','','intval');
+        $data['city'] = input('city','','intval');
+
+        $data['mobile'] = input('mobile','','addslashes');
+
+        $data['province'] = input('province','','intval');
+
+        $data['district'] = input('district','','intval');
+
+        $data['address'] = input('address','','addslashes');
+
+        $data['consignee'] = input('user_name','','addslashes');
+
+        $data['zipcode'] = input('postal_code','','intval');
+
+        $data['sheng'] = input('sheng','','addslashes');
+
+        $data['shi'] = input('shi','','addslashes');
+
+        $data['xian'] = input('xian','','addslashes');
+
+        $result = 0;
+
+        if( $address_id ){
+
+            AddressModel::where( 'address_id',$address_id )->update( $data );
+
+        }else{
+
+            $result = AddressModel::insertGetId( $data );
+
+        }
+
+      show_api($result);
+
+    }
+    //设置默认收货地址
+    public function isAddress()
+    {
+        $data=input('post.');
+//        dump($data);
+        $where=[
+            'user_id'=>$data['user_id'],
+            'default'=>1,
+        ];
+        Db::name('address')->where($where)->update(['default'=>0]);
+        Db::name('address')->where('address_id',$data['address_id'])->update(['default'=>1]);
+        show_api();
+
+    }
+    //地址列表
+    public function addressData()
+    {
+        $data=input('post.');
+        $rel=Db::name('address')->where('user_id',$data['user_id'])->select();
+        show_api($rel);
+    }
 
     /*
 
@@ -346,6 +424,15 @@ class Goods extends Common
     	AddressModel::where( array('address_id'=>$address_id,'user_id'=>$this->user['id']) )->delete();
 
         $this->result(0,1);
+
+    }
+    public function del_address1(){
+
+        $address_id = input('address_id','','intval');
+
+        AddressModel::where( array('address_id'=>$address_id,'user_id'=>$this->user['id']) )->delete();
+
+        show_api();
 
     }
 
@@ -406,7 +493,7 @@ class Goods extends Common
     {
       $info=Db::name('user')->find($uid);
       $ship=Db::name('user_ship')->where('level',$info['level'])->find();
-//      dump($ship);
+//      dump($ship);die();
       return 0.01*$ship['discount'];
     }
 
@@ -419,7 +506,8 @@ class Goods extends Common
     public function create_order(){
 
         $data = input('post.');
-        $data['order_status']=0;
+        //现在order_status为测试字段，等待传入字段
+//        $data['order_status']=0;
 
         $address_id = input('address_id');
 
@@ -437,6 +525,7 @@ class Goods extends Common
         $order['order_status'] = $data['order_status'];
         $goods = Db::name('shop_goods')->where('id','in',$goods_id)->select();
         $price= array_sum(array_column($goods,'price'));
+
         //判断订单类型order_status0本店订单存入goods_ID
         //          order_status1闲置订单
         //          order_status2秒杀订单
@@ -455,7 +544,11 @@ class Goods extends Common
             }
                 //判断是否level
                 $discount=$this->getLevel($data['uid']);
+            if($discount)
+            {
                 $price=$discount*$price;
+            }
+
 
         }
         $order['price'] = $price;

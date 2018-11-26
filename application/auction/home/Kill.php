@@ -91,39 +91,41 @@ class Kill extends Common
         }
         return $array;
     }
-    //秒杀商品列表
-    public function KillData()
-    {
-        $info=Db::name('auction_kill')
-            ->whereTime('start_time', '>=',time())
-            ->where('status',0)
-            ->select();
-        foreach ($info as &$goods) {
-            $goods['images'] = array_filter(explode(',',$goods['imgs']));
-        }
-        show_api($info);
-    }
-    public function Killinfo()
-    {
-        $data=input('post.');
-        $info=Db::name('auction_kill')
-            ->find($data['id']);
-        $info['imgs'] = array_filter(explode(',',$info['imgs']));
-        show_api($info);
-
-    }
+//    //秒杀商品列表
+//    public function KillData()
+//    {
+//        $info=Db::name('auction_kill')
+//            ->whereTime('start_time', '>=',time())
+//            ->where('status',0)
+//            ->select();
+//        foreach ($info as &$goods) {
+//            $goods['images'] = array_filter(explode(',',$goods['imgs']));
+//        }
+//        show_api($info);
+//    }
+//    public function Killinfo()
+//    {
+//        $data=input('post.');
+//        $info=Db::name('auction_kill')
+//            ->find($data['id']);
+//        $info['imgs'] = array_filter(explode(',',$info['imgs']));
+//        show_api($info);
+//
+//    }
     public function end()
     {
         $data=input('post.');
         $update=[
-            'status'=>1
+            'status'=>2
         ];
-        $rel=Db::name('auction_kill')->find($data['id']);
-        if($rel['status']!=2)
+        $rel=Db::name('shop_goods')->find($data['id']);
+//        dump($rel);
+        if($rel['status']==0)
         {
-            $info=Db::name('auction_kill')
-                ->where('id',$data['id'])->update($update);
+           return Json::create();
         }
-
+        $info=Db::name('shop_goods')
+            ->where('id',$data['id'])->update($update);
+        show_api();
     }
 }

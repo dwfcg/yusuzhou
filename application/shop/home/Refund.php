@@ -28,6 +28,12 @@ class Refund    extends Common
             'order_sn'=>$data['order_sn'],
             'user_id'=>$data['uid']
         ];
+        //查询是否申请过退款
+        $res=Db::name('shop_refund')->where('order_sn',$data['order_sn'])->find();
+        if($res)
+        {
+            show_api('','你已经申请过退款',0);
+        }
         $result=Db::name('shop_order')->where($where)->find();
 //        dump($result);
         if(!$result||$result['pay_status']==0)
@@ -59,6 +65,7 @@ class Refund    extends Common
             'express_no'=>$data['express_no'],
             'express'=>$data['express']
         ];
+//        dump($data);
         $result=Db::name('shop_refund')->where('order_sn',$data['order_sn'])->update($update);
         if($result)
         {
@@ -181,7 +188,7 @@ class Refund    extends Common
         }
 
     }
-    //微信退款异步通知等以后处理
+    //支付宝退款异步通知等以后处理微信退款同步直接处理
     public function refund_notify_url()
     {
         //接受xml数据流开始

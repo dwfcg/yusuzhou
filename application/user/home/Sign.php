@@ -42,9 +42,10 @@ class Sign extends Common
 //    	$uid = '7';
     	$data['last_time'] = time();
     	$integraldata=Db::name('user_setintegral')->find(1);
-    	dump($integraldata);
+//    	dump($integraldata);
     	//点击签到先查表里有没有用户签到过的记录
     	$qian = Db::name('user')->where(['id'=>$uid])->find();
+//        dump($qian);
     	//有就判断时间戳,处理签到次数
     	if (time() > $qian['last_time']) {
             $sign_str = date('Y-m-d',$qian['last_time']);//签到时间

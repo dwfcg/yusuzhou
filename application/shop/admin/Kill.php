@@ -91,7 +91,7 @@ class Kill extends Admin
                 ['right_button', '操作', 'btn']
 
             ])
-            ->addTopSelect('cid','分类',$fied)
+//            ->addTopSelect('cid','分类',$fied)
             ->addFilter('price')
             ->addTopButtons('add,delete')
 //            ->addTopButton('enable',['status'])
@@ -122,13 +122,18 @@ class Kill extends Admin
         if ($this->request->isPost()) {
             // 表单数据
             $data = $this->request->post();
+            $result=$this->validate($data,'kill');
+            if(true !== $result){
+                // 验证失败 输出错误信息
+                return  $this->error($result);
+            }
             $data['add_time'] = time();
             $data['sku'] =1;
             $data['start_time']=strtotime($data['start_time']);
             $data['end_time']=strtotime($data['end_time']);
             $advert=Db::name('shop_goods')->insertGetId($data);
             $killclass=new KillClass();
-            $re=$killclass->ruhuo($advert);
+//            $re=$killclass->ruhuo($advert);
             $ca=$data['s'];
             unset($data['s']);
             $this->setCat($ca,$advert);
@@ -162,7 +167,8 @@ class Kill extends Admin
                 ['select','kindid','属性白度','请选择',$kind],
                 ['text','weight','商品重量','请输入'],
                 ['text','size','商品尺寸','请输入'],
-                ['number', 'price', '商品价格','请输入'],
+                ['number', 'price', '商品秒杀价格','请输入'],
+                ['number', 'fontprice', '商品价格','请输入'],
                 ['tags', 'tags', '商品标签','请输入'],
                 ['tags', 'keyword', '商品关键词','请输入'],
                 ['number', 'sort', '商品排序','','99'],
@@ -195,6 +201,7 @@ class Kill extends Admin
 //                'images'=>3,
 //                'video'=>3,
                 'price' => 2,
+                'fontprice' => 2,
                 'tags' => 2,
                 'keyword'=>2,
 //                'status'=>4,
@@ -218,6 +225,8 @@ class Kill extends Admin
             // 表单数据
             $data = $this->request->post();
             $data['add_time'] = time();
+            $data['start_time']=strtotime($data['start_time']);
+            $data['end_time']=strtotime($data['end_time']);
             Db::name('categorygoods')->where('shopgoods_id',$id)->delete();
             $this->setCat($data['s'],$id);
             // $data['cid'] = implode(",",$data['cid']);
@@ -251,9 +260,11 @@ class Kill extends Admin
                 ['select','kindid','属性白度','请选择',$kind],
                 ['text','weight','商品重量','请输入'],
                 ['text','size','商品尺寸','请输入'],
-                ['number', 'price', '商品价格','请输入'],
+                ['number', 'price', '商品秒杀价格','请输入'],
+                ['number', 'fontprice', '商品价格','请输入'],
                 ['images', 'images', '商品图片'],
                 ['text', 'video', '编辑商品视频地址','<span class="text-danger">编辑商品视频地址</span>'],
+                ['file', 'video'],
                 ['tags', 'tags', '商品标签'],
                 ['tags', 'keyword', '商品关键词'],
                 ['number', 'sort', '商品排序','','99'],
@@ -286,6 +297,7 @@ class Kill extends Admin
 //                'images'=>3,
 //                'video'=>3,
                 'price' => 2,
+                'fontprice' => 2,
                 'tags' => 2,
                 'keyword'=>2,
 //                'status'=>4,

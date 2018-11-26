@@ -181,7 +181,7 @@ class Detail extends Common
         $data['page']=2;
         $dangid = input('post.dangid');
         //$where['type']=array('neq',2);
-        $dangid = '59';
+//        $dangid = '59';
         $guan = Db::name('user_guan')->alias('a')
                 ->join('forum_thread c','a.threadid=c.uid')
                 ->where('a.dangid',$dangid)
@@ -213,7 +213,7 @@ class Detail extends Common
                // echo Db::name('forum_shihui')->getLastSql();
             }
         }
-       //var_dump($guan);die;
+//       var_dump($guan);die;
         show_api($guan);
     }
   //ceshi没用

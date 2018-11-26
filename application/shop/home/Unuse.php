@@ -11,9 +11,10 @@ namespace app\shop\home;
 
 use app\index\controller\Home;
 use think\Db;
-
+// 逻辑更改之后不能使用这个类
 class Unuse extends Home
 {
+
     /**
      * 获取单个闲置商品信息
      * id

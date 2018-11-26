@@ -63,10 +63,11 @@ class Order extends Common{
            unset($where['status']);
         }
         $where['user_id'] = input('uid');
+//        $where['user_id'] = 111;
         // var_dump($where);die;
        // $where['user_id'] = $this->user['id'];
        $orders = OrdersModel::getOrders($where,$satrt,5);    
-      // var_dump($orders);die;
+//       var_dump($status);die;
       // print_r($orders);die;
        $page_count = $orders['count'];
        unset($orders['count']);
@@ -81,6 +82,7 @@ class Order extends Common{
      */
     public function detail($id = '') {       
         $detail = OrdersModel::get_one($id);
+//        dump($detail);
         $address = Db::name('address')->find($detail['address_id']);
         $this->assign('address', $address);
         $this->assign('detail', $detail);
@@ -159,6 +161,10 @@ class Order extends Common{
         $data = input('post.');
 //        dump($data);
         $orderInfo=Db::name('shop_order')->find($data['oid']);
+        if(!$orderInfo)
+        {
+            return show_api('','',0);
+        }
         $data['order_id'] = input('post.oid');
         if(!array_key_exists('content',$data))
         {
@@ -169,16 +175,23 @@ class Order extends Common{
         $data['status'] = 1;
         if(array_key_exists('addto',$data))
         {
+            $nam = Db::name('shop_order')->where('id',$data['oid'])->update(['status'=>5]);
             $data['addto'] = 1;
+        }
+        else{
+            $nam = Db::name('shop_order')->where('id',$data['oid'])->update(['status'=>4]);
         }
         $data['add_time'] = time();
         $data['uid'] = input('post.uid');
         //获取到前端传过来的图片路径
         $data['images'] = input('post.images');
         // var_dump($data);die;
-        $nam = Db::name('shop_order')->where('id',$data['oid'])->update(['status'=>4]);
+
         //新增数据并返回主键值
         $result = Db::name('shop_comment')->insertGetId($data);
+        $newdata=Db::name('user_setintegral')->select();
+        Db::name('user')
+            ->where('id',$data['uid'])->setInc('integraal',$newdata[0]['commentgoods']);
 //        dump($result);
         show_api($result);
     }

@@ -24,6 +24,7 @@ class Index extends Admin
         $data_list = Db::name('live_index')->alias('a')
                     ->join('live_cate c','a.cid = c.id')
                     ->field('a.*,c.name')
+                    ->where('videotype',1)
                     ->where($map)
                     ->order('sort asc')
                     ->paginate();
@@ -35,7 +36,7 @@ class Index extends Admin
                 ['title', '直播标题','link',url('edit',['id'=>'__id__'])],
                 ['name','所属分类'],
                 ['sort', '排序'],
-                ['status', '直播状态','status','',['关闭','开启','正在直播','没有直播']],
+                ['status', '状态','status','',['关闭','开启','正在直播','没有直播']],
                 ['right_button', '操作', 'btn']
             ])
             ->addTopButtons('add,delete')
@@ -69,13 +70,16 @@ class Index extends Admin
                 ['select', 'cid', '所属分类','', $cate],
                 ['text', 'title', '直播标题', '<span class="text-danger">必填</span>'],
                 ['image', 'img', '直播海报图', '<span class="text-danger">必填</span>'],
+
                 ['text', 'video', '直播url', '<span class="text-danger">必填</span>'],
+                ['file','video','上传视频','<span class="text-danger">上传商品视频地址</span>'],
                 ['text', 'details', '简介', '<span class="text-danger">必填</span>'],
-                ['text','partake','直播人气'],
+                ['text','partake','人气'],
                 ['datetime','starttime','直播开始时间'],
                 ['datetime','endtime','直播结束时间'],
                 ['radio', 'niming', '是否开启匿名评论', '', ['关闭', '开启'], 0],
-                ['radio', 'status', '直播状态', '', ['关闭', '开启'], 1]
+                ['radio', 'status', '状态', '', ['关闭', '开启'], 1],
+                ['radio', 'videotype', '分类', '', ['直播', '视频'], 1],
             ])
             ->layout(['cid' => 2, 'title' => 4,'video'=>4, 'sort' => 2, 'status' => 4])
             ->fetch();
@@ -109,13 +113,14 @@ class Index extends Admin
                 ['select', 'cid', '所属分类','', $cate],
                 ['text', 'title', '直播标题', '<span class="text-danger">必填</span>'],
                 ['image', 'img', '直播海报图', '<span class="text-danger">必填</span>'],
-                ['text', 'video', '直播url', '<span class="text-danger">必填</span>'],
+                ['text', 'video', 'url', '<span class="text-danger">必填</span>'],
+                ['file', 'video', 'url', '<span class="text-danger">必填</span>'],
                 ['text', 'details', '简介', '<span class="text-danger">必填</span>'],
-                ['text','partake','直播人气'],
+                ['text','partake','人气'],
                 ['datetime','starttime','直播开始时间'],
                 ['datetime','endtime','直播结束时间'],
                 ['radio', 'niming', '是否开启匿名评论', '', ['关闭', '开启'], 0],
-                ['radio', 'status', '直播状态', '', ['关闭', '开启'], 1]
+                ['radio', 'status', '状态', '', ['关闭', '开启'], 1]
             ])
             ->setFormData($info)
             ->layout(['cid' => 2, 'title' => 4,'video'=>4, 'sort' => 2, 'status' => 4])

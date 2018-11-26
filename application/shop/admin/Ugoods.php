@@ -85,7 +85,7 @@ class Ugoods extends Admin
                 ['right_button', '操作', 'btn']
 
             ])
-            ->addTopSelect('cid','分类',$fied)
+//            ->addTopSelect('cid','分类',$fied)
             ->addFilter('price')
             ->addTopButtons('add,delete')
 //            ->addTopButton('enable',['status'])
@@ -243,6 +243,7 @@ class Ugoods extends Admin
                 ['number', 'price', '商品价格','请输入'],
                 ['images', 'images', '商品图片'],
                 ['text', 'video', '编辑商品视频地址','<span class="text-danger">编辑商品视频地址</span>'],
+                ['file', 'video'],
                 ['tags', 'tags', '商品标签'],
                 ['tags', 'keyword', '商品关键词'],
                 ['number', 'sort', '商品排序','','99'],

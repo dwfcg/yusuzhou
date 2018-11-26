@@ -154,6 +154,26 @@ class Sale extends Common
             }
         }
     }
+    public function autoWithdrawl()
+    {
+       $data=Db::name('user')
+           ->whereTime('add_time','today')
+           ->field('id,withdraw,wallet,add_time')
+           ->select();
+//       dump($data);
+       foreach($data  as $k=>$v)
+       {
+           $update=[
+               'add_time'=>$v['add_time']+3600*24*9,
+               'wallet'=>$v['wallet']+$v['withdraw'],
+               'withdraw'=>0,
+           ];
+            Db::name('user')->where('id',$v['id'])->update($update);
+       }
+
+
+
+    }
     //qianbao
     public function qianbao()
     {

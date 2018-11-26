@@ -15,6 +15,25 @@ use com\unionpay\acp\sdk\AcpService;
  */
 class Zhifu extends Common
 {
+    //回扣
+    public function back($good_id,$uid)
+    {
+        $goodsData=Db::name('shop_goods')->find($good_id);
+        $userData= Db::name('user')->find($uid);
+        if(!$userData['leader'])
+        {
+            return false;
+        }else{
+            $leader=Db::name('user')->find($userData['leader']);
+            $update=[
+                'income'=>$leader['income']+$goodsData['back'],
+                'withdraw'=>$leader['withdraw']+$goodsData['back']
+            ];
+            Db::name('user')->where('id',$userData['leader'])->update($update);
+        }
+
+
+    }
     public function integral($uid)
     {
         $user=Db::name('user')->where('id',$uid)->find();
@@ -154,6 +173,7 @@ class Zhifu extends Common
 
             $res=Db::name("collect_order")->where($where)->update($data);
             $this->descNum($order_info['goods_id']);
+            $this->back($order_info['goods_id'],$order_info['user_id']);
             show_api();
         }else{
             return show_api('','',0);
@@ -313,6 +333,7 @@ class Zhifu extends Common
                             ->where('id',$order_info['user_id'])
                             ->setInc('total_amount',$order_info['price']);
                         $this->integral($order_info['user_id']);
+                        $this->back($order_info['goods_id'],$order_info['user_id']);
      
                         // $this->fenxiao_account($out_trade_no);
                     }
@@ -420,6 +441,7 @@ class Zhifu extends Common
                     ->where('id',$order_info['user_id'])
                     ->setInc('total_amount',$order_info['price']);
                 $this->integral($order_info['user_id']);
+                $this->back($order_info['goods_id'],$order_info['user_id']);
                 // $this->fenxiao_account($out_trade_no);
             }
             echo "SUCCESS";exit;

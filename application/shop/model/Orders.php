@@ -63,18 +63,33 @@ class Orders extends ThinkModel
         // $orders = Db::name('shop_order')->where($where)->limit($start,$limilt)->select();
 // var_dump($orders);die;
         foreach ($orders as &$row){
+            if($row['order_status']==3)
+            {
+                $goods = Db::name('auction_goods')->find($row['goods_id']);
 
-            $goods = Db::name('shop_goods')->find($row['goods_id']);
 
-       
 
-            $row['title'] = $goods['title'];
+                $row['title'] = $goods['title'];
 
-            
 
-            $imgs = explode(",", $goods['images']);
 
-            $row['pic'] = $imgs[0];     
+                $imgs = explode(",", $goods['imgs']);
+
+                $row['pic'] = $imgs[0];
+            }else{
+                $goods = Db::name('shop_goods')->find($row['goods_id']);
+
+
+
+                $row['title'] = $goods['title'];
+
+
+
+                $imgs = explode(",", $goods['images']);
+
+                $row['pic'] = $imgs[0];
+            }
+
 
         }  
 

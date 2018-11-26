@@ -1,12 +1,12 @@
 <?php
 namespace app\shop\home;
-use com\unionpay\acp\sdk\SDKConfig;
+use Alipay\Alipaynotify;
 use com\unionpay\acp\sdk\AcpService;
+use com\unionpay\acp\sdk\SDKConfig;
 use think\Config;
 use think\Db;
-use Alipay\Alipaynotify;
-use Wxpay\Wxpay;
 use Yansongda\Pay\Pay;
+
 /**
  * Created by PhpStorm.
  * User: 413010640@qq.com
@@ -15,6 +15,28 @@ use Yansongda\Pay\Pay;
  */
 class Zhifu extends Common
 {
+    //回扣
+    public function back($good_id,$uid)
+    {
+        $goodsData=Db::name('shop_goods')->find($good_id);
+        if($goodsData['shopstatus']==0)
+        {
+            $userData= Db::name('user')->find($uid);
+            if(!$userData['leader'])
+            {
+                return false;
+            }else{
+                $leader=Db::name('user')->find($userData['leader']);
+                $update=[
+                    'income'=>$leader['income']+$goodsData['back'],
+                    'withdraw'=>$leader['withdraw']+$goodsData['back']
+                ];
+                Db::name('user')->where('id',$userData['leader'])->update($update);
+            }
+        }
+
+
+    }
     public function integral($uid)
     {
         $user=Db::name('user')->where('id',$uid)->find();
@@ -42,6 +64,10 @@ class Zhifu extends Common
         return $orderInfo;
 
     }
+    public function unionpay_notify()
+    {
+        //yin银联支付回调
+    }
     //=银联支付
     public function unionpay()
     {
@@ -59,8 +85,8 @@ class Zhifu extends Common
             'txnType' => '01',				      //交易类型
             'txnSubType' => '01',				  //交易子类
             'bizType' => '000201',				  //业务类型
-            'frontUrl' =>  $serves::getSDKConfig()->frontUrl,  //前台通知地址
-            'backUrl' =>$serves::getSDKConfig()->backUrl,	  //后台通知地址
+//            'frontUrl' =>  $serves::getSDKConfig()->frontUrl,  //前台通知地址
+            'backUrl' =>'http://yusuzhou.youacloud.com/index.php/shop/zhifu/unionpay_notify',	  //后台通知地址
             'signMethod' => $serves::getSDKConfig()->signMethod,	              //签名方法
             'channelType' => '08',	              //渠道类型，07-PC，08-手机
             'accessType' => '0',		          //接入类型
@@ -140,7 +166,8 @@ class Zhifu extends Common
         $total_fee = $order_info['price'];
         $user=Db::name('user')->where('id',$order_info['user_id'])->find();
         $money=$user['wallet']-$total_fee;
-        if(is_int($money))
+//        dump($money);
+        if($money>=0)
         {
             //增加累计额度 咱判断会员等级和积分增加
             Db::name('user')->where('id',$order_info['user_id'])->setInc('total_amount',$total_fee);
@@ -154,7 +181,11 @@ class Zhifu extends Common
             $where['order_sn']=$order_info['order_sn'];
 
             $res=Db::name("shop_order")->where($where)->update($data);
-            $this->descNum($order_info['goods_id']);
+            if($order_info['order_status']!=3)
+            {
+                $this->descNum($order_info['goods_id']);
+            }
+            $this->back($order_info['goods_id'],$order_info['user_id']);
             show_api();
         }else{
             return show_api('','',0);
@@ -302,7 +333,10 @@ class Zhifu extends Common
             $where['order_sn']=$order_info['order_sn'];
 
                         $res=Db::name("shop_order")->where($where)->update($data);
-                        $this->descNum($order_info['goods_id']);
+                        if($order_info['order_status']!=3)
+                        {
+                            $this->descNum($order_info['goods_id']);
+                        }
 //                        $user=Db::name("user")->where('id',$order_info['user_id'])->find();
                         //增加累计额度 咱判断会员等级和积分增加
                         Db::name('user')
@@ -314,7 +348,7 @@ class Zhifu extends Common
 //                        ];
 //                        Db::name("user")->where('id',$order_info['user_id'])->update($update);
                         $this->integral($order_info['user_id']);
-
+                        $this->back($order_info['goods_id'],$order_info['user_id']);
      
                         // $this->fenxiao_account($out_trade_no);
                     }
@@ -408,7 +442,11 @@ class Zhifu extends Common
           // fwrite($file,$postData);
           // fclose($file);
                         $res=Db::name("shop_order")->where($where)->update($update);
-                $this->descNum($order_info['goods_id']);
+                        if($order_info['order_status']!=3)
+                        {
+                            $this->descNum($order_info['goods_id']);
+                        }
+
 //                $user=Db::name("user")->where('id',$order_info['user_id'])->find();
 //                //积分和累计额度增加
 //                $update=[
@@ -420,6 +458,7 @@ class Zhifu extends Common
                     ->where('id',$order_info['user_id'])
                     ->setInc('total_amount',$order_info['price']);
                 $this->integral($order_info['user_id']);
+                $this->back($order_info['goods_id'],$order_info['user_id']);
                 // $this->fenxiao_account($out_trade_no);
             }
             echo "SUCCESS";exit;

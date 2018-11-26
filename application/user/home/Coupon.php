@@ -22,7 +22,6 @@ class Coupon    extends Common
     public function getUserCoupon()
     {
         $data=input('post.');
-        if($data[''])
         $info = Db::name('shop_couponlist')->alias('a')
             ->join('user b','a.uid=b.id')
             ->join('shop_order c','a.order_id=c.id')
@@ -50,23 +49,35 @@ class Coupon    extends Common
     public function loginCoupon(){
         $data=input('post.');
         $coupon_info = Db::name('shop_coupon')->where(array('type' => 0, 'status' => 1))->select();
+//        dump($coupon_info);
         foreach ($coupon_info as $k => $v)
         {
-            if($coupon_info['send_num'] >= $coupon_info['createnum'] && $coupon_info['createnum'] != 0){
+            if($v['send_num'] > $v['createnum'] && $v['createnum'] != 0){
 
             }else{
                 if($v['send_end_time'] >time()){
                     $data = array('uid' => $data['uid'], 'cid' => $v['id'], 'type' => 0, 'send_time' => time(),'status'=>0);
                     Db::name('shop_couponlist')->insert($data);
                     Db::name('shop_coupon')->where(array('id' => $v['id'], 'status' => 1))->setInc('send_num');
+
                 }
             }
 
         }
-        show_api();
+
+        show_api($data);
 
 
-
+    }
+    public function coupon()
+    {
+        $data=input('post.');
+        $coupon_info = Db::name('shop_coupon')
+            ->where(array('type' => 2, 'status' => 1))
+            ->whereTime('send_start_time','<',time())
+            ->paginate(10,'',['page'=>$data['page']]);
+//        dump($coupon_info);
+        show_api($coupon_info);
     }
     /**
      * 领券

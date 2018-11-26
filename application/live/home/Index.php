@@ -47,6 +47,7 @@ class Index extends Home
     {
         $data = input('post.');
         $lives = Db::name('live_index')->where('status',1)
+                ->where('videotype',1)
                 ->order('id desc')
                 ->field('id,cid,title,video,partake,column,v_list,img,details,uids,imgs,zan,niming,addtime,code,jifen,jfuids,listpic,is_tip,sort,status')
                 ->limit(0,10)

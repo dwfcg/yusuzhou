@@ -10,9 +10,10 @@ namespace app\user\home;
 
 
 use app\user\model\UserCart;
+use JPush\Client as JPush;
 use think\Db;
 use app\user\model\User;
-
+//无用
 class Cart  extends Common
 {
     public function add()
@@ -135,5 +136,30 @@ class Cart  extends Common
             $goods['images'] = array_filter(explode(',',$goods['images']));
         }
         show_api($info);
+    }
+    public function ceshi()
+    {
+        require    EXTEND_PATH.'JPush/autoload.php';
+        $app_key = "d6ecdd4b31d7125d4e009503";
+        $master_secret = "83034a219960d7648bd5a8b8";
+        $client = new JPush($app_key, $master_secret);
+        $result = $client->push()
+          ->setPlatform('ios', 'android')
+          ->addAllAudience()
+          ->setNotificationAlert('Hello, JPush')
+          ->options(array(
+              "apns_production" => false  //true表示发送到生产环境(默认值)，false为开发环境
+          ))
+          ->send();
+        try {
+            $result->send();
+        } catch (\JPush\Exceptions\JPushException $e) {
+            // try something else here
+            print $e;
+        }
+
+      echo 'Result=' . json_encode($result);
+
+
     }
 }
