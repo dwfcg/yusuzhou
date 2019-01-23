@@ -41,9 +41,10 @@ class Goods extends Home
         $rel=Db::name('user')->where('id',$data['uid'])->find();
         $orderintegral=Db::name('user_integral')->where('id',$data['orderId'])->find();
         $price=$rel['integral']-$orderintegral['price'];
-        if(is_int($price))
+        Db::startTrans();
+        if($price>=0)
         {
-            Db::startTrans();
+
             $shopdata=Db::name('integralshop_index')->where('id',$orderintegral['integralshop_id'])->find();
             if($shopdata['num']==0){
                 show_api('','已经被兑换完','0');
@@ -66,6 +67,7 @@ class Goods extends Home
             show_api('','兑换成功','1');
         }else{
             Db::rollback();
+            Db::name('user_integral')->where('id',$data['orderId'])->delete();
             show_api('','积分不足','0');
         }
 
@@ -96,10 +98,10 @@ class Goods extends Home
 
 
         $region = AddressModel::where( 'address_id',$address_id )->find();
-
-        if( !$region || !$region['address'] || !$region['sheng'] || !$region['shi'] || !$region['xian']){
-
-           show_api(0,'address');
+//        dump($region->toArray());
+        if( !$region ){
+//            echo 11;
+           show_api(0,'address',0);
 
         }
 
@@ -183,6 +185,7 @@ class Goods extends Home
             ->join("integralshop_index b","a.integralshop_id=b.id")
             ->where('user_id',$data['uid'])
             ->order('add_time desc')
+            ->where('a.status','neq',0)
             ->field('a.*,b.images,b.status as shopstatus,b.price,b.money,b.comment,b.name')
             ->paginate(10,'',['page'=>$data['page']]);
         foreach ($info as &$goods) {

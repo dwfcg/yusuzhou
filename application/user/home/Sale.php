@@ -122,7 +122,7 @@ class Sale extends Common
                 ->join('user b','a.user_id = b.id')
                 ->join('shop_goods g','a.goods_id = g.id')
                 ->where(['a.user_id'=>$v['id']])
-                ->field('a.order_sn,a.add_time,b.id,b.name,b.headimg,b.system,g.title,g.images')
+                ->field('a.order_sn,a.add_time,b.id,b.name,b.headimg,b.system,g.title,g.images,back')
                 ->select();
             foreach ($asd as &$va) {
                 $va['images'] = array_filter(explode(',',$va['images']));

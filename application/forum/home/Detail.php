@@ -401,6 +401,7 @@ class Detail extends Common
         $data['gen'] = Db::name('forum_comment')->where(['id'=>$id])
                 ->field('id,uid,tid,images,content,zan_num,hui_num,status,uname,headimg,add_time')
                 ->find();
+//        dump($id);
         $data['gen']['content']=json_decode($data['gen']['content']);
         $data['gen']['images']=array_filter(explode(',',$data['gen']['images']));
         $data['gen']['add_time']=date('Y-m-d H:i',$data['gen']['add_time']);
@@ -413,8 +414,9 @@ class Detail extends Common
         $data['hui'] = Db::name('forum_reply')->where(['comment_id'=>$data['gen']['id']])
          	    ->field('id,comment_id,from_uid,to_uid,content as acontent,fname,toname,reply_status,addtime')
                 ->select();
+//        dump($data['hui']);
             foreach ($data['hui'] as $key => &$va) {
-                $data['hui']['acontent']=json_decode($va['acontent']);
+                $data['hui'][$key]['acontent']=json_decode($va['acontent']);
             }
         //var_dump($data);die;
         show_api($data);

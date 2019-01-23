@@ -38,7 +38,7 @@ class Member extends Common
                 'discount'=>0
             ];
             Db::name('user')->where('id',$data['uid'])->update($update);
-            dump($ship);
+//            dump($ship);
             show_api('','恭喜你成为'.$ship['name'].'会员');
         }else{
             show_api('','你还没有达到条件',0);

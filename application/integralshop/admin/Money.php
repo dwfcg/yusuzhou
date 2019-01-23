@@ -19,6 +19,7 @@ class Money     extends Admin
     {
         $data=Db::name('integralshop_index')->order('id asc')->where('integralcatg',1)->select();
         return ZBuilder::make('table')
+            ->setTableName('integralshop_index')
             ->addColumns([ // 批量添加列
                 ['id', 'ID'],
                 ['name', '名称','text'],

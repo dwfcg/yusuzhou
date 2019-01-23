@@ -107,7 +107,7 @@ class User extends Common
             $sta3 = Db::name('shop_order')->where(['user_id' => $user['id'], 'status' => 3])->count();//待评价
             $user['status0'] = $status0;
             $user['statu1'] = $statu1;
-            $user['stat2'] = $stat2;
+            $user['stat2'] = 9;
             $user['sta3'] = $sta3;
             show_api($user, '老用户', 1);
             //如果用户使用qq登录则调用qq
@@ -429,7 +429,10 @@ class User extends Common
     public function getUnuse()
     {
         $data = input('post.');
-        $info['goods'] = Db::name('shop_unuse')->where('user_id', $data['user_id'])->select();
+        $info['goods'] = Db::name('shop_unuse')
+//            ->order('add_time desc')
+            ->where('user_id', $data['user_id'])
+            ->select();
         foreach ($info['goods'] as &$goods) {
             $goods['images'] = array_filter(explode(',', $goods['images']));
         }

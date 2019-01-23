@@ -71,9 +71,9 @@ class Kill extends Common
         $newdata=[];
         foreach ($data as $k =>$v)
         {
-            $newdata[$k]=json_decode($v);
+            $newdata[]=json_decode($v);
         }
-        $newdata=$this->object_array($newdata);
+//        $newdata=$this->object_array($newdata);
         show_api($newdata,'',1);
 //        [138] => array(3) {
 //            ["uid"] => string(3) "138"

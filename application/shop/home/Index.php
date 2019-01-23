@@ -279,11 +279,37 @@ class Index extends Common
        }
        show_api($info);
    }
+    //全部本店商品
+    public function getGoodsQuanByasc()
+    {
+        $data = input('post.');
+        $limit = 8;
+        $info['goods'] = Db::name('shop_goods')->where(['status'=>1])
+            ->order('price asc')
+            ->where('shopstatus',0)
+            ->field('id,cid,title,tags,price,content,images,video,status,sort,goods_num,shou_num,click_num,com_num,is_free,thoughid,originid,rockid,kindid,weight,size,sku,add_time')
+            ->limit($data['page']*$limit,$limit)
+            ->select();
+        foreach ($info['goods'] as &$goods) {
+            $goods['images'] = array_filter(explode(',',$goods['images']));
+            $goods['tags'] = array_filter(explode(',',$goods['tags']));
+        }
+        show_api($info);
+    }
     //全部闲置商品
     public function unuseGetGoodsQuan()
     {
         $data = input('post.');
         $limit = 8;
+//        if($data['type']==='time'){
+//            $where=[
+//                'price'=>'desc',
+//            ];
+//        }else{
+//            $where=[
+//                'price'=>'desc',
+//            ];
+//        }
         $info = Db::name('shop_goods')->where(['status'=>1])
             ->order('price desc')
             ->where('shopstatus',1)
@@ -305,8 +331,7 @@ class Index extends Common
             ->order('add_time desc')
             ->where('shopstatus',1)
             ->field('shopstatus,id,cid,title,tags,price,content,images,video,status,sort,goods_num,shou_num,click_num,com_num,is_free,thoughid,originid,rockid,kindid,weight,size,sku,add_time')
-            ->limit($data['page']*$limit,$limit)
-            ->select();
+            ->paginate(10,'',['page'=>$data['page']]);
         foreach ($info as &$goods) {
             $goods['images'] = array_filter(explode(',',$goods['images']));
             $goods['tags'] = array_filter(explode(',',$goods['tags']));
@@ -324,8 +349,7 @@ class Index extends Common
             ->where('shopstatus',1)
             ->where('recommend',0)
             ->field('shopstatus,id,cid,title,tags,price,content,images,video,status,sort,goods_num,shou_num,click_num,com_num,is_free,thoughid,originid,rockid,kindid,weight,size,sku,add_time')
-            ->limit($data['page']*$limit,$limit)
-            ->select();
+            ->paginate(10,'',['page'=>$data['page']]);
         foreach ($info as &$goods) {
             $goods['images'] = array_filter(explode(',',$goods['images']));
             $goods['tags'] = array_filter(explode(',',$goods['tags']));

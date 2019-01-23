@@ -34,7 +34,7 @@ class Coupon    extends Common
             $info = Db::name('shop_couponlist')->alias('a')
                 ->join('user b','a.uid=b.id')
                 ->join('shop_coupon d','a.cid=d.id')
-                ->field('a.id,d.name as couponname,a.use_time,a.status,a.type,b.name')
+                ->field('a.*,d.use_start_time,d.use_end_time,d.money,d.condition,d.name')
                 ->where('a.uid',$data['uid'])
                 ->select();
         }
@@ -198,6 +198,7 @@ class Coupon    extends Common
         $Coupon = new ShopCoupon();
         $userCouponArr = [];
         $userCouponList = $CouponList->where('uid', $user_id)->where('status', 0)->select();//用户优惠券
+//        dump($userCouponList);
         if(!$userCouponList){
             return $userCouponArr;
         }

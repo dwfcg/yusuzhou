@@ -121,7 +121,7 @@ class Coupon    extends Admin
                 ['text','money', '优惠券金额'],
                 ['text','condition', '消费金额'],
                 ['text','createnum', '发放数量0则为无限制'],
-                ['radio', 'type', '发放类型', '', ['注册','邀请','免费领取'], 0],
+                ['radio', 'type', '发放类型', '', ['注册','邀请','免费领取']],
                 ['datetime','send_start_time','发放开始时间'],
                 ['datetime','send_end_time','发放结束时间'],
                 ['datetime','use_start_time','使用开始时间'],
@@ -157,7 +157,7 @@ class Coupon    extends Admin
            }
        }
        $info = Db::name('shop_coupon')
-           ->find();
+           ->find($id);
        // 显示添加页面
        return ZBuilder::make('form')
            ->addFormItems([
