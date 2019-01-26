@@ -80,7 +80,7 @@ class Slide extends Admin
                 ['status','状态', 'status','',['关闭', '开启']],
                 ['right_button', '操作', 'btn']
             ])
-            ->addTopSelect('sid','版块',$section)
+//            ->addTopSelect('sid','版块',$section)
             ->addTopButtons('add,delete')
             ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
             ->setRowList($data_list)
@@ -107,7 +107,7 @@ class Slide extends Admin
                 ['status','状态', 'status','',['关闭', '开启']],
                 ['right_button', '操作', 'btn']
             ])
-            ->addTopSelect('sid','版块',$section)
+//            ->addTopSelect('sid','版块',$section)
             ->addTopButtons('add,delete')
             ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
             ->setRowList($data_list)
@@ -134,7 +134,7 @@ class Slide extends Admin
                 ['status','状态', 'status','',['关闭', '开启']],
                 ['right_button', '操作', 'btn']
             ])
-            ->addTopSelect('sid','版块',$section)
+//            ->addTopSelect('sid','版块',$section)
             ->addTopButtons('add,delete')
             ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
             ->setRowList($data_list)
@@ -161,7 +161,7 @@ class Slide extends Admin
                 ['status','状态', 'status','',['关闭', '开启']],
                 ['right_button', '操作', 'btn']
             ])
-            ->addTopSelect('sid','版块',$section)
+//            ->addTopSelect('sid','版块',$section)
             ->addTopButtons('add,delete')
             ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
             ->setRowList($data_list)
@@ -188,7 +188,7 @@ class Slide extends Admin
                 ['status','状态', 'status','',['关闭', '开启']],
                 ['right_button', '操作', 'btn']
             ])
-            ->addTopSelect('sid','版块',$section)
+//            ->addTopSelect('sid','版块',$section)
             ->addTopButtons('add,delete')
             ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
             ->setRowList($data_list)
@@ -215,7 +215,7 @@ class Slide extends Admin
                 ['status','状态', 'status','',['关闭', '开启']],
                 ['right_button', '操作', 'btn']
             ])
-            ->addTopSelect('sid','版块',$section)
+//            ->addTopSelect('sid','版块',$section)
             ->addTopButtons('add,delete')
             ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
             ->setRowList($data_list)

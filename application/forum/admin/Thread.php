@@ -43,7 +43,7 @@ class Thread extends Admin
     {
         // 查询
         $map = $this->getMap();
-        $map['sid'] = array('neq',4);
+//        $map['sid'] = array('neq',4);
         // 数据列表
         $section = Db::name('forum_section')->column('id,tionname');
         $data_list = Db::name('forum_thread')->alias('a')
@@ -215,7 +215,7 @@ class Thread extends Admin
                 ['add_time','发帖时间','datetime'],
                 ['right_button', '操作', 'btn']
             ])
-            ->addTopSelect('sid','版块',$section)
+//            ->addTopSelect('sid','版块',$section)
             ->addTopButtons('add,delete')
             ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
             ->setRowList($data_list)
@@ -253,7 +253,7 @@ class Thread extends Admin
                 ['add_time','发帖时间','datetime'],
                 ['right_button', '操作', 'btn']
             ])
-            ->addTopSelect('sid','版块',$section)
+//            ->addTopSelect('sid','版块',$section)
             ->addTopButtons('add,delete')
             ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
             ->setRowList($data_list)
@@ -288,7 +288,7 @@ class Thread extends Admin
                 ['add_time','发帖时间','datetime'],
                 ['right_button', '操作', 'btn']
             ])
-            ->addTopSelect('sid','版块',$section)
+//            ->addTopSelect('sid','版块',$section)
             ->addTopButtons('add,delete')
             ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
             ->setRowList($data_list)
@@ -326,7 +326,7 @@ class Thread extends Admin
                 ['add_time','发帖时间','datetime'],
                 ['right_button', '操作', 'btn']
             ])
-            ->addTopSelect('sid','版块',$section)
+//            ->addTopSelect('sid','版块',$section)
             ->addTopButtons('add,delete')
             ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
             ->setRowList($data_list)
@@ -364,7 +364,7 @@ class Thread extends Admin
                 ['add_time','发帖时间','datetime'],
                 ['right_button', '操作', 'btn']
             ])
-            ->addTopSelect('sid','版块',$section)
+//            ->addTopSelect('sid','版块',$section)
             ->addTopButtons('add,delete')
             ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
             ->setRowList($data_list)
@@ -402,7 +402,7 @@ class Thread extends Admin
                 ['add_time','发帖时间','datetime'],
                 ['right_button', '操作', 'btn']
             ])
-            ->addTopSelect('sid','版块',$section)
+//            ->addTopSelect('sid','版块',$section)
             ->addTopButtons('add,delete')
             ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
             ->setRowList($data_list)
@@ -440,7 +440,7 @@ class Thread extends Admin
                 ['add_time','发帖时间','datetime'],
                 ['right_button', '操作', 'btn']
             ])
-            ->addTopSelect('sid','版块',$section)
+//            ->addTopSelect('sid','版块',$section)
             ->addTopButtons('add,delete')
             ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
             ->setRowList($data_list)
@@ -478,7 +478,7 @@ class Thread extends Admin
                 ['add_time','发帖时间','datetime'],
                 ['right_button', '操作', 'btn']
             ])
-            ->addTopSelect('sid','版块',$section)
+//            ->addTopSelect('sid','版块',$section)
             ->addTopButtons('add,delete')
             ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
             ->setRowList($data_list)
@@ -516,7 +516,7 @@ class Thread extends Admin
                 ['add_time','发帖时间','datetime'],
                 ['right_button', '操作', 'btn']
             ])
-            ->addTopSelect('sid','版块',$section)
+//            ->addTopSelect('sid','版块',$section)
             ->addTopButtons('add,delete')
             ->addRightButtons(['edit', 'delete' => ['data-tips' => '删除后无法恢复。']])
             ->setRowList($data_list)
@@ -524,8 +524,9 @@ class Thread extends Admin
     }
 //-----------------------------------------------------------------------------------------------
     //获取板块下面的分类
-    public function category($id = '')
+    public function category($id = '',$sid='')
     {
+        $id = ($id)?$id:$sid;
         // $id = '6';
         $data['code'] = '1';//判断状态
         $data['msg'] = '请求成功';
@@ -606,13 +607,20 @@ class Thread extends Admin
             }
         }
         $info = Db::name('forum_thread')->find($id);
-        $section = Db::name('forum_section')->where('id',$info['sid'])->column('id,tionname');
+//        $info['name'] = url('category',['id'=>$info['sid']]);
+        $section = Db::name('forum_section')
+//            ->where('id',$info['sid'])
+            ->column('id,tionname');
         $list = Db::name('forum_cate')->where('id',$info['cid'])->column('id,name');
         // print_r($section);
+        //dump($info);
+//        dump($section);
         // 显示编辑页面
         return ZBuilder::make('form')
-            ->addLinkage('id','选择板块','',$section,'',url('category'),'name')
-            ->addSelect('name','选择分类','',$list)
+            ->addLinkage('sid','选择板块','',$section,$info['sid'],url('category'),'cid')
+            ->addSelect('cid','选择分类')
+//            ->addLinkage('sid','选择板块','',$section,'',url('category'),'name','id')
+//            ->addSelect('name','选择分类','','',$info['cid'])
             ->addFormItems([
                 ['hidden', 'id'],
                 // ['select','sid','版块','请选择',$section],

@@ -465,13 +465,13 @@ class Thread extends Common
     {
         $page = 10;
         $data = input('post.');
-        $data['page']=0;
+//        $data['page']=0;
         $sid = input('post.sid');
-        //$sid = 6;
+//        $sid = 6;
         $da = input('post.forum');
-         //$da = 3;
+//         $da = 3;
         $cid = input('post.cid');
-        //$cid = 22;
+//        $cid = 22;
         if ($cid != 0) {
             $da = Db::name('forum_thread')->where(['sid'=>$sid,'cid'=>$cid,'status'=>1])->field('id,uid,oid,vid,cid,sid,title,content,conimage,images,videos,firsturl,status,type,zan_num,guan_num,view_num,com_num,flag,stick,add_time')->limit($data['page']*$page,$page)->order('flag desc,add_time desc')->select();
             //echo Db::name('forum_thread')->getLastSql();die;

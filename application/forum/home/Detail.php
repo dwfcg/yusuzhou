@@ -63,8 +63,10 @@ class Detail extends Common
     }
     // 文章详情
     public function index(){
-        $id = input('id');//$id=297;
-        $dangid = input('uid');$uid=4;
+        $id = input('id');
+//        $id=297;
+        $dangid = input('uid');
+//        $dangid=4;
         $thread = Db::name('forum_thread')->alias('t')->join('user u','t.uid = u.id')
                   ->where(['t.id'=>$id])
                   ->field('t.id,t.uid,t.oid,t.cid,t.sid,t.title,t.content,t.conimage,t.images,t.videos,t.firsturl,t.status,t.zan_num,t.guan_num,t.view_num,t.com_num,t.zan_user,t.flag,t.stick,t.add_time,u.name,u.headimg,u.id as uid')
@@ -94,12 +96,15 @@ class Detail extends Common
                 }
                 $va['mos'] = Db::name('forum_reply')->where(['comment_id'=>$comment[$key]['cid']])->field('id,comment_id,content as acontent,from_uid,to_uid,fname,toname,reply_status')->limit(0,3)
                             ->select();
+
                 foreach($va['mos'] as $ke =>&$vs)
                 {
                     $re_str = substr($vs['acontent'],1,-1);
-                    // $comment[$key][$ke]['acontent']=$this->unicodeDecode($re_str);a
+                     $comment[$key][$ke]['acontent']=$this->unicodeDecode($re_str);
                     $va['mos'][$ke]['acontent'] = $this->unicodeDecode($re_str);
-                    // $va['mos'][$ke]['acontent'] = json_decode($vs['acontent']);
+
+//                     $va['mos'][$ke]['acontent'] = json_decode($vs['acontent']);
+//                    dump(  $va['mos'][$ke]['acontent']);die();
                 }
            }
         $recom = Db::name('forum_thread')->where(['id'=>array('neq',$id),'sid'=>$thread['sid'],'status'=>1])->order('add_time desc')->limit(6)->select();
@@ -108,17 +113,20 @@ class Detail extends Common
         Db::name('forum_thread')->where(['id'=>$id])->update(['url'=>$url]);
         $this->assign('guan',$guan);
         $this->assign('zan',$zan);
-        // $this->assign('hui',$hui);
+//         $this->assign('hui',$hui);
         $this->assign('recom',$recom);
         $this->assign('thread',$thread);
         $this->assign('comment',$comment);
+//        dump($comment);
         return $this->fetch();
     }
   //转json
      public function unicodeDecode($unicode_str){
         $json = '{"str":"'.$unicode_str.'"}';
         $arr = json_decode($json,true);
+
         if(empty($arr)) return '';
+
         return $arr['str'];
     }
     //关注用户
@@ -178,7 +186,7 @@ class Detail extends Common
     {
         $page = 10;
         $data = input('post.');
-        $data['page']=2;
+//        $data['page']=2;
         $dangid = input('post.dangid');
         //$where['type']=array('neq',2);
 //        $dangid = '59';
@@ -354,15 +362,18 @@ class Detail extends Common
     public function huifu()
     {
         $data = input('post.');
-        $type = input('post.reply_status');$type=1;
+        $type = input('post.reply_status');
+//        $type=1;
         $uid = input('post.comment_id');//根评论id对应评论里面的自增id
-        $uid=240;
+//        $uid=240;
         $bei = input('post.from_uid');//被回复人的id对应评论里面的uid
-        $bei=50;
+//        $bei=50;
         $dang = input('post.to_uid');//回复人id
-        $dang=59;
+//        $dang=59;
         $content = input('post.content');//回复内容
+//        $content='asdas';
         $nei = json_encode($content);
+//        $nei='asdas';
         $time = time();
         $fu = Db::name('user')->where(['id'=>$bei])->field('id,name')->find();
         $to = Db::name('user')->where(['id'=>$dang])->field('id,name')->find();
@@ -455,27 +466,28 @@ class Detail extends Common
         $data = input('post.');
         $type = input('post.hui_status');//$type=1;
         $uid = input('post.shicomid');//视频id
-        //$uid=240;
+//        $uid=240;
         $bei = input('post.shi_uid');//发布视频的用户id
-        //$bei=50;
+//        $bei=50;
         $dang = input('post.hui_uid');//回复人id
-        //$dang=59;
+//        $dang=59;
         $content = input('post.hcontent');//回复内容
         $nei = json_encode($content);
         $fu = Db::name('user')->where(['id'=>$bei])->field('id,name')->find();
         $to = Db::name('user')->where(['id'=>$dang])->field('id,name')->find();
         Db::name('forum_thread')->where(['id'=>$uid])->setInc('com_num');
-        $data = Db::name('forum_shihui')->insert(['shicomid'=>$uid,'shi_uid'=>$bei,'hui_uid'=>$dang,'hcontent'=>$nei,'hui_status'=>$type,'shiname'=>$fu['name'],'huiname'=>$to['name']]);
-        if ($data == 1) {
+        $shihuiId = Db::name('forum_shihui')
+            ->insertGetId(['shicomid'=>$uid,'shi_uid'=>$bei,'hui_uid'=>$dang,'hcontent'=>$nei,'hui_status'=>$type,'shiname'=>$fu['name'],'huiname'=>$to['name']]);
+        if ($shihuiId) {
             $da = Db::name('forum_shihui')
-                  ->where(['shi_uid'=>$bei])
+                  ->where(['id'=>$shihuiId])
                   ->field('id,shicomid,shi_uid,hui_uid,hcontent,hui_status,shiname,huiname')
                   ->find();
             $da['hcontent'] = json_decode($da['hcontent']);
             // $da['addtime'] = date('Y-m-d H:i',$da['addtime']);
             show_api($da,'回复成功');
-            }elseif($data != 1){
-                show_api($data,'回复失败',2);
+            }elseif($shihuiId){
+                show_api("",'回复失败',2);
             }
     }
     //删除回复

@@ -18,21 +18,23 @@ class Withdrawals   extends Admin
     public function index()
     {
         $map = $this->getMap();
-        $info=Db::name('user_withdrawals')->select();
+        $info=Db::name('user_withdrawals')->where($map)->select();
         // 使用ZBuilder快速创建数据表格
         return ZBuilder::make('table')
 //            ->setTableName('user_Withdrawals')
             ->setPageTitle('提现管理') // 设置页面标题
 //            ->setTableName('user_Withdrawals') // 设置数据表名
-//            ->setSearch(['id' => 'ID', 'name' => '会员名', 'mobile' => '手机号']) // 设置搜索参数
+            ->setSearch(['account_bank' => '银行账号', 'account_name' => '开户人名称']) // 设置搜索参数
             ->addColumns([ // 批量添加列
                 ['user_id', '用户ID'],
-                ['create_time', '申请提现时间','datetime'],
-                ['money', '提现金额'],
-                ['bank_name', '类别'],
+
+                ['bank_name', '银行名称'],
                 ['account_bank', '银行账号'],
-                ['account_name', '对应账户名称'],
-                ['remark', '备注'],
+                ['account_name', '开户人名称'],
+                ['money', '提现金额'],
+                ['remark', '提现备注'],
+
+                ['create_time', '申请提现时间','datetime'],
                 ['status', '状态','status','',[0=>'处理中','处理成功','处理失败']],
                 ['right_button', '操作', 'btn']
             ])

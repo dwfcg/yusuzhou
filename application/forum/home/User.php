@@ -127,7 +127,7 @@ class User extends Common
                ->order('stick desc,add_time desc')
                ->select();
         foreach ($jing as &$v) {
-            $v['conimage'] = array_filter(explode(',',$v['conimage']));
+            $v[' '] = array_filter(explode(',',$v['conimage']));
             $v['images'] = array_filter(explode(',',$v['images']));
             $v['add_time'] = date('Y-m-d H:i',$v['add_time']);
         }
@@ -136,8 +136,10 @@ class User extends Common
     //热帖文章
     public function retie(){
         $page = 10;
-        $data = input('post.');$data['page']=0;
-        $dangid = input('post.dangid');$dangid=59;
+        $data = input('post.');
+//        $data['page']=0;
+        $dangid = input('post.dangid');
+//        $dangid=59;
         $re = Db::name('forum_thread')->alias('a')
             ->join('user u','a.uid=u.id')
             ->where(['a.status'=>1,'a.view_num'=>array('egt',100),'a.zan_num'=>array('egt',10)])

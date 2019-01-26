@@ -497,7 +497,7 @@
 	                    	<div class="reply-list"><span class="font-color reply-list-replyed" data-bh="{$asd.to_uid}" data-cid="{$com.cid}">{$asd.toname}</span>：<span>{$asd.acontent}</span></div>
 	                        {elseif condition="$asd['reply_status'] == 1"}
 	                    	<!-- 当前用户回复回复的评论 -->
-                       		<div class="reply-list"><span class="font-color reply-list-replyed" data-bh="{$asd.to_uid}" data-cid="{$com.cid}">{$asd.toname}</span>回复<span class="font-color" data-hr="{$asd.to_uid}">{$asd.fname}</span>：<span>{$asd.acontent}</span></div>
+                       		<div class="reply-list"><span class="font-color reply-list-replyed" data-bh="{$asd.to_uid}" data-cid="{$com.cid}">{$asd.toname}</span>回复<span class="font-color" data-hr="{$asd.to_uid}">{$asd.fname}</span>：<span>{$asd.content}</span></div>
 	                        {/if}
                       	{/volist}
                     	{if condition="$com['hui_num'] > 3"}

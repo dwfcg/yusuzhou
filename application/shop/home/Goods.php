@@ -69,7 +69,9 @@ class Goods extends Common
 //---------详情------------------------------------------------------------
     public function index(){
         $id = input('id');
+//        $id='1094';
         $uid = input('uid');
+//        $uid='111';
         // var_dump($id);
         // var_dump($uid);
         $shou = Db::name('shop_shou')->where(['userid'=>$uid,'goodid'=>$id])->count();
@@ -112,6 +114,7 @@ class Goods extends Common
         $this->assign('origin',$origin);
         $this->assign('rock',$rock);
         // $this->assign('cation',$cation);
+//        dump($goods);
         return $this->fetch();
     }
     public function kefu()
